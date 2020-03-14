@@ -35,6 +35,8 @@ transform: rotate(180deg);
         margin-bottom:5%;
         transition: all 1s !important;
     }
+
+  /* */  
 .card-blog{
 
 }
@@ -43,11 +45,12 @@ transform: rotate(180deg);
         box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.3);
         transform:translateY(-10px) !important;
     }
-
+/*carousel bg color issue fix*/
     .my-page-header::before{
         background-color: white !important;
     }
 
+/*landing page top carousel  bottom curve fix */
     .mycarouselindicators{
         background-image: url('../img/Artboard7.svg');
         background-size:100vw 10vh;
@@ -64,3 +67,59 @@ transform: rotate(180deg);
         margin-right:0.5% !important;
         margin-left:0.5% !important;
     }
+/* social media icons*/
+#hovericonscontainer{
+    z-index:9999999;display: block; padding:1%;position: fixed;right:0;bottom:5%
+;}
+    .hovericons {
+        transition: all 0.5s ease;
+        background-color: transparent;
+      }
+    #hovericons1{
+        border-radius:20%;
+        background: -webkit-linear-gradient( purple, red, gold);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+      #hovericons1:hover {
+        transform: rotate(360deg);
+        padding: 10%;
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: unset;
+        color: white !important;
+        background-image: linear-gradient(to bottom left, purple, red, gold) !important;
+    
+      }
+    #hovericons2{
+        border-radius:20%;
+        color:blue;
+    }
+      #hovericons2:hover {
+        transform: rotate(360deg);
+        padding: 10%;
+        color: white !important;
+        background-color: blue !important;
+    
+      }
+    #hovericons3{
+  border-radius:20%;color:rgb(58, 58, 238);
+    }
+      #hovericons3:hover {
+        transform: rotate(360deg);
+        padding: 10%;
+        color: white !important;
+        background-color: rgb(58, 58, 238) !important;
+    
+      }
+    #hovericons4{
+    border-radius:50%;
+color:rgb(209, 68, 68);
+    }
+      #hovericons4:hover {
+        transform: rotate(360deg);
+        padding: 10%;
+        color: white !important;
+        background-color: rgb(209, 68, 68) !important;
+    
+    
+      }

@@ -37,7 +37,7 @@ import {
   TabPane
 } from "reactstrap";
 import AOS from "aos";
-import "aos/dist/aos.css"; // You can also use <link> for styles
+import "aos/dist/aos.css"; // You can also use <link to='#'> for styles
 // ..
 import Features1 from "components/LandingPageFeatures";
 import GridContainer from "assets/jss/GridContainer";
@@ -216,6 +216,16 @@ function LandingPage(props) {
   };
   return (
     <React.Fragment>
+        <div id='hovericonscontainer'>
+    <Link to='#'><i  id='hovericons1'
+        className="mx-2 my-3  hovericons fab fa-2x fa-instagram"></i></Link><br />
+    <Link to='#'><i  id='hovericons2'
+        className="mx-2 my-3 hovericons fab fa-2x fa-facebook"></i></Link><br />
+    <Link to='#'> <i  id='hovericons3'
+        className="mx-2 my-3 hovericons fab fa-2x fa-twitter"></i></Link><br />
+    <Link to='#'><i  id='hovericons4'
+        className="mx-2 my-3  hovericons fab fa-2x fa-pinterest"></i></Link>
+  </div>
       <LandingPageHeader3 />
       <LandingPageHeader2 /> 
       {/* <Container>
@@ -283,76 +293,7 @@ function LandingPage(props) {
      */}
     
       <LandingPills />
-      <Container>
-        <Row>
-  
-
-          <Col className=" pl-5 mr-auto text-left" md="6">
-            <h2
-              data-aos="fade-left"
-              className="title"
-              style={{ fontSize: "2rem" }}
-            >
-               Mansehej 's History
-            </h2>
-            <h5
-              data-aos="fade-left"
-              className="description"
-              style={{ fontSize: "1rem" }}
-            >
-              The riding of waves has likely existed since humans began swimming
-              in the ocean. In this sense, bodysurfing is the oldest type of
-              wave-catching. Standing up on what is now called a surfboard is a
-              relatively recent innovation developed by the Polynesians.
-            </h5>
-            <br></br>
-            <div data-aos="fade-left" className="buttons">
-              {/* <Button
-                      className="btn-icon btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                      size="lg"
-                    >
-                      <i className="fab fa-twitter"></i>
-                    </Button>
-                    <Button
-                      className="btn-icon btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                      size="lg"
-                    >
-                      <i className="fab fa-facebook-square"></i>
-                    </Button>
-                    <Button
-                      className="btn-icon btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                      size="lg"
-                    >
-                      <i className="fab fa-get-pocket"></i>
-                    </Button> */}
-              <Button
-                className="mr-3 btn-warning"
-                color="info"
-                href="#pablo"
-                onClick={e => e.preventDefault()}
-                size="lg"
-              >
-                Read More
-              </Button>
-            </div>
-          </Col>
-          <Col md="6" style={{ alignSelf: "center" }}>
-            <img
-              data-aos="fade-up"
-              style={{ alignSelf: "center" }}
-              src={require("../assets/img/temp12.png")}
-            ></img>
-          </Col>  </Row>
-      </Container>
+      
       <Container className="mb-5">
         <CardTitle
           data-aos="zoom-in-up"
@@ -392,7 +333,7 @@ function LandingPage(props) {
                     <h4 className={classes.cardTitle}>
                       <a href="#pablo" onClick={e => e.preventDefault()}>
                         This Card is Doing a Full Rotation on Hover...
-                      </a>
+                      </Link>
                     </h4>
                     <p className={classes.cardDescription}>
                       Don{"'"}t be scared of the truth because we need to
@@ -459,7 +400,7 @@ function LandingPage(props) {
                     <h4 className={classes.cardTitle}>
                       <a href="#pablo" onClick={e => e.preventDefault()}>
                         This Card is Doing a Full Rotation on Hover...
-                      </a>
+                      </Link>
                     </h4>
                     <p className={classes.cardDescription}>
                       Don{"'"}t be scared of the truth because we need to
@@ -525,7 +466,7 @@ function LandingPage(props) {
                     <h4 className={classes.cardTitle}>
                       <a href="#pablo" onClick={e => e.preventDefault()}>
                         This Card is Doing a Full Rotation on Hover...
-                      </a>
+                      </Link>
                     </h4>
                     <p className={classes.cardDescription}>
                       Don{"'"}t be scared of the truth because we need to
@@ -593,7 +534,7 @@ function LandingPage(props) {
                     <h4 className={classes.cardTitle}>
                       <a href="#pablo" onClick={e => e.preventDefault()}>
                         This Card is Doing a Full Rotation on Hover...
-                      </a>
+                      </Link>
                     </h4>
                     <p className={classes.cardDescription}>
                       Don{"'"}t be scared of the truth because we need to
@@ -661,7 +602,7 @@ function LandingPage(props) {
                     <h4 className={classes.cardTitle}>
                       <a href="#pablo" onClick={e => e.preventDefault()}>
                         This Card is Doing a Full Rotation on Hover...
-                      </a>
+                      </Link>
                     </h4>
                     <p className={classes.cardDescription}>
                       Don{"'"}t be scared of the truth because we need to
@@ -728,7 +669,7 @@ function LandingPage(props) {
                     <h4 className={classes.cardTitle}>
                       <a href="#pablo" onClick={e => e.preventDefault()}>
                         This Card is Doing a Full Rotation on Hover...
-                      </a>
+                      </Link>
                     </h4>
                     <p className={classes.cardDescription}>
                       Don{"'"}t be scared of the truth because we need to
@@ -842,7 +783,7 @@ function LandingPage(props) {
                           className="img rounded"
                           src={require("assets/img/card-blog2.jpg")}
                         ></img>
-                      </a>
+                      </Link>
                     </div>
                     <CardBody>
                       <h6 className="category text-info">Features</h6>
@@ -884,7 +825,7 @@ function LandingPage(props) {
                           className="img rounded"
                           src={require("assets/img/card-blog2.jpg")}
                         ></img>
-                      </a>
+                      </Link>
                     </div>
                     <CardBody>
                       <h6 className="category text-info">Features</h6>
@@ -919,7 +860,7 @@ function LandingPage(props) {
       </div>
     */}
 
-      <Row className="contactus-2 pb-5 mb-5" >
+      <Row className="contactus-2  mb-5" >
        <Col  xs='12' sm='12' md='8'style={{paddingLeft:'2%',paddingRight:'2%'}}>
          <div
           className="big-map"
@@ -928,7 +869,7 @@ function LandingPage(props) {
             // position: "relative",
            
             overflow: "hidden",
-            height: "70vh",
+            height: "65vh",
          
           }}
         >
@@ -1021,13 +962,13 @@ function LandingPage(props) {
                 </Row>
                 <Row>
                   <Col md="6">
-                    <FormGroup check>
+                    {/* <FormGroup check>
                       <Label check>
                         <Input type="checkbox"></Input>
                         <span className="form-check-sign"></span>
                         I'm not a robot
                       </Label>
-                    </FormGroup>
+                    </FormGroup> */}
                   </Col>
                   <Col md="6">
                     <Button
@@ -1046,6 +987,77 @@ function LandingPage(props) {
       </Row>
 
       {/* <Footer1 /> */}
+      <Container>
+        <Row>
+  
+
+          <Col className=" pl-5 mr-auto text-left" md="6">
+            <h2
+              data-aos="fade-left"
+              className="title"
+              style={{ fontSize: "2rem" }}
+            >
+               Mansehej 's History
+            </h2>
+            <h5
+              data-aos="fade-left"
+              className="description"
+              style={{ fontSize: "1rem" }}
+            >
+              The riding of waves has likely existed since humans began swimming
+              in the ocean. In this sense, bodysurfing is the oldest type of
+              wave-catching. Standing up on what is now called a surfboard is a
+              relatively recent innovation developed by the Polynesians.
+            </h5>
+            <br></br>
+            <div data-aos="fade-left" className="buttons">
+              {/* <Button
+                      className="btn-icon btn-neutral"
+                      color="link"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                      size="lg"
+                    >
+                      <i className="fab fa-twitter"></i>
+                    </Button>
+                    <Button
+                      className="btn-icon btn-neutral"
+                      color="link"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                      size="lg"
+                    >
+                      <i className="fab fa-facebook-square"></i>
+                    </Button>
+                    <Button
+                      className="btn-icon btn-neutral"
+                      color="link"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                      size="lg"
+                    >
+                      <i className="fab fa-get-pocket"></i>
+                    </Button> */}
+              <Button
+                className="mr-3 btn-warning"
+                color="info"
+                href="#pablo"
+                onClick={e => e.preventDefault()}
+                size="lg"
+              >
+                Read More
+              </Button>
+            </div>
+          </Col>
+          <Col md="6" style={{ alignSelf: "center" }}>
+            <img
+              data-aos="fade-up"
+              style={{ alignSelf: "center" }}
+              src={require("../assets/img/temp12.png")}
+            ></img>
+          </Col>  </Row>
+      </Container>
+     
     </React.Fragment>
   );
 }
