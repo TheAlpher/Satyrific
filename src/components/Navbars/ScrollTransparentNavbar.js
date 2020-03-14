@@ -22,9 +22,10 @@ import {
 function ScrollTransparentNavbar() {
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const [navbarColor, setNavbarColor] = React.useState(
-    (document.documentElement.scrollTop > 499 || document.body.scrollTop) > 499
-      ? ""
-      : " navbar-transparent"
+    // (document.documentElement.scrollTop > 499 || document.body.scrollTop) > 499
+    //   ? ""
+    //   : " navbar-transparent"
+    ""
   );
   const [buyButtonColor, setBuyButtonColor] = React.useState(
     (document.documentElement.scrollTop > 499 || document.body.scrollTop) > 499
@@ -45,8 +46,9 @@ function ScrollTransparentNavbar() {
         document.documentElement.scrollTop < 500 ||
         document.body.scrollTop < 500
       ) {
-        setNavbarColor(" navbar-transparent");
-        document.getElementById('logoimage').src=img1;
+        setNavbarColor(""); 
+        //  navbar-transparent
+        document.getElementById('logoimage').src=img2;
         setBuyButtonColor("neutral");
       }
     };
@@ -67,10 +69,10 @@ function ScrollTransparentNavbar() {
         />
       ) : null}
       <Navbar className={"fixed-top" + navbarColor} color="white" expand="lg">
-        <Container>
+        <Container style={{marginLeft:'5%'}}>
           <div className="navbar-translate">
           <NavbarBrand href="#pablo" onClick={e => e.preventDefault()} style={{maxWidth:'30vw'}}>
-                <img alt='logo' id='logoimage' width='35%' src={require('assets/img/brandlogomini3.png')}/>
+                <img alt='logo' id='logoimage' width='35%' src={require('assets/img/BRANDLOGOMINI2.png')}/>
               </NavbarBrand>
             {/* <UncontrolledTooltip target="navbar-brand">
               Designed by Invision. Coded by Creative Tim

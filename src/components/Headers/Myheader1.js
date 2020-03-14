@@ -1,5 +1,6 @@
 import React from "react";
 import AOS from "aos";
+import transparentcurve from '../../assets/img/Artboard7.svg';
 import "aos/dist/aos.css";
 // reactstrap components
 import {
@@ -315,12 +316,18 @@ interval="5000"
 style={{minHeight:'80vh',maxHeight:'80vh'}} 
 next={next} previous={previous}
 >
+  {/* <div id="clipped-div" className='carousel-indicators' style={{minHeight:'fit-content',
+
+background:'transparent'}}>
+  
+   </div>  */}
             <CarouselIndicators
+            className='mycarouselindicators px-auto'
               items={items}
               activeIndex={activeIndex}
               onClickHandler={goToIndex}
               
-            />
+            ></CarouselIndicators>
             {items.map(item => {
               return (
                 <CarouselItem
@@ -328,7 +335,7 @@ next={next} previous={previous}
                   onExited={onExited}
                   key={item.src}
                 >
-                  <div className="page-header locationcarousel-page-header header-filter" style={{
+                  <div className="page-header  header-filter" style={{
                     minHeight:'80vh',maxHeight:'80vh'}}>
                     <div
                       className="page-header-image"
@@ -363,7 +370,7 @@ next={next} previous={previous}
               role="button"
             >
 
-              <div className="now-ui-icons arrows-1_minimal-left" style={{ backgroundColor:'white', borderRadius:'50%', border:'1px solid white',color:'black',fontWeight:'bolder',padding:'10%'}} />
+              <div className="now-ui-icons arrows-1_minimal-left" style={{ backgroundColor:'white', borderRadius:'40%', border:'1px solid white',color:'black',fontWeight:'bolder',padding:'10%'}} />
           
             </a>
             <a
@@ -378,7 +385,7 @@ next={next} previous={previous}
               role="button"
             >
               
-              <div className="now-ui-icons arrows-1_minimal-right" style={{ backgroundColor:'white', borderRadius:'50%', border:'1px solid white',color:'black',fontWeight:'bolder',padding:'10%'}} />
+              <div className="now-ui-icons arrows-1_minimal-right" style={{ backgroundColor:'white', borderRadius:'40%', border:'1px solid white',color:'black',fontWeight:'bolder',padding:'10%'}} />
           
             </a> */}
        

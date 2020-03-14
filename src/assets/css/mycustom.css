@@ -47,3 +47,20 @@ transform: rotate(180deg);
     .my-page-header::before{
         background-color: white !important;
     }
+
+    .mycarouselindicators{
+        background-image: url('../img/Artboard7.svg');
+        background-size:100vw 10vh;
+        margin-left:0 !important;
+        /* padding-left:48% !important;
+        padding-right:48% !important; */
+        min-width:100vw !important;
+        margin-right:0 !important;
+        min-height: 10vh;
+        padding-top:1% !important;
+        margin-bottom: 0 !important;
+    }
+    .mycarouselindicators li{
+        margin-right:0.5% !important;
+        margin-left:0.5% !important;
+    }

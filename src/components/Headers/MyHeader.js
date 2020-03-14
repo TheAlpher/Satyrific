@@ -33,8 +33,8 @@ import {
         ><CardTitle data-aos="zoom-in-up" data-aos-duration='1000' tag='h3'  className='text-center pt-5' style={{color:'black'}}>Current Locations</CardTitle>
                       <Container className="text-center">
                   
-              <Row style={{justifyContent:'center'}}>
-                <Col md="4" sm='4'>
+              <Row style={{justifyContent:'center',display:'flex'}}>
+                <Col md="3" sm='3' xs='4'>
                  
                  
                   {/* <Button
@@ -49,7 +49,7 @@ import {
                  <img src={require('assets/img/hostel1.png')}/>
                  <CardTitle data-aos="zoom-in-up" data-aos-duration='1000' tag='h4'  className='text-center' style={{color:'black',marginTop:0,marginBottom:0}}>Satya Niketan </CardTitle>
                 </Col>
-                <Col md="4" sm='4'>
+                <Col md="3" sm='3' xs='4'>
                  
                  
                  {/* <Button
@@ -84,8 +84,8 @@ import {
         ><CardTitle data-aos="zoom-in-up" data-aos-duration='1000' tag='h3'  className='text-center pt-5' style={{color:'black'}}>Upcoming Locations</CardTitle>
                       <Container className="text-center">
                   
-              <Row style={{justifyContent:'center'}}>
-                <Col md="3" sm='3'>
+              <Row style={{justifyContent:'center',display:'flex'}}>
+                <Col md="3" sm='3' xs='3' xs='3'>
                  
                  
                   {/* <Button
@@ -100,7 +100,7 @@ import {
                  <img src={require('assets/img/hostel1.png')}/>
                  <CardTitle data-aos="zoom-in-up" data-aos-duration='1000' tag='h4'  className='text-center' style={{color:'black',marginTop:0,marginBottom:0}}>Pune </CardTitle>
                 </Col>
-                <Col md="3" sm='3'>
+                <Col md="3" sm='3' xs='3' xs='3'>
                  
                  
                  {/* <Button
@@ -115,7 +115,7 @@ import {
                 <img src={require('assets/img/hostel2.png')}/>
                 <CardTitle data-aos="zoom-in-up" data-aos-duration='1000' tag='h4'  className='text-center' style={{color:'black',marginTop:0,marginBottom:0}}>Colombo </CardTitle>
                </Col>
-               <Col md="3" sm='3'>
+               <Col md="3" sm='3' xs='3' xs='3'>
                  
                  
                  {/* <Button
@@ -180,10 +180,10 @@ const MyHeader =()=>{
         <Carousel activeIndex={activeIndex}  keyboard={false}
 
 className='locationcarousel'
-pause={true}
+pause={false}
 ride="carousel"
 interval="5000000"
-style={{maxHeight:'35vh'}} 
+style={{maxHeight:'auto'}} 
 next={next} previous={previous}
 >
             {/* <CarouselIndicators
@@ -200,7 +200,7 @@ next={next} previous={previous}
                   key={item.src}
                 >
                   <div className="page-header my-page-header header-filter" style={{
-                    minHeight:'unset',maxHeight:'35vh',}} >
+                    minHeight:'unset',maxHeight:'auto',}} >
                     {/* <div
                       className="page-header-image"
                       style={{
@@ -216,7 +216,6 @@ next={next} previous={previous}
             <a
               className="left carousel-control carousel-control-prev"
               data-slide="prev"
-
               href="#pablo"
               onClick={e => {
                 e.preventDefault();

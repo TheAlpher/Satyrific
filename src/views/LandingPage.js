@@ -372,10 +372,16 @@ function LandingPage(props) {
                     className={classes.cardBodyRotate}
                     style={{ minHeight: "35vh" }}
                   >
+                               <h5
+                      className={classes.cardTitle}
+                      style={{ fontFamily: "Lato",textAlign:'center' }}
+                    >
+                      Air Conditioner
+                    </h5>
                     <img
                       className="mx-auto my-auto"
                       src={require("../assets/img/AC.png")}
-                      width="100%"
+                      width="80%"
                     />
                     {/* <Success>
                       <h5 className={classes.cardCategorySocial}>
@@ -401,12 +407,7 @@ function LandingPage(props) {
                     className={classes.cardBodyRotate}
                     style={{ border: "1px solid orange" }}
                   >
-                    <h5
-                      className={classes.cardTitle}
-                      style={{ fontFamily: "Lato" }}
-                    >
-                      Air Conditioner
-                    </h5>
+         
                     <p className={classes.cardDescription}>
                       All Rooms are fiited with dedicated Air Conditioners
                     </p>
@@ -438,11 +439,16 @@ function LandingPage(props) {
                   <CardBody
                     className={classes.cardBodyRotate}
                     style={{ minHeight: "35vh" }}
-                  >
+                  ><h5
+                  className={classes.cardTitle}
+                  style={{ fontFamily: "Lato",textAlign:'center' }}
+                >
+                  Gym
+                </h5>
                     <img
                       className="mx-auto my-auto"
                       src={require("../assets/img/gym.png")}
-                      width="100%"
+                      width="80%"
                     />
                     {/* <Success>
                       <h5 className={classes.cardCategorySocial}>
@@ -468,12 +474,7 @@ function LandingPage(props) {
                     className={classes.cardBodyRotate}
                     style={{ border: "1px solid orange" }}
                   >
-                    <h5
-                      className={classes.cardTitle}
-                      style={{ fontFamily: "Lato" }}
-                    >
-                      Gym
-                    </h5>
+                    
                     <p className={classes.cardDescription}>
                       All students have access to our world class gym facilities
                     </p>
@@ -504,11 +505,16 @@ function LandingPage(props) {
                   <CardBody
                     className={classes.cardBodyRotate}
                     style={{ minHeight: "35vh" }}
-                  >
+                  > <h5
+                  className={classes.cardTitle}
+                  style={{ fontFamily: "Lato",textAlign:'center' }}
+                >
+                  Housekeeping
+                </h5>
                     <img
                       className="mx-auto my-auto"
                       src={require("../assets/img/housekeeping.png")}
-                      width="100%"
+                      width="80%"
                     />
                     {/* <Success>
                       <h5 className={classes.cardCategorySocial}>
@@ -534,12 +540,7 @@ function LandingPage(props) {
                     className={classes.cardBodyRotate}
                     style={{ border: "1px solid orange" }}
                   >
-                    <h5
-                      className={classes.cardTitle}
-                      style={{ fontFamily: "Lato" }}
-                    >
-                      Housekeeping
-                    </h5>
+                   
                     <p className={classes.cardDescription}>
                       Housekeeping service is available for all students
                     </p>
@@ -572,11 +573,16 @@ function LandingPage(props) {
                   <CardBody
                     className={classes.cardBodyRotate}
                     style={{ minHeight: "35vh" }}
-                  >
+                  >               <h5
+                  className={classes.cardTitle}
+                  style={{ fontFamily: "Lato",textAlign:'center' }}
+                >
+                  Meals
+                </h5>
                     <img
                       className="mx-auto my-auto"
                       src={require("../assets/img/meals.png")}
-                      width="100%"
+                      width="80%"
                     />
                     {/* <Success>
                       <h5 className={classes.cardCategorySocial}>
@@ -602,12 +608,7 @@ function LandingPage(props) {
                     className={classes.cardBodyRotate}
                     style={{ border: "1px solid orange" }}
                   >
-                    <h5
-                      className={classes.cardTitle}
-                      style={{ fontFamily: "Lato" }}
-                    >
-                      Meals
-                    </h5>
+     
                     <p className={classes.cardDescription}>
                       Students are provided 4 nutritious meals everyday with a
                       longer list of choices
@@ -640,11 +641,16 @@ function LandingPage(props) {
                   <CardBody
                     className={classes.cardBodyRotate}
                     style={{ minHeight: "35vh" }}
-                  >
+                  >      <h5
+                  className={classes.cardTitle}
+                  style={{ fontFamily: "Lato",textAlign:'center' }}
+                >
+                  Laundry
+                </h5>
                     <img
                       className="mx-auto my-auto"
                       src={require("../assets/img/laundry.png")}
-                      width="100%"
+                      width="80%"
                     />
                     {/* <Success>
                       <h5 className={classes.cardCategorySocial}>
@@ -670,12 +676,7 @@ function LandingPage(props) {
                     className={classes.cardBodyRotate}
                     style={{ border: "1px solid orange" }}
                   >
-                    <h5
-                      className={classes.cardTitle}
-                      style={{ fontFamily: "Lato" }}
-                    >
-                      Laundry
-                    </h5>
+              
                     <p className={classes.cardDescription}>
                       Laundry service is available for all students
                     </p>
@@ -707,11 +708,16 @@ function LandingPage(props) {
                   <CardBody
                     className={classes.cardBodyRotate}
                     style={{ minHeight: "35vh" }}
-                  >
+                  >                 <h5
+                  className={classes.cardTitle}
+                  style={{ fontFamily: "Lato",textAlign:'center' }}
+                >
+                  Library
+                </h5>
                     <img
                       className="mx-auto my-auto"
                       src={require("../assets/img/library.png")}
-                      width="100%"
+                      width="80%"
                     />
                     {/* <Success>
                       <h5 className={classes.cardCategorySocial}>
@@ -737,12 +743,7 @@ function LandingPage(props) {
                     className={classes.cardBodyRotate}
                     style={{ border: "1px solid orange" }}
                   >
-                    <h5
-                      className={classes.cardTitle}
-                      style={{ fontFamily: "Lato" }}
-                    >
-                      Library
-                    </h5>
+   
                     <p className={classes.cardDescription}>
                       All students have access to our Library
                     </p>
@@ -770,7 +771,7 @@ function LandingPage(props) {
       </Container>
 
       <ReviewsCarousel />
-      <Features1 />
+      {/* <Features1 /> */}
       {/* <Faqs /> */}
       {/* <div className="wrapper">
         <Container>
@@ -918,15 +919,17 @@ function LandingPage(props) {
       </div>
     */}
 
-      <div className="contactus-2">
-        <div
+      <Row className="contactus-2 pb-5 mb-5" >
+       <Col  xs='12' sm='12' md='8'style={{paddingLeft:'2%',paddingRight:'2%'}}>
+         <div
           className="big-map"
           id="contactUsMap"
           style={{
-            position: "relative",
-            zIndex: -20,
+            // position: "relative",
+           
             overflow: "hidden",
-            height: "70vh"
+            height: "70vh",
+         
           }}
         >
           <MapWrapper
@@ -936,8 +939,9 @@ function LandingPage(props) {
             mapElement={<div style={{ height: `100%` }} />}
           />
         </div>
-        <Col lg="6" md="10" style={{ marginTop: "-70vh" }}>
-          <Card className="card-contact card-raised">
+        </Col>   
+          <Col xs='12' sm='12' lg="4" md="4"  >
+          <Card className="card-contact card-raised " style={{marginLeft:0,marginTop:'2%'}}>
             <Form id="contact-form" method="post" role="form">
               <CardHeader className="text-center">
                 <CardTitle tag="h4">Contact Us</CardTitle>
@@ -1039,7 +1043,7 @@ function LandingPage(props) {
             </Form>
           </Card>
         </Col>
-      </div>
+      </Row>
 
       {/* <Footer1 /> */}
     </React.Fragment>

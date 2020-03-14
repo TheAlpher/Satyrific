@@ -11,14 +11,14 @@ import "assets/demo/demo.css";
 import "assets/demo/react-demo.css";
 import "assets/demo/nucleo-icons-page-styles.css";
 // pages
-import AboutUs from "views/AboutUs.js";
+// import AboutUs from "views/AboutUs.js";
 // import BlogPost from "views/examples/BlogPost.js";
 // import BlogPosts from "views/examples/BlogPosts.js";
 // import ContactUs from "views/examples/ContactUs.js";
 // import Ecommerce from "views/examples/Ecommerce.js";
 // import Index from "views/Index.js";
 import LandingPage from "views/LandingPage.js";
-import ProductsPage from "views/ProductsPage.js";
+// import ProductsPage from "views/ProductsPage.js";
 // import LoginPage from "views/examples/LoginPage.js";
 // import NucleoIcons from "views/NucleoIcons.js";
 // import Presentation from "views/Presentation.js";
