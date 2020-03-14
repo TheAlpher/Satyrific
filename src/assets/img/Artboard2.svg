@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1440" height="720" viewBox="0 0 1440 720">
+  <defs>
+    <clipPath id="clip-Artboard_2">
+      <rect width="1440" height="720"/>
+    </clipPath>
+  </defs>
+  <g id="Artboard_2" data-name="Artboard – 2" clip-path="url(#clip-Artboard_2)">
+    <ellipse id="Ellipse_1" data-name="Ellipse 1" cx="720" cy="719" rx="720" ry="719" transform="translate(0 -719)" fill="#00a2ff"/>
+  </g>
+</svg>
