@@ -29,12 +29,12 @@ import {
       src: "url(" + require("assets/img/bg20.jpg") + ")",
       content: (
         <div className="social-line social-line-big-icons social-line-white" 
-        style={{}} 
+        style={{backgroundColor:'rgba(255,255,255,0)'}} 
         ><CardTitle data-aos="zoom-in-up" data-aos-duration='1000' tag='h3'  className='text-center pt-5' style={{color:'black'}}>Current Locations</CardTitle>
                       <Container className="text-center">
                   
               <Row style={{justifyContent:'center',display:'flex'}}>
-                <Col md="3" sm='3' xs='4'>
+                <Col md="3" sm='4' xs='4'>
                  
                  
                   {/* <Button
@@ -49,7 +49,7 @@ import {
                  <img src={require('assets/img/hostel1.png')}/>
                  <CardTitle data-aos="zoom-in-up" data-aos-duration='1000' tag='h4'  className='text-center' style={{color:'black',marginTop:0,marginBottom:0}}>Satya Niketan </CardTitle>
                 </Col>
-                <Col md="3" sm='3' xs='4'>
+                <Col md="3" sm='4' xs='4'>
                  
                  
                  {/* <Button
@@ -80,12 +80,12 @@ import {
       src: "url(" + require("assets/img/bg15.jpg") + ")",
       content: (
         <div className="social-line social-line-big-icons social-line-white" 
-        style={{}} 
+        style={{backgroundColor:'rgba(255,255,255,0)'}} 
         ><CardTitle data-aos="zoom-in-up" data-aos-duration='1000' tag='h3'  className='text-center pt-5' style={{color:'black'}}>Upcoming Locations</CardTitle>
                       <Container className="text-center">
                   
               <Row style={{justifyContent:'center',display:'flex'}}>
-                <Col md="3" sm='3' xs='3' xs='3'>
+                <Col md="3" sm='3' xs='4' xs='4'>
                  
                  
                   {/* <Button
@@ -100,7 +100,7 @@ import {
                  <img src={require('assets/img/hostel1.png')}/>
                  <CardTitle data-aos="zoom-in-up" data-aos-duration='1000' tag='h4'  className='text-center' style={{color:'black',marginTop:0,marginBottom:0}}>Pune </CardTitle>
                 </Col>
-                <Col md="3" sm='3' xs='3' xs='3'>
+                <Col md="3" sm='3' xs='4' xs='4'>
                  
                  
                  {/* <Button
@@ -115,7 +115,7 @@ import {
                 <img src={require('assets/img/hostel2.png')}/>
                 <CardTitle data-aos="zoom-in-up" data-aos-duration='1000' tag='h4'  className='text-center' style={{color:'black',marginTop:0,marginBottom:0}}>Colombo </CardTitle>
                </Col>
-               <Col md="3" sm='3' xs='3' xs='3'>
+               <Col md="3" sm='3' xs='4' xs='4'>
                  
                  
                  {/* <Button

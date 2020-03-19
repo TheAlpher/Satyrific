@@ -23,7 +23,7 @@ import {
     CarouselItem,
     CarouselIndicators
   } from "reactstrap";
-  import MyNavbar from '../Navbars/ScrollTransparentNavbar';
+  import MyNavbar from '../Navbars/LandingPageNavbar';
 //   import MyNavbar from 'components/Navbars/WhiteNavbar';
 const items = [
     {

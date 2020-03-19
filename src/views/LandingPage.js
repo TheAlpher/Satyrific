@@ -1,4 +1,5 @@
 import React from "react";
+import Rellax from "rellax";
 import { makeStyles } from "@material-ui/core/styles";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
@@ -36,17 +37,17 @@ import {
   TabContent,
   TabPane
 } from "reactstrap";
+import LandingCards from "../components/LandingPageCards.js";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link to='#'> for styles
 // ..
 import Features1 from "components/LandingPageFeatures";
-import GridContainer from "assets/jss/GridContainer";
-import GridItem from "assets/jss/GridItem";
+
 // core components
 // import DropdownFixedNavbar from "components/Navbars/DropdownFixedNavbar.js";
 import LandingPageHeader from "components/Headers/LandingPageHeader.js";
 import LandingPageHeader2 from "components/Headers/MyHeader";
-import LandingPageHeader3 from "components/Headers/Myheader1";
+import LandingPageHeader3 from "components/Headers/StayrificLandingPageHeader";
 import ReviewsCarousel from "components/Headers/ReviewCarousel";
 import LandingPills from "components/LandingPagePills";
 import LandingPageHeader1 from "components/Headers/LandingPageHeader1.js";
@@ -57,6 +58,51 @@ import { Link } from "react-router-dom";
 import styles from "assets/jss/sectionCards.js";
 // import FooterDefault from "components/Footers/FooterDefault.js";
 AOS.init();
+const amenitiesitems = [
+  {
+    title: "Air Conditioner",
+    info: " All Rooms are fiited with dedicated Air Conditioners",
+    src: require("../assets/img/AC.png"),
+
+    altText: "AC"
+  },
+  {
+    title: "Gym",
+    info: "  All students have access to our world class gym facilities",
+    src: require("../assets/img/gym.png"),
+
+    altText: "Gym"
+  },
+  {
+    title: " Housekeeping",
+    info: " Housekeeping service is available for all students",
+    src: require("../assets/img/housekeeping.png"),
+
+    altText: "Housekeeping"
+  },
+  {
+    title: "Meals",
+    info:
+      " Students are provided 4 nutritious meals everyday with alonger list of choices",
+    src: require("../assets/img/meals.png"),
+
+    altText: "Meals"
+  },
+  {
+    title: " Laundry",
+    info: " Laundry service is available for all students",
+    src: require("../assets/img/laundry.png"),
+
+    altText: "Laundry"
+  },
+  {
+    title: "Library",
+    info: " All students have access to our Library",
+    src: require("../assets/img/library.png"),
+
+    altText: "Library"
+  }
+];
 const useStyles = makeStyles(styles);
 const MapWrapper = withScriptjs(
   withGoogleMap(props => (
@@ -172,15 +218,15 @@ function LandingPage(props) {
     "See Details"
   );
   React.useEffect(() => {
-    if (window) {
-      window.addEventListener("resize", addStylesForRotatingCards);
+    if (window.innerWidth >= 991) {
+      setTimeout(function() {
+        new Rellax(".rellax", {
+          center: true
+        });
+      }, 5000);
+      new Rellax(".rellax-header");
+      new Rellax(".rellax-text");
     }
-    addStylesForRotatingCards();
-    return function cleanup() {
-      if (window) {
-        window.removeEventListener("resize", addStylesForRotatingCards);
-      }
-    };
     document.body.classList.add("landing-page");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
@@ -189,34 +235,56 @@ function LandingPage(props) {
       document.body.classList.remove("sidebar-collapse");
     };
   });
-  const addStylesForRotatingCards = () => {
-    var rotatingCards = document.getElementsByClassName(classes.cardRotate);
-    for (let i = 0; i < rotatingCards.length; i++) {
-      var rotatingCard = rotatingCards[i];
-      var cardFront = rotatingCard.getElementsByClassName(classes.front)[0];
-      var cardBack = rotatingCard.getElementsByClassName(classes.back)[0];
-      cardFront.style.height = "unset";
-      cardFront.style.width = "unset";
-      cardBack.style.height = "unset";
-      cardBack.style.width = "unset";
-      var rotatingWrapper = rotatingCard.parentElement;
-      var cardWidth = rotatingCard.parentElement.offsetWidth;
-      var cardHeight = rotatingCard.children[0].children[0].offsetHeight;
-      rotatingWrapper.style.height = cardHeight + "px";
-      rotatingWrapper.style["margin-bottom"] = 30 + "px";
-      cardFront.style.height = "unset";
-      cardFront.style.width = "unset";
-      cardBack.style.height = "unset";
-      cardBack.style.width = "unset";
-      cardFront.style.height = cardHeight + 35 + "px";
-      cardFront.style.width = cardWidth + "px";
-      cardBack.style.height = cardHeight + 35 + "px";
-      cardBack.style.width = cardWidth + "px";
-    }
-  };
+
   return (
     <React.Fragment>
-        <div id='hovericonscontainer'>
+      <div
+        className="bg-elements "
+        style={{
+          height: 0,
+          width: "100%",
+          marginTop: "70vh",
+          position: "absolute",
+          zIndex: "-1000"
+        }}
+      >
+        <div
+          className="bg-elements-2 rellax mr-5 ml-auto"
+          data-rellax-speed="-3"
+          style={{
+            minHeight: "150px",
+            maxWidth: " 150px",
+            borderRadius: "20%",
+            backgroundColor: "rgba(255, 165, 0, 0.3)",
+            transform: "rotate(45deg)"
+          }}
+        ></div>
+        <div
+          className="bg-elements-1 rellax  ml-5 mr-auto"
+          data-rellax-speed="-4"
+          style={{
+            marginTop: "20vh",
+            minHeight: "100px",
+            maxWidth: "100px",
+            borderRadius: "20%",
+            backgroundColor: "rgba(255, 165, 0, 0.3)",
+            transform: "rotate(45deg)"
+          }}
+        ></div>{" "}
+        <div
+          className="bg-elements-3 rellax  mr-auto"
+          data-rellax-speed="3"
+          style={{
+            marginLeft: "60vw",
+            minHeight: "50px",
+            maxWidth: "50px",
+            borderRadius: "20%",
+            backgroundColor: "rgba(255, 165, 0, 0.3)",
+            transform: "rotate(45deg)"
+          }}
+        ></div>
+      </div>
+      {/* <div id='hovericonscontainer'>
     <Link to='#'><i  id='hovericons1'
         className="mx-2 my-3  hovericons fab fa-2x fa-instagram"></i></Link><br />
     <Link to='#'><i  id='hovericons2'
@@ -226,8 +294,10 @@ function LandingPage(props) {
     <Link to='#'><i  id='hovericons4'
         className="mx-2 my-3  hovericons fab fa-2x fa-pinterest"></i></Link>
   </div>
+     
+      */}
       <LandingPageHeader3 />
-      <LandingPageHeader2 /> 
+      <LandingPageHeader2 />
       {/* <Container>
         <div
           className=" social-line social-line-big-icons social-line-white"
@@ -291,427 +361,24 @@ function LandingPage(props) {
         </div>
       </Container>
      */}
-    
-      <LandingPills />
-      
-      <Container className="mb-5">
-        <CardTitle
-          data-aos="zoom-in-up"
-          data-aos-duration="1000"
-          tag="h2"
-          className="text-center py-5"
-          style={{}}
-        >
-          Amenities{" "}
-        </CardTitle>
-        <GridContainer className="my-2 py-3">
-          <GridItem data-aos="zoom-in-up" xs={12} sm={6} md={6} lg={4}>
-            <div className={classes.rotatingCardContainer}>
-              <Card className={classes.cardRotate}>
-                <div className={classes.front}>
-                  <CardBody
-                    className={classes.cardBodyRotate}
-                    style={{ minHeight: "35vh" }}
-                  >
-                               <h5
-                      className={classes.cardTitle}
-                      style={{ fontFamily: "Lato",textAlign:'center' }}
-                    >
-                      Air Conditioner
-                    </h5>
-                    <img
-                      className="mx-auto my-auto"
-                      src={require("../assets/img/AC.png")}
-                      width="80%"
-                    />
-                    {/* <Success>
-                      <h5 className={classes.cardCategorySocial}>
-                        <i className="far fa-newspaper" />
-                        TechCrunch
-                      </h5>
-                    </Success>
-                    <h4 className={classes.cardTitle}>
-                      <a href="#pablo" onClick={e => e.preventDefault()}>
-                        This Card is Doing a Full Rotation on Hover...
-                      </Link>
-                    </h4>
-                    <p className={classes.cardDescription}>
-                      Don{"'"}t be scared of the truth because we need to
-                      restart the human foundation in truth And I love you like
-                      Kanye loves Kanye I love Rick Owens’ bed design but the
-                      back is...
-                    </p> */}
-                  </CardBody>
-                </div>
-                <div className={classes.back}>
-                  <CardBody
-                    className={classes.cardBodyRotate}
-                    style={{ border: "1px solid orange" }}
-                  >
-         
-                    <p className={classes.cardDescription}>
-                      All Rooms are fiited with dedicated Air Conditioners
-                    </p>
-                    {/* <div className={classes.textCenter}>
-                      <Button round color="rose">
-                        <Subject /> Read
-                      </Button>
-                      <Button round justIcon color="twitter">
-                        <i className="fab fa-twitter" />
-                      </Button>
-                      <Button round justIcon color="dribbble">
-                        <i className="fab fa-dribbble" />
-                      </Button>
-                      <Button round justIcon color="facebook">
-                        <i className="fab fa-facebook" />
-                      </Button>
-                    </div>
-                  */}
-                  </CardBody>
-                </div>
-              </Card>
-            </div>
-          </GridItem>
 
-          <GridItem data-aos="zoom-in-up" xs={12} sm={6} md={6} lg={4}>
-            <div className={classes.rotatingCardContainer}>
-              <Card className={classes.cardRotate}>
-                <div className={classes.front}>
-                  <CardBody
-                    className={classes.cardBodyRotate}
-                    style={{ minHeight: "35vh" }}
-                  ><h5
-                  className={classes.cardTitle}
-                  style={{ fontFamily: "Lato",textAlign:'center' }}
-                >
-                  Gym
-                </h5>
-                    <img
-                      className="mx-auto my-auto"
-                      src={require("../assets/img/gym.png")}
-                      width="80%"
-                    />
-                    {/* <Success>
-                      <h5 className={classes.cardCategorySocial}>
-                        <i className="far fa-newspaper" />
-                        TechCrunch
-                      </h5>
-                    </Success>
-                    <h4 className={classes.cardTitle}>
-                      <a href="#pablo" onClick={e => e.preventDefault()}>
-                        This Card is Doing a Full Rotation on Hover...
-                      </Link>
-                    </h4>
-                    <p className={classes.cardDescription}>
-                      Don{"'"}t be scared of the truth because we need to
-                      restart the human foundation in truth And I love you like
-                      Kanye loves Kanye I love Rick Owens’ bed design but the
-                      back is...
-                    </p> */}
-                  </CardBody>
-                </div>
-                <div className={classes.back}>
-                  <CardBody
-                    className={classes.cardBodyRotate}
-                    style={{ border: "1px solid orange" }}
-                  >
-                    
-                    <p className={classes.cardDescription}>
-                      All students have access to our world class gym facilities
-                    </p>
-                    {/* <div className={classes.textCenter}>
-                      <Button round color="rose">
-                        <Subject /> Read
-                      </Button>
-                      <Button round justIcon color="twitter">
-                        <i className="fab fa-twitter" />
-                      </Button>
-                      <Button round justIcon color="dribbble">
-                        <i className="fab fa-dribbble" />
-                      </Button>
-                      <Button round justIcon color="facebook">
-                        <i className="fab fa-facebook" />
-                      </Button>
-                    </div>
-                  */}
-                  </CardBody>
-                </div>
-              </Card>
-            </div>
-          </GridItem>
-          <GridItem data-aos="zoom-in-up" xs={12} sm={6} md={6} lg={4}>
-            <div className={classes.rotatingCardContainer}>
-              <Card className={classes.cardRotate}>
-                <div className={classes.front}>
-                  <CardBody
-                    className={classes.cardBodyRotate}
-                    style={{ minHeight: "35vh" }}
-                  > <h5
-                  className={classes.cardTitle}
-                  style={{ fontFamily: "Lato",textAlign:'center' }}
-                >
-                  Housekeeping
-                </h5>
-                    <img
-                      className="mx-auto my-auto"
-                      src={require("../assets/img/housekeeping.png")}
-                      width="80%"
-                    />
-                    {/* <Success>
-                      <h5 className={classes.cardCategorySocial}>
-                        <i className="far fa-newspaper" />
-                        TechCrunch
-                      </h5>
-                    </Success>
-                    <h4 className={classes.cardTitle}>
-                      <a href="#pablo" onClick={e => e.preventDefault()}>
-                        This Card is Doing a Full Rotation on Hover...
-                      </Link>
-                    </h4>
-                    <p className={classes.cardDescription}>
-                      Don{"'"}t be scared of the truth because we need to
-                      restart the human foundation in truth And I love you like
-                      Kanye loves Kanye I love Rick Owens’ bed design but the
-                      back is...
-                    </p> */}
-                  </CardBody>
-                </div>
-                <div className={classes.back}>
-                  <CardBody
-                    className={classes.cardBodyRotate}
-                    style={{ border: "1px solid orange" }}
-                  >
-                   
-                    <p className={classes.cardDescription}>
-                      Housekeeping service is available for all students
-                    </p>
-                    {/* <div className={classes.textCenter}>
-                      <Button round color="rose">
-                        <Subject /> Read
-                      </Button>
-                      <Button round justIcon color="twitter">
-                        <i className="fab fa-twitter" />
-                      </Button>
-                      <Button round justIcon color="dribbble">
-                        <i className="fab fa-dribbble" />
-                      </Button>
-                      <Button round justIcon color="facebook">
-                        <i className="fab fa-facebook" />
-                      </Button>
-                    </div>
-                  */}
-                  </CardBody>
-                </div>
-              </Card>
-            </div>
-          </GridItem>
-        </GridContainer>
-        <GridContainer className="my-2 py-3">
-          <GridItem data-aos="zoom-in-up" xs={12} sm={6} md={6} lg={4}>
-            <div className={classes.rotatingCardContainer}>
-              <Card className={classes.cardRotate}>
-                <div className={classes.front}>
-                  <CardBody
-                    className={classes.cardBodyRotate}
-                    style={{ minHeight: "35vh" }}
-                  >               <h5
-                  className={classes.cardTitle}
-                  style={{ fontFamily: "Lato",textAlign:'center' }}
-                >
-                  Meals
-                </h5>
-                    <img
-                      className="mx-auto my-auto"
-                      src={require("../assets/img/meals.png")}
-                      width="80%"
-                    />
-                    {/* <Success>
-                      <h5 className={classes.cardCategorySocial}>
-                        <i className="far fa-newspaper" />
-                        TechCrunch
-                      </h5>
-                    </Success>
-                    <h4 className={classes.cardTitle}>
-                      <a href="#pablo" onClick={e => e.preventDefault()}>
-                        This Card is Doing a Full Rotation on Hover...
-                      </Link>
-                    </h4>
-                    <p className={classes.cardDescription}>
-                      Don{"'"}t be scared of the truth because we need to
-                      restart the human foundation in truth And I love you like
-                      Kanye loves Kanye I love Rick Owens’ bed design but the
-                      back is...
-                    </p> */}
-                  </CardBody>
-                </div>
-                <div className={classes.back}>
-                  <CardBody
-                    className={classes.cardBodyRotate}
-                    style={{ border: "1px solid orange" }}
-                  >
-     
-                    <p className={classes.cardDescription}>
-                      Students are provided 4 nutritious meals everyday with a
-                      longer list of choices
-                    </p>
-                    {/* <div className={classes.textCenter}>
-                      <Button round color="rose">
-                        <Subject /> Read
-                      </Button>
-                      <Button round justIcon color="twitter">
-                        <i className="fab fa-twitter" />
-                      </Button>
-                      <Button round justIcon color="dribbble">
-                        <i className="fab fa-dribbble" />
-                      </Button>
-                      <Button round justIcon color="facebook">
-                        <i className="fab fa-facebook" />
-                      </Button>
-                    </div>
-                  */}
-                  </CardBody>
-                </div>
-              </Card>
-            </div>
-          </GridItem>
+      <LandingPills style={{ background: "transparent" }} />
+      <div className='wrapper' style={{backgroundColor:'white ',position:'relative',zIndex:'1',marginBottom:'unset',paddingBottom:'3%'}}>
+      <CardTitle
+        data-aos="zoom-in-up"
+        data-aos-duration="1000"
+        tag="h2"
+        className="text-center py-5"
+        style={{}}
+      >
+        Amenities{" "}
+      </CardTitle>
+      <LandingCards
+        items={amenitiesitems}
+        
+      /></div>
 
-          <GridItem data-aos="zoom-in-up" xs={12} sm={6} md={6} lg={4}>
-            <div className={classes.rotatingCardContainer}>
-              <Card className={classes.cardRotate}>
-                <div className={classes.front}>
-                  <CardBody
-                    className={classes.cardBodyRotate}
-                    style={{ minHeight: "35vh" }}
-                  >      <h5
-                  className={classes.cardTitle}
-                  style={{ fontFamily: "Lato",textAlign:'center' }}
-                >
-                  Laundry
-                </h5>
-                    <img
-                      className="mx-auto my-auto"
-                      src={require("../assets/img/laundry.png")}
-                      width="80%"
-                    />
-                    {/* <Success>
-                      <h5 className={classes.cardCategorySocial}>
-                        <i className="far fa-newspaper" />
-                        TechCrunch
-                      </h5>
-                    </Success>
-                    <h4 className={classes.cardTitle}>
-                      <a href="#pablo" onClick={e => e.preventDefault()}>
-                        This Card is Doing a Full Rotation on Hover...
-                      </Link>
-                    </h4>
-                    <p className={classes.cardDescription}>
-                      Don{"'"}t be scared of the truth because we need to
-                      restart the human foundation in truth And I love you like
-                      Kanye loves Kanye I love Rick Owens’ bed design but the
-                      back is...
-                    </p> */}
-                  </CardBody>
-                </div>
-                <div className={classes.back}>
-                  <CardBody
-                    className={classes.cardBodyRotate}
-                    style={{ border: "1px solid orange" }}
-                  >
-              
-                    <p className={classes.cardDescription}>
-                      Laundry service is available for all students
-                    </p>
-                    {/* <div className={classes.textCenter}>
-                      <Button round color="rose">
-                        <Subject /> Read
-                      </Button>
-                      <Button round justIcon color="twitter">
-                        <i className="fab fa-twitter" />
-                      </Button>
-                      <Button round justIcon color="dribbble">
-                        <i className="fab fa-dribbble" />
-                      </Button>
-                      <Button round justIcon color="facebook">
-                        <i className="fab fa-facebook" />
-                      </Button>
-                    </div>
-                  */}
-                  </CardBody>
-                </div>
-              </Card>
-            </div>
-          </GridItem>
-
-          <GridItem data-aos="zoom-in-up" xs={12} sm={6} md={6} lg={4}>
-            <div className={classes.rotatingCardContainer}>
-              <Card className={classes.cardRotate}>
-                <div className={classes.front}>
-                  <CardBody
-                    className={classes.cardBodyRotate}
-                    style={{ minHeight: "35vh" }}
-                  >                 <h5
-                  className={classes.cardTitle}
-                  style={{ fontFamily: "Lato",textAlign:'center' }}
-                >
-                  Library
-                </h5>
-                    <img
-                      className="mx-auto my-auto"
-                      src={require("../assets/img/library.png")}
-                      width="80%"
-                    />
-                    {/* <Success>
-                      <h5 className={classes.cardCategorySocial}>
-                        <i className="far fa-newspaper" />
-                        TechCrunch
-                      </h5>
-                    </Success>
-                    <h4 className={classes.cardTitle}>
-                      <a href="#pablo" onClick={e => e.preventDefault()}>
-                        This Card is Doing a Full Rotation on Hover...
-                      </Link>
-                    </h4>
-                    <p className={classes.cardDescription}>
-                      Don{"'"}t be scared of the truth because we need to
-                      restart the human foundation in truth And I love you like
-                      Kanye loves Kanye I love Rick Owens’ bed design but the
-                      back is...
-                    </p> */}
-                  </CardBody>
-                </div>
-                <div className={classes.back}>
-                  <CardBody
-                    className={classes.cardBodyRotate}
-                    style={{ border: "1px solid orange" }}
-                  >
-   
-                    <p className={classes.cardDescription}>
-                      All students have access to our Library
-                    </p>
-                    {/* <div className={classes.textCenter}>
-                      <Button round color="rose">
-                        <Subject /> Read
-                      </Button>
-                      <Button round justIcon color="twitter">
-                        <i className="fab fa-twitter" />
-                      </Button>
-                      <Button round justIcon color="dribbble">
-                        <i className="fab fa-dribbble" />
-                      </Button>
-                      <Button round justIcon color="facebook">
-                        <i className="fab fa-facebook" />
-                      </Button>
-                    </div>
-                  */}
-                  </CardBody>
-                </div>
-              </Card>
-            </div>
-          </GridItem>
-        </GridContainer>
-      </Container>
-
-      <ReviewsCarousel />
+      <ReviewsCarousel style={{ background: "transparent" }} />
       {/* <Features1 /> */}
       {/* <Faqs /> */}
       {/* <div className="wrapper">
@@ -859,30 +526,118 @@ function LandingPage(props) {
         </Container>
       </div>
     */}
-
-      <Row className="contactus-2  mb-5" >
-       <Col  xs='12' sm='12' md='8'style={{paddingLeft:'2%',paddingRight:'2%'}}>
-         <div
-          className="big-map"
-          id="contactUsMap"
-          style={{
-            // position: "relative",
-           
-            overflow: "hidden",
-            height: "65vh",
-         
-          }}
+    <div style={{paddingTop:'3%',backgroundColor:'white',position:'relative',zIndex:'1'}}>
+      <Container>
+        <Row>
+          <Col className=" pl-5 mr-auto text-left" md="6" style={{overflowX:'hidden'}}>
+            <h2
+              data-aos="fade-left"
+              className="title"
+              style={{ fontSize: "2rem" }}
+            >
+              Mansehej 's History
+            </h2>
+            <h5
+              data-aos="fade-left"
+              className="description"
+              style={{ fontSize: "1rem" }}
+            >
+              The riding of waves has likely existed since humans began swimming
+              in the ocean. In this sense, bodysurfing is the oldest type of
+              wave-catching. Standing up on what is now called a surfboard is a
+              relatively recent innovation developed by the Polynesians.
+            </h5>
+            <br></br>
+            <div data-aos="fade-left" className="buttons">
+              {/* <Button
+                      className="btn-icon btn-neutral"
+                      color="link"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                      size="lg"
+                    >
+                      <i className="fab fa-twitter"></i>
+                    </Button>
+                    <Button
+                      className="btn-icon btn-neutral"
+                      color="link"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                      size="lg"
+                    >
+                      <i className="fab fa-facebook-square"></i>
+                    </Button>
+                    <Button
+                      className="btn-icon btn-neutral"
+                      color="link"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                      size="lg"
+                    >
+                      <i className="fab fa-get-pocket"></i>
+                    </Button> */}
+              <Button
+                className="mr-3 btn-warning"
+                color="info"
+                href="#pablo"
+                onClick={e => e.preventDefault()}
+                size="lg"
+              >
+                Read More
+              </Button>
+            </div>
+          </Col>
+          <Col md="6" style={{ alignSelf: "center" }}>
+            <img
+              data-aos="fade-up"
+              style={{ alignSelf: "center" }}
+              src={require("../assets/img/temp12.png")}
+            ></img>
+          </Col>{" "}
+        </Row>
+      </Container>
+      </div>
+      <Row className="contactus-2  mb-5" style={{backgroundColor:'white',position:'relative',zIndex:'1'}}>
+        <Col
+          xs="12"
+          sm="12"
+          md="6"
+          style={{ paddingLeft: "2%", marginTop: "2%", paddingRight: "2%" }}
         >
-          <MapWrapper
-            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDW85sBZkHfzpqR2TBk5pDm2Deq5Mt6paE"
-            loadingElement={<div style={{ height: `100%` }} />}
-            containerElement={<div style={{ height: `100%` }} />}
-            mapElement={<div style={{ height: `100%` }} />}
-          />
-        </div>
-        </Col>   
-          <Col xs='12' sm='12' lg="4" md="4"  >
-          <Card className="card-contact card-raised " style={{marginLeft:0,marginTop:'2%'}}>
+          <div
+            className="big-map"
+            id="contactUsMap"
+            style={{
+              // position: "relative",
+
+              overflow: "hidden",
+              height: "62vh"
+            }}
+          >
+            <MapWrapper
+              googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDW85sBZkHfzpqR2TBk5pDm2Deq5Mt6paE"
+              loadingElement={<div style={{ height: `100%` }} />}
+              containerElement={<div style={{ height: `100%` }} />}
+              mapElement={<div style={{ height: `100%` }} />}
+            />
+          </div>
+        </Col>
+        <Col
+          xs="12"
+          sm="12"
+          lg="6"
+          md="6"
+          style={{ marginTop: "2%", paddingRight: "2%" }}
+        >
+          <Card
+            className="card-contact card-raised "
+            style={{
+              maxWidth: "unset",
+              height: "100%",
+              marginLeft: 0,
+              marginTop: "0"
+            }}
+          >
             <Form id="contact-form" method="post" role="form">
               <CardHeader className="text-center">
                 <CardTitle tag="h4">Contact Us</CardTitle>
@@ -987,77 +742,6 @@ function LandingPage(props) {
       </Row>
 
       {/* <Footer1 /> */}
-      <Container>
-        <Row>
-  
-
-          <Col className=" pl-5 mr-auto text-left" md="6">
-            <h2
-              data-aos="fade-left"
-              className="title"
-              style={{ fontSize: "2rem" }}
-            >
-               Mansehej 's History
-            </h2>
-            <h5
-              data-aos="fade-left"
-              className="description"
-              style={{ fontSize: "1rem" }}
-            >
-              The riding of waves has likely existed since humans began swimming
-              in the ocean. In this sense, bodysurfing is the oldest type of
-              wave-catching. Standing up on what is now called a surfboard is a
-              relatively recent innovation developed by the Polynesians.
-            </h5>
-            <br></br>
-            <div data-aos="fade-left" className="buttons">
-              {/* <Button
-                      className="btn-icon btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                      size="lg"
-                    >
-                      <i className="fab fa-twitter"></i>
-                    </Button>
-                    <Button
-                      className="btn-icon btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                      size="lg"
-                    >
-                      <i className="fab fa-facebook-square"></i>
-                    </Button>
-                    <Button
-                      className="btn-icon btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                      size="lg"
-                    >
-                      <i className="fab fa-get-pocket"></i>
-                    </Button> */}
-              <Button
-                className="mr-3 btn-warning"
-                color="info"
-                href="#pablo"
-                onClick={e => e.preventDefault()}
-                size="lg"
-              >
-                Read More
-              </Button>
-            </div>
-          </Col>
-          <Col md="6" style={{ alignSelf: "center" }}>
-            <img
-              data-aos="fade-up"
-              style={{ alignSelf: "center" }}
-              src={require("../assets/img/temp12.png")}
-            ></img>
-          </Col>  </Row>
-      </Container>
-     
     </React.Fragment>
   );
 }

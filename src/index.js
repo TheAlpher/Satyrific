@@ -18,6 +18,9 @@ import "assets/demo/nucleo-icons-page-styles.css";
 // import Ecommerce from "views/examples/Ecommerce.js";
 // import Index from "views/Index.js";
 import LandingPage from "views/LandingPage.js";
+import AmenitiesPage from "views/AmenitiesPage.js";
+import ContactUsPage from 'views/ContactUsPage.js';
+import AboutPage from 'views/AboutUsPage.js';
 // import ProductsPage from "views/ProductsPage.js";
 // import LoginPage from "views/examples/LoginPage.js";
 // import NucleoIcons from "views/NucleoIcons.js";
@@ -34,7 +37,11 @@ ReactDOM.render(<React.Fragment>
     <Switch>
     {/* <Route path="/products" render={props => <ProductsPage {...props} />} />
       <Route path="/about-us" render={props => <AboutUs {...props} />} /> */}
-      <Route path="/" render={props => <LandingPage {...props} />} />
+      <Route path="/home" render={props => <LandingPage {...props} />} />
+      <Route path="/amenities" render={props => <AmenitiesPage {...props} />} />
+      <Route path="/about-us" render={props => <AboutPage {...props} />} />
+      <Route path="/contact-us" render={props => <ContactUsPage {...props} />} />
+
 
       
 {/* 
@@ -66,8 +73,8 @@ ReactDOM.render(<React.Fragment>
 //         render={props => <ProfilePage {...props} />}
 //       />
 //       <Route path="/sections" render={props => <Sections {...props} />} />
-//       <Route path="/sign-up" render={props => <SignupPage {...props} />} />
-//       <Redirect to="/presentation" /> */}
+//       <Route path="/sign-up" render={props => <SignupPage {...props} />} />*/}
+    <Redirect to="/home" /> 
     </Switch>
   </BrowserRouter>
 {/* <LandingPage/> */}

@@ -1,10 +1,11 @@
 import React from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link, animateScroll as scroll } from "react-scroll";
 // reactstrap components
 import {
   NavItem,
-  NavLink,
+NavLink,
   Nav,
   TabContent,
   TabPane,
@@ -17,18 +18,13 @@ import {
 AOS.init();
 function Pills() {
 
-  const [horizontalTabs, setHorizontalTabs] = React.useState("1");
-  const [verticalTabs, setVerticalTabs] = React.useState("1");
+
   const [iconHorizontalTabs, setIconHorizontalTabs] = React.useState("1");
-  const [iconVerticalTabs, setIconVerticalTabs] = React.useState("1");
-  const [justIconHorizontalTabs, setJustIconHorizontalTabs] = React.useState(
-    "1"
-  );
-  const [justIconVerticalTabs, setJustIconVerticalTabs] = React.useState("1");
+
 
   return (
     <>
-      <div className="section section-pills">
+      <div className="section-pills">
         <Container>
 
             {/* <Row>
@@ -194,9 +190,9 @@ function Pills() {
                   pills
                   role="tablist"
                   
-                  style={{justifyContent:'center'}}
+                  style={{justifyContent:'center',display:'flex'}}
                 >
-                  <NavItem data-aos="zoom-in" className='mx-3'> 
+                  <NavItem data-aos="zoom-in" style={{margin:'0.5%'}}> 
                     <NavLink
                       className={iconHorizontalTabs === "1" ? "active" : "" }
                       href="#pablo"
@@ -204,13 +200,13 @@ function Pills() {
                         e.preventDefault();
                         setIconHorizontalTabs("1");
                       }}
-                      style={{fontSize:'larger',border:'1px solid grey',color:'black',  borderRadius:'10px',paddingRight:'50px ',paddingLeft:'50px ',paddingTop:'30px',paddingBottom:'30px',backgroundColor:'white'}}
+                      style={{fontSize:'larger',border:'1px solid grey',color:'black',  borderRadius:'10px',paddingRight:'4vh ',paddingLeft:'4vh ',paddingTop:'30px',paddingBottom:'30px',backgroundColor:'white'}}
                     >
                       <img src={require('../assets/img/temp13.svg')}/><br/>
                      <b>C</b>ommunity
                     </NavLink>
                   </NavItem>
-                  <NavItem data-aos="zoom-in" className='mx-3'>
+                  <NavItem data-aos="zoom-in" style={{margin:'0.5%'}}>
                     <NavLink
                       className={iconHorizontalTabs === "2" ? "active" : ""}
                       href="#pablo"
@@ -218,13 +214,13 @@ function Pills() {
                         e.preventDefault();
                         setIconHorizontalTabs("2");
                       }}
-                      style={{fontSize:'larger',border:'1px solid grey',color:'black',borderRadius:'10px',paddingRight:'50px ',paddingLeft:'50px ',paddingTop:'30px',paddingBottom:'30px',backgroundColor:'white'}}
+                      style={{fontSize:'larger',border:'1px solid grey',color:'black',borderRadius:'10px',paddingRight:'5vh ',paddingLeft:'5vh ',paddingTop:'30px',paddingBottom:'30px',backgroundColor:'white'}}
                     >
                     <img src={require('../assets/img/temp14.svg')}/><br/>
                       <b>A</b>menities
                     </NavLink>
                   </NavItem>
-                  <NavItem  data-aos="zoom-in" className='mx-3'>
+                  <NavItem  data-aos="zoom-in" style={{margin:'0.5%'}}>
                     <NavLink
                       className={iconHorizontalTabs === "3" ? "active" : ""}
                       href="#pablo"
@@ -232,13 +228,13 @@ function Pills() {
                         e.preventDefault();
                         setIconHorizontalTabs("3");
                       }}
-                      style={{fontSize:'larger',border:'1px solid grey',color:'black',borderRadius:'10px ',paddingRight:'50px ',paddingLeft:'50px ',paddingTop:'30px',paddingBottom:'30px',backgroundColor:'white'}}
+                      style={{fontSize:'larger',border:'1px solid grey',color:'black',borderRadius:'10px ',paddingRight:'4.2vh ',paddingLeft:'4.2vh ',paddingTop:'30px',paddingBottom:'30px',backgroundColor:'white'}}
                     >
-                     <img src={require('../assets/img/temp15.svg')}/><br/>
+                     <img src={require('../assets/img/temp15.svg')}/>
                      <b>T</b>echnology
                     </NavLink>
                   </NavItem>
-                  <NavItem  data-aos="zoom-in" className='mx-3'>
+                  <NavItem  data-aos="zoom-in" style={{margin:'0.5%'}}>
                     <NavLink
                       className={iconHorizontalTabs === "4" ? "active" : ""}
                       href="#pablo"
@@ -246,7 +242,7 @@ function Pills() {
                         e.preventDefault();
                         setIconHorizontalTabs("4");
                       }}
-                      style={{fontSize:'larger',border:'1px solid grey',color:'black',borderRadius:'10px ',paddingRight:'50px ',paddingLeft:'50px ',paddingTop:'30px',paddingBottom:'30px',backgroundColor:'white'}}
+                      style={{fontSize:'larger',border:'1px solid grey',color:'black',borderRadius:'10px ',paddingRight:'5vh ',paddingLeft:'5vh ',paddingTop:'30px',paddingBottom:'30px',backgroundColor:'white'}}
                     >
                      <img src={require('../assets/img/temp11.svg')}/><br/>
                      <b>S</b>ecurity
@@ -260,12 +256,12 @@ function Pills() {
                   activeTab={"iconHorizontalTabs" + iconHorizontalTabs}
                 >
                   <TabPane tabId="iconHorizontalTabs1">
-                  <Row>
-            <Col md='6' className='px-auto' data-aos="fade-right" style={{textAlign:'center'}} >
+                  <Row style={{overflowX:'hidden'}}>
+            <Col md='6' xs="12" className='px-auto' data-aos="fade-right" style={{textAlign:'center'}} >
             <img  style={{alignSelf:'center',width:'50%'}} src={require('../assets/img/jug.png')}></img>
             </Col>
         
-            <Col   className=" pl-5 mr-auto text-left" md="6">
+            <Col   className=" pl-5 mr-auto text-left"  md='6' xs="12">
                   <h2 className="title" data-aos="fade-left" style={{fontSize:'2rem'}}>History of surfing</h2>
                   <h5 className="description" data-aos="fade-left" style={{fontSize:'1rem'}}>
                     The riding of waves has likely existed since humans began

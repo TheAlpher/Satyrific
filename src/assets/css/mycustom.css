@@ -1,3 +1,12 @@
+body{
+  z-index: 0;
+  position: relative;
+  background-color: white;
+overflow-x: hidden;
+margin:0;
+box-sizing: border-box;
+padding: 0;
+}
 #prev-btn:hover, #next-btn:hover{
 border: 2px solid white !important;
 }
@@ -47,7 +56,13 @@ transform: rotate(180deg);
     }
 /*carousel bg color issue fix*/
     .my-page-header::before{
-        background-color: white !important;
+        background-color: rgba(255, 255, 255, 0) !important;
+    }
+    .page-header::before{
+      background-color: transparent !important;
+    }
+    .my-page-header{
+      max-height: 40vh !important;
     }
 
 /*landing page top carousel  bottom curve fix */
@@ -102,13 +117,13 @@ transform: rotate(180deg);
     
       }
     #hovericons3{
-  border-radius:20%;color:rgb(58, 58, 238);
+  border-radius:20%;color:rgb(59, 129, 233);
     }
       #hovericons3:hover {
         transform: rotate(360deg);
         padding: 10%;
         color: white !important;
-        background-color: rgb(58, 58, 238) !important;
+        background-color: rgb(59, 129, 233) !important;
     
       }
     #hovericons4{
@@ -122,4 +137,18 @@ color:rgb(209, 68, 68);
         background-color: rgb(209, 68, 68) !important;
     
     
+      }
+
+.reviewcarouselitems{
+   max-height: 45vh !important; box-shadow: "none" ;
+}
+.reviewcarouselitems .card-testimonial{
+margin-left: auto !important;
+
+margin-right: auto !important;
+margin-top: 1% !important;
+margin-bottom: 1% !important;}
+      /* fix contact us section background*/
+      .section-image::after {
+        background-color: white !important;
       }
