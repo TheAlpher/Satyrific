@@ -156,9 +156,9 @@ function ContactUsPage(props) {
         
      
                 <h2 className="title" style={{color:'black',textAlign:'center'}}>You need more information?</h2>
-                <h4 className="description" style={{color:'black',textAlign:'center'}}>
-                 <b>Request a Call</b>  
-                </h4>  
+                {/* <h4 className="description" style={{color:'black',textAlign:'center'}}>
+                 <b>Contact Us</b>  
+                </h4>   */}
               
                 <Row className="contactus-2  mb-5" style={{background:'transparent'}} >
        <Col  xs='12' sm='12' md='6'style={{paddingLeft:'2%',marginTop:'2%', paddingRight:'2%'}}>
@@ -185,7 +185,7 @@ function ContactUsPage(props) {
           <Card className="card-contact card-raised" style={{maxWidth:'unset',height:'100%',marginLeft:0,marginTop:0}}>
                   <Form id="contact-form1" method="post" role="form">
                     <CardHeader className="text-center">
-                      <CardTitle tag="h4">Contact Us</CardTitle>
+                      <CardTitle tag="h4">Request a Call</CardTitle>
                     </CardHeader>
                     <CardBody>
                       <Row>
