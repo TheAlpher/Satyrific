@@ -33,14 +33,18 @@ function Footer(props) {
               <div className="content">
                 <Row>
                   <Col md="4">
-                    <h5>About Us</h5>
+                  <a href="/about-us" target='_blank' style={{textDecoration:'none'}}>
+                
+                    <h5 style={{color:'black'}}>About Us</h5>
                     <br/>
                     <p>
                     Stayrific is a provider of Student Housing &
               Living Solutions with World Class, Tech Enabled, Neo & Vibrant
               Outlook, Best Amenities and Yet affordable on Pocket.
                     </p>
-                    <br/>
+                    <br/>    
+            </a>
+           
                   </Col>
                   <Col md="4">
                     <h5>Social Feed</h5>
@@ -66,6 +70,7 @@ function Footer(props) {
                         </p>
                       </div>
                     </div>
+
                   </Col>
                   <Col md="4">
                     <h5>Instagram Feed</h5>
@@ -129,6 +134,20 @@ function Footer(props) {
                 <li>
                   <a href="/our-news" target='_blank'>
                     Stayrific in The News
+                  </a>
+                </li> <li>
+                  <a href="/amenities" target='_blank'>
+                    Amenities
+                  </a>
+                </li>
+                <li>
+                  <a href="/events" target='_blank'>
+                    Events
+                  </a>
+                </li>
+                <li>
+                  <a href="/contact-us" target='_blank'>
+                    Contact Us
                   </a>
                 </li>
                 {/* <li>

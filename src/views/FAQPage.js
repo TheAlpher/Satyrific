@@ -36,6 +36,7 @@ import {
 import DefaultNavbar from "components/Navbars/DefaultPageNavbar.js";
 import SecondaryPageHeader from "components/Headers/SecondaryPageHeader.js";
 import Faqs from 'components/LandingPageFaqs.js';
+import Footer from 'components/Footers/Myfooter';
 const MapWrapper = withScriptjs(
     withGoogleMap(props => (
       <GoogleMap
@@ -152,6 +153,7 @@ function FAQPage(props) {
         <SecondaryPageHeader title="F A Q" />
       <Faqs/>
       </div>
+      <Footer/>
     </>
   );
 }

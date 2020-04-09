@@ -17,6 +17,7 @@ import { Link } from "react-router-dom";
 import FixedNavbar from "components/Navbars/EventNavbar.js";
 import BlogPostHeader from "components/Headers/BlogPostHeader1.js";
 import FooterBlack from "components/Footers/FooterBlack.js";
+import Footer from 'components/Footers/Myfooter';
 import { isTemplateExpression } from "typescript";
 import { useHistory } from "react-router-dom";
 function BlogPost(props) {
@@ -99,6 +100,7 @@ console.log(props.match.params.id)
           </div>
          
       </div></div>
+      <Footer/>
     </>
   );
 }

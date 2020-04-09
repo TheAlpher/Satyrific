@@ -35,6 +35,7 @@ import {
   } from "react-google-maps";
 import ContactUsNavbar from "components/Navbars/ContactUsPageNavbar.js";
 import SecondaryPageHeader from "components/Headers/SecondaryPageHeader.js";
+import Footer from 'components/Footers/Myfooter';
 const MapWrapper = withScriptjs(
     withGoogleMap(props => (
       <GoogleMap
@@ -156,7 +157,7 @@ function ContactUsPage(props) {
      
                 <h2 className="title" style={{color:'black',textAlign:'center'}}>You need more information?</h2>
                 <h4 className="description" style={{color:'black',textAlign:'center'}}>
-                 <b>Get in Touch!</b>  
+                 <b>Request a Call</b>  
                 </h4>  
               
                 <Row className="contactus-2  mb-5" style={{background:'transparent'}} >
@@ -232,19 +233,18 @@ function ContactUsPage(props) {
                         </Col>
                       </Row>
                       <FormGroup>
-                        <label>Email address</label>
-                        <InputGroup
-                          className={email1Focus ? "input-group-focus" : ""}
-                        >
-                          <InputGroupAddon addonType="prepend">
+                        <InputGroup>
+                      <InputGroupAddon addonType="prepend">
                             <InputGroupText>
-                              <i className="now-ui-icons ui-1_email-85"></i>
+                              <i className="now-ui-icons tech_mobile"></i>
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
-                            autoComplete="email"
-                            placeholder="Email Here..."
-                            type="email"
+                          required='true'
+                            // autoComplete="phone"
+                            placeholder="12345-67890"
+                            pattern="[0-9]{5}-[0-9]{5}"
+                            type="tel"
                             onFocus={() => setEmail1Focus(true)}
                             onBlur={() => setEmail1Focus(false)}
                           ></Input>
@@ -284,6 +284,7 @@ function ContactUsPage(props) {
       </div>
   
       </div>
+      <Footer/>
     </>
   );
 }

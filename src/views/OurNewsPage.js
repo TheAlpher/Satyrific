@@ -34,9 +34,10 @@ import {
     Marker
   } from "react-google-maps";
 import DefaultNavbar from "components/Navbars/DefaultPageNavbar.js";
-import CustomUpload from 'components/CustomUpload/FileUpload.js'
+
 import SecondaryPageHeader from "components/Headers/SecondaryPageHeader.js";
-import Faqs from 'components/LandingPageFaqs.js';
+import Footer from 'components/Footers/Myfooter';
+
 const MapWrapper = withScriptjs(
     withGoogleMap(props => (
       <GoogleMap
@@ -152,8 +153,9 @@ function OurNewsPage(props) {
       <div className="wrapper">
         <SecondaryPageHeader title="Stayrific in the News" />
       {/* <Faqs/> */}
-      <CustomUpload/>
+    {/* <CustomUpload/> */}
       </div>
+      <Footer/>
     </>
   );
 }

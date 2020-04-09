@@ -30,6 +30,7 @@ import {
 
 import AboutUsNavbar from "components/Navbars/AboutUsPageNavbar.js";
 import SecondaryPageHeader from "components/Headers/SecondaryPageHeader.js";
+import Footer from 'components/Footers/Myfooter';
 
 const amenitiesitems = [
   {
@@ -89,13 +90,9 @@ function AboutUsPage() {
         new Rellax(".rellax-header");
         new Rellax(".rellax-text");
       }
-    document.body.classList.add("profile-page");
-    document.body.classList.add("sidebar-collapse");
-    document.documentElement.classList.remove("nav-open");
-    return function cleanup() {
-      document.body.classList.remove("profile-page");
-      document.body.classList.remove("sidebar-collapse");
-    };
+    
+    
+ 
   });
   return (
     <>
@@ -109,7 +106,7 @@ function AboutUsPage() {
         <SecondaryPageHeader title="About Us" />
         <div className="section" style={{background:'transparent'}}>
           <Container style={{background:'transparent'}}>
-            <h3 className="title">Stay Terrific</h3>
+            <h3 className="title" style={{textAlign:'center'}}>Stay Terrific</h3>
             <h5
               className="description text-center"
               style={{ fontFamily: "Lato" }}
@@ -132,7 +129,7 @@ function AboutUsPage() {
                 <h2
                   data-aos="fade-up"
                   className="title"
-                  style={{ fontSize: "2rem" }}
+                  style={{ fontSize: "2rem" ,textAlign:'center'}}
                 >
                   Vision <b>&</b> Mission
                 </h2>
@@ -188,13 +185,13 @@ function AboutUsPage() {
               </Col>
             </Row>
           </Container>
-          <Container className="pt-2 mt-5" style={{background:'transparent'}}>
+          <Container className="pt-2 mt-5" style={{background:'transparent',textAlign:'center'}}>
             <h2 className="title">Why Delhi-NCR</h2>
             <Row>
               <Col md="6">
                 <div
                   className="info info-horizontal"
-                  style={{ maxWidth: "unset" }}
+                  style={{ maxWidth: "unset" ,paddingTop:'unset'}}
                 >
                   <div className="icon icon-info icon-circle">
                     <i className="now-ui-icons business_chart-bar-32"></i>
@@ -209,7 +206,7 @@ function AboutUsPage() {
                 </div>
                 <div
                   className="info info-horizontal"
-                  style={{ maxWidth: "unset" }}
+                  style={{ maxWidth: "unset",paddingTop:'unset' }}
                 >
                   <div className="icon icon-info icon-circle">
                     <i className="now-ui-icons education_agenda-bookmark"></i>
@@ -224,7 +221,7 @@ function AboutUsPage() {
                 </div>
                 <div
                   className="info info-horizontal"
-                  style={{ maxWidth: "unset" }}
+                  style={{ maxWidth: "unset",paddingTop:'unset' }}
                 >
                   <div className="icon icon-info icon-circle">
                     <i className="now-ui-icons objects_spaceship"></i>
@@ -484,6 +481,8 @@ function AboutUsPage() {
           </Container>
         </div>
       </div>
+    
+      <Footer/>
     </>
   );
 }

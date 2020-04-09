@@ -28,6 +28,7 @@ import {
 } from "reactstrap";
 import EventsNavbar from "components/Navbars/EventsPageNavbar";
 import SecondaryHeader from "components/Headers/SecondaryPageHeader";
+import Footer from 'components/Footers/Myfooter';
 import axios from "axios";
 import { Divider } from "@material-ui/core";
 
@@ -207,6 +208,7 @@ function EventsPage(props) {
           </Row>
         </Container>
       </div>
+      <Footer/>
     </>
   );
 }
