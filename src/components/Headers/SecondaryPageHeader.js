@@ -8,7 +8,12 @@ import { Container } from "reactstrap";
 function AmenitiesPageHeader(props) {
   let pageHeader = React.createRef();
   React.useEffect(() => {
-    if (window.innerWidth > 991) {
+    let x=991;
+
+
+      x=991;
+ 
+    if (window.innerWidth > x) {
       const updateScroll = () => {
         let windowScrollTop = window.pageYOffset / 3;
         pageHeader.current.style.transform =
@@ -18,7 +23,7 @@ function AmenitiesPageHeader(props) {
       return function cleanup() {
         window.removeEventListener("scroll", updateScroll);
       };
-    }
+    }  
   });
   return (
     <>

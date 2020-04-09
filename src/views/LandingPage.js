@@ -7,7 +7,7 @@ import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import Typography from "@material-ui/core/Typography";
 import Footer1 from "components/Footers/FooterSocial";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-// reactstrap components
+
 import {
   withScriptjs,
   withGoogleMap,
@@ -33,6 +33,9 @@ import {
   CardHeader,
   Container,
   Row,
+  UncontrolledPopover,
+  PopoverBody,
+  PopoverHeader,
   Col,
   TabContent,
   TabPane
@@ -54,6 +57,8 @@ import LandingPageHeader1 from "components/Headers/LandingPageHeader1.js";
 import Subject from "@material-ui/icons/Subject";
 import Success from "assets/jss/Success";
 import Faqs from "components/LandingPageFaqs";
+import Footer from 'components/Footers/Myfooter';
+// reactstrap component
 import { Link } from "react-router-dom";
 import styles from "assets/jss/sectionCards.js";
 // import FooterDefault from "components/Footers/FooterDefault.js";
@@ -83,7 +88,7 @@ const amenitiesitems = [
   {
     title: "Meals",
     info:
-      " Students are provided 4 nutritious meals everyday with alonger list of choices",
+      " Students are provided 4  meals everyday with a lot of choices",
     src: require("../assets/img/meals.png"),
 
     altText: "Meals"
@@ -192,6 +197,7 @@ const MapWrapper = withScriptjs(
   ))
 );
 function LandingPage(props) {
+  const [content,setContent]=React.useState({});
   const [first1Focus, setFirst1Focus] = React.useState(false);
   const [last1Focus, setLast1Focus] = React.useState(false);
   const [email1Focus, setEmail1Focus] = React.useState(false);
@@ -218,6 +224,20 @@ function LandingPage(props) {
     "See Details"
   );
   React.useEffect(() => {
+    fetch(
+      "https://www.googleapis.com/blogger/v3/blogs/3261234612673840962/posts/?orderBy=updated&&prettyPrint=true&&fetchBodies=true&&fetchImages=true&&maxResults=1&&key=AIzaSyBM0DKpr4ruF4cJJBfPc7m0bQrALMLSEPA "
+    )
+      .then(res => res.json())
+      .then(res =>{
+        // let data=res.data.items[0].content;
+        // var template = document.createElement('div');
+        // template.innerHTML=data;
+        // document.getElementById('mycontainer').appendChild(template)
+        // console.log(typeof(res.data.items[0].blog.published))
+console.log(res.items)
+        setContent(res.items[0])}
+
+      );
     if (window.innerWidth >= 991) {
       setTimeout(function() {
         new Rellax(".rellax", {
@@ -227,6 +247,7 @@ function LandingPage(props) {
       new Rellax(".rellax-header");
       new Rellax(".rellax-text");
     }
+   
     document.body.classList.add("landing-page");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
@@ -234,7 +255,7 @@ function LandingPage(props) {
       document.body.classList.remove("landing-page");
       document.body.classList.remove("sidebar-collapse");
     };
-  });
+  },[]);
 
   return (
     <React.Fragment>
@@ -296,6 +317,36 @@ function LandingPage(props) {
   </div>
      
       */}
+      <div className='overlay-event'>
+      <Button
+     
+                className=" btn-round overlay-btn" 
+                id="tooltip511894367"  
+                type="button" style={{opacity:0.8}}
+              >
+                Latest!!
+              </Button>
+             
+              <UncontrolledPopover style={{}}
+                target="tooltip511894367"
+                placement='top'
+                >
+               <a style={{textDecoration:'none'}} href={'./events/'+content.id} target='_blank'>
+                <PopoverHeader style={{color:'black'}}>{content.title}</PopoverHeader>
+                <PopoverBody style={{}}> 
+                  {/* Here will be some very useful information about his popover.
+                  <br /> Here will be some very useful information about his
+                  popover. */}
+                       <img
+                  alt="..."
+                  className="rounded img-raised"
+                   src={ content.images!=undefined ? content.images[0].url : undefined}
+                ></img>
+            </PopoverBody>   
+            </a>
+              </UncontrolledPopover>
+           
+      </div>
       <LandingPageHeader3 />
       <LandingPageHeader2 />
       {/* <Container>
@@ -441,7 +492,7 @@ function LandingPage(props) {
                   <Card
                     data-aos="zoom-in-up"
                     data-aos-duration="2000"
-                    className="card-blog"
+                    className="minicards card-blog"
                   >
                     <div className="card-image">
                       <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -483,7 +534,7 @@ function LandingPage(props) {
                   <Card
                     data-aos="zoom-in-up"
                     data-aos-duration="2000"
-                    className="card-blog"
+                    className="minicards card-blog"
                   >
                     <div className="card-image">
                       <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -597,12 +648,13 @@ function LandingPage(props) {
         </Row>
       </Container>
       </div>
-      <Row className="contactus-2  mb-5" style={{backgroundColor:'white',position:'relative',zIndex:'1'}}>
-        <Col
+      <div className='section'>
+      <Row className="contactus-2  mx-0 mb-5" style={{backgroundColor:'white',position:'relative',zIndex:'1'}}>
+        <Col 
           xs="12"
           sm="12"
           md="6"
-          style={{ paddingLeft: "2%", marginTop: "2%", paddingRight: "2%" }}
+          style={{ marginTop: "2%" }}
         >
           <div
             className="big-map"
@@ -610,24 +662,33 @@ function LandingPage(props) {
             style={{
               // position: "relative",
 
-              overflow: "hidden",
-              height: "62vh"
+              overflowX: "hidden",
+              height: "62vh",
+       
             }}
           >
             <MapWrapper
               googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDW85sBZkHfzpqR2TBk5pDm2Deq5Mt6paE"
-              loadingElement={<div style={{ height: `100%` }} />}
-              containerElement={<div style={{ height: `100%` }} />}
-              mapElement={<div style={{ height: `100%` }} />}
+              loadingElement={<div style={{ height: `100%`, }} />}
+              containerElement={<div style={{ height: `100%`, }} />}
+              mapElement={<div style={{ height: `100%`, }} />}
             />
           </div>
+
+{/* <div id="map" data-aos="fade-down" data-aos-duration="1500" >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.291506663627!2d77.31577431464314!3d28.591030482434224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce4f6e191a8a7%3A0xb52a042cdb14632d!2sPranav%20Arts!5e0!3m2!1sen!2sin!4v1583912853373!5m2!1sen!2sin"
+           frameborder="0" style={{border:"0",height:'400%',width:'100%'}} allowfullscreen="" aria-hidden="false"
+              tabindex="0"></iframe>
+          </div>
+        */}
         </Col>
         <Col
           xs="12"
           sm="12"
           lg="6"
           md="6"
-          style={{ marginTop: "2%", paddingRight: "2%" }}
+          style={{ marginTop: "2%" }}
         >
           <Card
             className="card-contact card-raised "
@@ -739,9 +800,9 @@ function LandingPage(props) {
             </Form>
           </Card>
         </Col>
-      </Row>
+      </Row></div>
 
-      {/* <Footer1 /> */}
+      <Footer />
     </React.Fragment>
   );
 }

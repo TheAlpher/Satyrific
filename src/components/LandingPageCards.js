@@ -76,17 +76,17 @@ function LandingPageCards(props){
         <GridContainer className="my-2 py-3">
         {props.items.map(item => {
               return (
-          <GridItem data-aos="zoom-in-up" className='my-2 py-3' xs={6} sm={6} md={6} lg={4}
+          <GridItem data-aos="zoom-in-up" className='my-2 py-2 px-1' xs={6} sm={6} md={6} lg={4}
           key={item.src}>
             <div className={classes.rotatingCardContainer}>
               <Card className={classes.cardRotate}>
                 <div className={classes.front}>
                   <CardBody
                     className={classes.cardBodyRotate}
-                    style={{ minHeight: "35vh" }}
+                    style={{ minHeight: "37vh" }}
                   >
                                <h5
-                      className={classes.cardTitle + 'cardtitle'}
+                      className={classes.cardTitle + 'cardtitle pt-2'}
                       style={{ fontFamily: "Lato",textAlign:'center' }}
                     >
                       {item.title}

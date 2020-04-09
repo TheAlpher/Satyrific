@@ -49,15 +49,15 @@ const useStyles = makeStyles(theme => ({
         <div className='wrapper faqs'>
 
         <Container >
-  <CardTitle data-aos="zoom-in-up" data-aos-duration='1000' tag='h6'  className='text-center' style={{color:'grey'}}>TESTIMONIALS</CardTitle>
+
       <CardTitle data-aos="zoom-in-up" data-aos-duration='1000' tag='h3'   className='text-center' style={{fontWeight:'bold'}}>Frequently Asked Questions</CardTitle>
   <hr data-aos="zoom-in-up" data-aos-duration='2000' style={{width:'20%',border:'3px solid orange',borderRadius:'3px'}}/>
   </Container>
           <Container>
             <Row  style={{justifyContent:'center'}}>
               <Col className='mx-auto' md='8'>
-                <div className={classes.root}>
-        <ExpansionPanel  data-aos="zoom-in-up" data-aos-duration='1000' className=' MuiExpansionPanel-rounded my-3 'style={{position:'none', border:'2px solid grey',borderRadius:'40px'}}>
+                <div data-aos="zoom-in-up" data-aos-duration='2000'  className={classes.root}>
+        <ExpansionPanel   className=' MuiExpansionPanel-rounded my-3 'style={{position:'none', border:'2px solid grey',borderRadius:'40px'}}>
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
@@ -71,7 +71,7 @@ const useStyles = makeStyles(theme => ({
             </div>
           </ExpansionPanelDetails>
         </ExpansionPanel>
-        <ExpansionPanel  data-aos="zoom-in-up" data-aos-duration='1000' className=' MuiExpansionPanel-rounded my-3 'style={{position:'none', border:'2px solid grey',borderRadius:'40px'}}>
+        <ExpansionPanel   className=' MuiExpansionPanel-rounded my-3 'style={{position:'none', border:'2px solid grey',borderRadius:'40px'}}>
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
@@ -86,7 +86,7 @@ const useStyles = makeStyles(theme => ({
          </div>
           </ExpansionPanelDetails>
         </ExpansionPanel>
-        <ExpansionPanel  data-aos="zoom-in-up" data-aos-duration='1000' className=' MuiExpansionPanel-rounded my-3 ' style={{ border:'2px solid grey',borderRadius:'40px'}}>
+        <ExpansionPanel   className=' MuiExpansionPanel-rounded my-3 ' style={{ border:'2px solid grey',borderRadius:'40px'}}>
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
@@ -101,7 +101,7 @@ const useStyles = makeStyles(theme => ({
             </div>
           </ExpansionPanelDetails>
         </ExpansionPanel>
-        <ExpansionPanel  data-aos="zoom-in-up" data-aos-duration='1000' className=' MuiExpansionPanel-rounded my-3 'style={{ border:'2px solid grey',borderRadius:'40px'}}>
+        <ExpansionPanel   className=' MuiExpansionPanel-rounded my-3 'style={{ border:'2px solid grey',borderRadius:'40px'}}>
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
@@ -118,7 +118,7 @@ const useStyles = makeStyles(theme => ({
         </ExpansionPanel>
       
       
-        <ExpansionPanel  data-aos="zoom-in-up" data-aos-duration='1000' className=' MuiExpansionPanel-rounded my-3 'style={{position:'none', border:'2px solid grey',borderRadius:'40px'}}>
+        <ExpansionPanel   className=' MuiExpansionPanel-rounded my-3 'style={{position:'none', border:'2px solid grey',borderRadius:'40px'}}>
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"

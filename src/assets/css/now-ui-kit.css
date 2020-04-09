@@ -5695,10 +5695,10 @@ textarea.form-control:active {
 .nav-pills .nav-item .nav-link.active,
 .nav-pills .nav-item .nav-link.active:focus,
 .nav-pills .nav-item .nav-link.active:hover {
-  background-color: #9A9A9A ;
-  color: #FFFFFF;
-  
-  border:'10px solid #e8be00 !important';
+  /* background-color: #9A9A9A ;
+  color: #FFFFFF; */
+/*   
+  border:'10px solid #e8be00 !important'; */
 }
 
 .nav-pills .nav-item .nav-link.disabled,
@@ -5731,11 +5731,11 @@ textarea.form-control:active {
   background-color: #f96332;
 }
 
-.nav-pills.nav-pills-info .nav-item .nav-link.active,
-.nav-pills.nav-pills-info .nav-item .nav-link.active:focus,
-.nav-pills.nav-pills-info .nav-item .nav-link.active:hover {
+.nav-pills-info .nav-item .nav-link.active,
+.nav-pills-info .nav-item .nav-link.active:focus,
+.nav-pills-info .nav-item .nav-link.active:hover {
   /* background-color: #2CA8FF; */
-  border:1px solid yellow
+  border:1px solid yellow !important;
 }
 
 .nav-pills.nav-pills-success .nav-item .nav-link.active,

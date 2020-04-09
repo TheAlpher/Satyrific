@@ -1,7 +1,8 @@
 import React from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link , animateScroll as scroll } from "react-scroll";
+
 // reactstrap components
 import {
   NavItem,
@@ -13,10 +14,11 @@ NavLink,
   Row,
   Col,Button,CardTitle
 } from "reactstrap";
+// import { defaultProps } from "react-select/src/Select";
 
 // core components
 AOS.init();
-function Pills() {
+function Pills(props) {
 
 
   const [iconHorizontalTabs, setIconHorizontalTabs] = React.useState("1");
@@ -192,83 +194,88 @@ function Pills() {
                   
                   style={{justifyContent:'center',display:'flex'}}
                 >
-                  <NavItem data-aos="zoom-in" style={{margin:'0.5%'}}> 
-                    <NavLink
-                      className={iconHorizontalTabs === "1" ? "active" : "" }
-                      href="#pablo"
+       <NavItem  data-aos="zoom-in" style={{margin:'0.5%'}}>
+                    <Link
+                      className={iconHorizontalTabs === "1" ? "active  nav-link pills-links" : "pills-links nav-link"}
+                      to="HorizontalTabs"
+                      smooth={true} offset={-50}
                       onClick={e => {
                         e.preventDefault();
                         setIconHorizontalTabs("1");
                       }}
-                      style={{fontSize:'larger',border:'1px solid grey',color:'black',  borderRadius:'10px',paddingRight:'4vh ',paddingLeft:'4vh ',paddingTop:'30px',paddingBottom:'30px',backgroundColor:'white'}}
+                      style={{display:'block',textAlign:"center", textDecoration:'none',fontSize:'larger',border:'1px solid grey',color:'black',borderRadius:'10px ',paddingRight:'3.5vh ',paddingLeft:'3.5vh ',paddingTop:'30px',paddingBottom:'30px',backgroundColor:'white'}}
                     >
-                      <img src={require('../assets/img/temp13.svg')}/><br/>
-                     <b>C</b>ommunity
-                    </NavLink>
+                     <img className='px-auto mx-auto' align='middle' src={require('../assets/img/temp13.svg')}/>
+                   <p className='mx-auto my-0 py-0'style={{fontFamily:'Lato',fontWeight:'bold'}}>  <b>C</b>ommunity</p>
+                    </Link>
                   </NavItem>
-                  <NavItem data-aos="zoom-in" style={{margin:'0.5%'}}>
-                    <NavLink
-                      className={iconHorizontalTabs === "2" ? "active" : ""}
-                      href="#pablo"
+                
+                  <NavItem  data-aos="zoom-in" style={{margin:'0.5%'}}>
+                    <Link
+                      className={iconHorizontalTabs === "2" ? "active  nav-link pills-links" : "pills-links  nav-link"}
+                      to="HorizontalTabs"
+                      smooth={true} 
+                      offset={-50}
                       onClick={e => {
                         e.preventDefault();
                         setIconHorizontalTabs("2");
                       }}
-                      style={{fontSize:'larger',border:'1px solid grey',color:'black',borderRadius:'10px',paddingRight:'5vh ',paddingLeft:'5vh ',paddingTop:'30px',paddingBottom:'30px',backgroundColor:'white'}}
+                      style={{display:'block',textAlign:"center", textDecoration:'none',fontSize:'larger',border:'1px solid grey',color:'black',borderRadius:'10px ',paddingRight:'4.4vh ',paddingLeft:'4.4vh ',paddingTop:'30px',paddingBottom:'30px',backgroundColor:'white'}}
                     >
-                    <img src={require('../assets/img/temp14.svg')}/><br/>
-                      <b>A</b>menities
-                    </NavLink>
+                     <img className='px-auto mx-auto' align='middle' src={require('../assets/img/temp14.svg')}/>
+                   <p className='mx-auto my-0 py-0'style={{fontFamily:'Lato',fontWeight:'bold'}}>  <b>A</b>menities</p>
+                    </Link>
                   </NavItem>
+                
                   <NavItem  data-aos="zoom-in" style={{margin:'0.5%'}}>
-                    <NavLink
-                      className={iconHorizontalTabs === "3" ? "active" : ""}
-                      href="#pablo"
+                    <Link
+                      className={iconHorizontalTabs === "3" ? "active  nav-link pills-links" : "pills-links  nav-link"}
+                      to="HorizontalTabs"
+                      smooth={true} offset={-50}
                       onClick={e => {
                         e.preventDefault();
                         setIconHorizontalTabs("3");
                       }}
-                      style={{fontSize:'larger',border:'1px solid grey',color:'black',borderRadius:'10px ',paddingRight:'4.2vh ',paddingLeft:'4.2vh ',paddingTop:'30px',paddingBottom:'30px',backgroundColor:'white'}}
+                      style={{display:'block',textAlign:"center", textDecoration:'none',fontSize:'larger',border:'1px solid grey',color:'black',borderRadius:'10px ',paddingRight:'3.5vh ',paddingLeft:'3.5vh ',paddingTop:'30px',paddingBottom:'30px',backgroundColor:'white'}}
                     >
-                     <img src={require('../assets/img/temp15.svg')}/>
-                     <b>T</b>echnology
-                    </NavLink>
+                     <img className='px-auto mx-auto' align='middle' src={require('../assets/img/temp15.svg')}/>
+                   <p className='mx-auto my-0 py-0'style={{fontFamily:'Lato',fontWeight:'bold'}}>  <b>T</b>echnology</p>
+                    </Link>
                   </NavItem>
+                
+                
                   <NavItem  data-aos="zoom-in" style={{margin:'0.5%'}}>
-                    <NavLink
-                      className={iconHorizontalTabs === "4" ? "active" : ""}
-                      href="#pablo"
+                    <Link
+                      className={iconHorizontalTabs === "4" ? "active  nav-link pills-links" : "pills-links  nav-link"}
+                      to="HorizontalTabs"
+                      smooth={true} offset={-50}
                       onClick={e => {
                         e.preventDefault();
                         setIconHorizontalTabs("4");
                       }}
-                      style={{fontSize:'larger',border:'1px solid grey',color:'black',borderRadius:'10px ',paddingRight:'5vh ',paddingLeft:'5vh ',paddingTop:'30px',paddingBottom:'30px',backgroundColor:'white'}}
+                      style={{display:'block',textAlign:"center", textDecoration:'none',fontSize:'larger',border:'1px solid grey',color:'black',borderRadius:'10px ',paddingRight:'5.2vh ',paddingLeft:'5.2vh ',paddingTop:'30px',paddingBottom:'30px',backgroundColor:'white'}}
                     >
-                     <img src={require('../assets/img/temp11.svg')}/><br/>
-                     <b>S</b>ecurity
-                    </NavLink>
+                     <img className='px-auto mx-auto' align='middle' src={require('../assets/img/temp11.svg')}/>
+                   <p className='mx-auto my-0 py-0'style={{fontFamily:'Lato',fontWeight:'bold'}}>  <b>S</b>ecurity</p>
+                    </Link>
                   </NavItem>
                 
                 
                 </Nav>
                 <TabContent
-                  className="tab-space mt-3"
+                  className="tab-space mt-3" id="HorizontalTabs"
                   activeTab={"iconHorizontalTabs" + iconHorizontalTabs}
                 >
-                  <TabPane tabId="iconHorizontalTabs1">
+                  <TabPane tabId="iconHorizontalTabs1" id="HorizontalTabs1">
                   <Row style={{overflowX:'hidden'}}>
             <Col md='6' xs="12" className='px-auto' data-aos="fade-right" style={{textAlign:'center'}} >
             <img  style={{alignSelf:'center',width:'50%'}} src={require('../assets/img/jug.png')}></img>
             </Col>
         
             <Col   className=" pl-5 mr-auto text-left"  md='6' xs="12">
-                  <h2 className="title" data-aos="fade-left" style={{fontSize:'2rem'}}>History of surfing</h2>
-                  <h5 className="description" data-aos="fade-left" style={{fontSize:'1rem'}}>
-                    The riding of waves has likely existed since humans began
-                    swimming in the ocean. In this sense, bodysurfing is the
-                    oldest type of wave-catching. Standing up on what is now
-                    called a surfboard is a relatively recent innovation
-                    developed by the Polynesians.
+                  <h2 className="title" data-aos="fade-left" style={{fontSize:'2rem'}}>Best Community</h2>
+                  <h5 className="description" data-aos="fade-left" style={{fontSize:'0.95rem',fontFamily:'Lato'}}>
+                  STAYRIFIC is a family where strangers meet with a smile and where laughter never ends. And to preserve this precious smiles we always offer innovative ideas to facilitate your lifestyle. We provide you with drop facility at your workplace(until its very near to the residential area) so that you don’t have to spend extra bucks on cabs an rickshaws. Also we provide you with fresh and hot lunch at your location at your preferred time. You just have to let us know your cravings. And there are much more services to make you feel the HOMELY feeling.
                   </h5>
                   <br></br>
                   <div  data-aos="fade-left" className="buttons">
@@ -313,18 +320,16 @@ function Pills() {
             </Col>
           </Row>
                   </TabPane>
-                  <TabPane tabId="iconHorizontalTabs2">
+                 
+                 
+                  <TabPane tabId="iconHorizontalTabs2" id="HorizontalTabs2">
                                <Row>
            
         
             <Col   className=" pl-5 mr-auto text-left" md="6">
-                  <h2  data-aos="fade-right" className="title" style={{fontSize:'2rem'}}>History of surfing</h2>
-                  <h5 data-aos="fade-right" className="description" style={{fontSize:'1rem'}}>
-                    The riding of waves has likely existed since humans began
-                    swimming in the ocean. In this sense, bodysurfing is the
-                    oldest type of wave-catching. Standing up on what is now
-                    called a surfboard is a relatively recent innovation
-                    developed by the Polynesians.
+                  <h2  data-aos="fade-right" className="title" style={{fontSize:'2rem'}}>      Access to comfort </h2>
+                  <h5 data-aos="fade-right" className="description" style={{fontSize:'0.95rem',fontFamily:'Lato'}}>
+                  Cook delicacies in your microwave or hide your chocolates in your own mini fridge with a free gym, free laundry, every day cleaning of rooms, 24*7 wifi. Also adding to the list is our FSSAI certified food which can make you drool over the same.  And all these are not just mere services or products, these are our ways of making you feel the HOMELY feeling.
                   </h5>
                   <br></br>
                   <div  data-aos="fade-right" className="buttons">
@@ -358,8 +363,8 @@ function Pills() {
                     <Button
                       className="mr-3 btn-warning"
                       color="info"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
+                      href="/amenities"
+                      
                       size="lg"
                     >
                       Read More
@@ -372,19 +377,16 @@ function Pills() {
             </Col>
           </Row>
                   </TabPane>
-                  <TabPane tabId="iconHorizontalTabs3">
+                
+                  <TabPane tabId="iconHorizontalTabs3" id="HorizontalTabs3">
          <Row> 
                      <Col md='6' data-aos="fade-right" style={{textAlign:'center'}} >
                <img  style={{alignSelf:'center',width:'50%'}} src={require('../assets/img/jug.png')}></img>
             </Col>  
             <Col  className=" pl-5 mr-auto text-left" md="6">
-                  <h2 data-aos="fade-left" className="title" style={{fontSize:'2rem'}}>History of surfing</h2>
-                  <h5 data-aos="fade-left" className="description" style={{fontSize:'1rem'}}>
-                    The riding of waves has likely existed since humans began
-                    swimming in the ocean. In this sense, bodysurfing is the
-                    oldest type of wave-catching. Standing up on what is now
-                    called a surfboard is a relatively recent innovation
-                    developed by the Polynesians.
+                  <h2 data-aos="fade-left" className="title" style={{fontSize:'2rem'}}>Best in class Technology</h2>
+                  <h5 data-aos="fade-left" className="description" style={{fontSize:'0.95rem',fontFamily:'Lato'}}>
+                  When R. Buckminster Fuller said "Humanity is acquiring all the right technology for all the wrong reasons.” We felt him and evolved for an effective path of communication. The STAYRIFIC app is everything you need to modernize your solutions. The app records grievances,provides solutions,listens to the changes according you and spills them in front of us and also reminds you to pay us both love and invoices. You don’t have to worry just have to feel the HOMELY feeling.
                   </h5>
                   <br></br>
                   <div data-aos="fade-left" className="buttons">
@@ -419,7 +421,8 @@ function Pills() {
                       className="mr-3 btn-warning"
                       color="info"
                       href="#pablo"
-                      onClick={e => e.preventDefault()}
+                      onClick={e =>{e.preventDefault();
+                    }}
                       size="lg"
                     >
                       Read More
@@ -428,18 +431,20 @@ function Pills() {
              
             </Col></Row>
                   </TabPane>
-                  <TabPane tabId="iconHorizontalTabs4">
+                  <TabPane tabId="iconHorizontalTabs4" id="HorizontalTabs4">
+              
+              
                   <Row>
            
         
            <Col   className=" pl-5 mr-auto text-left" md="6">
-                 <h2  data-aos="fade-right" className="title" style={{fontSize:'2rem'}}>History of surfing</h2>
-                 <h5 data-aos="fade-right" className="description" style={{fontSize:'1rem'}}>
-                   The riding of waves has likely existed since humans began
-                   swimming in the ocean. In this sense, bodysurfing is the
-                   oldest type of wave-catching. Standing up on what is now
-                   called a surfboard is a relatively recent innovation
-                   developed by the Polynesians.
+                 <h2  data-aos="fade-right" className="title" style={{fontSize:'2rem'}}>Security is a prime priority</h2>
+                 <h5 data-aos="fade-right" className="description" style={{fontSize:'0.95rem',fontFamily:'Lato'}}>
+                 STAYRIFIC is as secure as your mother’s lap is.
+                  We not only believe in manual  security but also confer your security in your hands on the app.
+                   The app generates out pass and in pass according to your concerns.
+                    CCTV cameras are installed and monitored every moment to make the place safer.
+                     You can sleep well because there’re people working hard to make you feel the HOMELY feeling.
                  </h5>
                  <br></br>
                  <div  data-aos="fade-right" className="buttons">

@@ -13,4 +13,6 @@ code {
 } */
 body{
   font-family: 'Lato !important';
+  scroll-behavior: smooth;
+  width: 100vw;
 }

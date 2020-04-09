@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import img1 from './../../assets/img/brandlogomini3.png';
-import img2 from './../../assets/img/BRANDLOGOMINI2.png';
+import img1 from "./../../assets/img/brandlogomini3.png";
+import img2 from "./../../assets/img/BRANDLOGOMINI2.png";
 // reactstrap components
 import {
   Button,
@@ -32,7 +32,7 @@ function ScrollTransparentNavbar() {
       ? "info"
       : "neutral"
   );
- 
+
   React.useEffect(() => {
     const updateNavbarColor = () => {
       if (
@@ -40,15 +40,15 @@ function ScrollTransparentNavbar() {
         document.body.scrollTop > 499
       ) {
         setNavbarColor("");
-        document.getElementById('logoimage').src=img2;
+        document.getElementById("logoimage").src = img2;
         setBuyButtonColor("info");
       } else if (
         document.documentElement.scrollTop < 500 ||
         document.body.scrollTop < 500
       ) {
-        setNavbarColor(""); 
+        setNavbarColor("");
         //  navbar-transparent
-        document.getElementById('logoimage').src=img2;
+        document.getElementById("logoimage").src = img2;
         setBuyButtonColor("neutral");
       }
     };
@@ -69,11 +69,20 @@ function ScrollTransparentNavbar() {
         />
       ) : null}
       <Navbar className={"fixed-top" + navbarColor} color="white" expand="lg">
-        <Container style={{marginLeft:'5%'}}>
+        <Container style={{ marginLeft: "5%" }}>
           <div className="navbar-translate">
-          <NavbarBrand href="/"  style={{maxWidth:'30vw'}}>
-                <img alt='logo' id='logoimage' width='35%' src={require('assets/img/BRANDLOGOMINI2.png')}/>
-              </NavbarBrand>
+            <NavbarBrand
+              href="/lo"
+           
+              style={{ maxWidth: "30vw" }}
+            >
+              <img
+                alt="logo"
+                id="logoimage"
+                width="35%"
+                src={require("assets/img/BRANDLOGOMINI2.png")}
+              />
+            </NavbarBrand>
             {/* <UncontrolledTooltip target="navbar-brand">
               Designed by Invision. Coded by Creative Tim
             </UncontrolledTooltip> */}
@@ -243,7 +252,7 @@ function ScrollTransparentNavbar() {
                   className="nav-link btn-default "
                   color={buyButtonColor}
                   href="/home"
-                //   target="_blank"
+                  //   target="_blank"
                 >
                   <p>Home</p>
                 </NavLink>
@@ -253,42 +262,42 @@ function ScrollTransparentNavbar() {
                   className="nav-link btn-default "
                   color={buyButtonColor}
                   href="/about-us"
-                //   target="_blank"
+                  //   target="_blank"
                 >
                   <p>About Us</p>
                 </NavLink>
               </NavItem>
-              <NavItem className='active'>
+              <NavItem>
                 <NavLink
                   className="nav-link btn-default "
                   color={buyButtonColor}
                   href="/amenities"
-                //   target="_blank"
+                  //   target="_blank"
                 >
                   <p>Amenities</p>
+                </NavLink>
+              </NavItem>
+              <NavItem className="active">
+                <NavLink
+                  className="nav-link btn-default"
+                  color={buyButtonColor}
+                  href="/events"
+                  //   target="_blank"
+                >
+                  <p>Events</p>
                 </NavLink>
               </NavItem>
               <NavItem >
                 <NavLink
                   className="nav-link btn-default"
                   color={buyButtonColor}
-                  href="/events"
-                //   target="_blank"
-                >
-                  <p>Events</p>
-                </NavLink>
-              </NavItem>
-               <NavItem >
-                <NavLink
-                  className="nav-link btn-default"
-                  color={buyButtonColor}
                   href="/contact-us"
-                //   target="_blank"
+                  //   target="_blank"
                 >
                   <p>Contact Us</p>
                 </NavLink>
-              </NavItem> </Nav>
-       
+              </NavItem>
+            </Nav>
           </Collapse>
         </Container>
       </Navbar>

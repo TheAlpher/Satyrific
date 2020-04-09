@@ -248,7 +248,7 @@ function ScrollTransparentNavbar() {
                   <p>Home</p>
                 </NavLink>
               </NavItem>
-              <NavItem>
+              <NavItem >
                 <NavLink
                   className="nav-link btn-default "
                   color={buyButtonColor}
@@ -258,7 +258,7 @@ function ScrollTransparentNavbar() {
                   <p>About Us</p>
                 </NavLink>
               </NavItem>
-              <NavItem className='active'>
+              <NavItem >
                 <NavLink
                   className="nav-link btn-default "
                   color={buyButtonColor}
@@ -278,7 +278,7 @@ function ScrollTransparentNavbar() {
                   <p>Events</p>
                 </NavLink>
               </NavItem>
-               <NavItem >
+              <NavItem >
                 <NavLink
                   className="nav-link btn-default"
                   color={buyButtonColor}
@@ -287,7 +287,8 @@ function ScrollTransparentNavbar() {
                 >
                   <p>Contact Us</p>
                 </NavLink>
-              </NavItem> </Nav>
+              </NavItem>
+            </Nav>
        
           </Collapse>
         </Container>

@@ -10,19 +10,20 @@ import defaultAvatar from "assets/img/placeholder.jpg";
 function ImageUpload(props) {
   const [file, setFile] = React.useState(null);
   const [imagePreviewUrl, setImagePreviewUrl] = React.useState(
-    props.avatar ? defaultAvatar : defaultImage
+    "No file Uploaded yet"
   );
   const fileInput = React.createRef();
   const handleImageChange = e => {
     e.preventDefault();
     let reader = new FileReader();
     let file = e.target.files[0];
+    console.log(file.name);
     reader.onloadend = () => {
       setFile(file);
-      console.log(file.name);
-      setImagePreviewUrl(reader.result);
+      setImagePreviewUrl(file.name);
+      console.log(file)
     };
-    reader.readAsDataURL(file);
+    reader.readAsArrayBuffer(file);
   };
   // const handleSubmit = e => {
   // e.preventDefault();
@@ -43,16 +44,16 @@ function ImageUpload(props) {
       <input type="file" onChange={handleImageChange} ref={fileInput} />
       <div
         className={
-          "fileinput-new thumbnail img-raised" +
-          (props.avatar ? " img-circle" : "")
+          "thumbnail "
+         
         }
       >
-        <img src={imagePreviewUrl} alt="..." />
+        <h6>{imagePreviewUrl}</h6>
       </div>
       <div>
         {file === null ? (
           <Button className="btn-round" color="default" onClick={handleClick}>
-            {props.avatar ? "Add Photo" : "Select image"}
+            {props.avatar ? "Add File" : "Select File"}
           </Button>
         ) : (
           <span>

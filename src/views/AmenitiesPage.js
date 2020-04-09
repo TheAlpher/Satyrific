@@ -85,7 +85,7 @@ const noidaamenities = [
   },
 
    { title:"Meals",
-  info:' Students are provided 4 nutritious meals everyday with alonger list of choices',
+  info:' Students are provided 4 nutritious meals everyday with a long list of choices',
     src: require("../assets/img/meals.png") ,
  
     altText: "Meals"
@@ -195,6 +195,124 @@ function AmenitiesPage() {
       <div className="wrapper" style={{background:'transparent'}}>
         <SecondaryPageHeader title='Amenities' />
         <NavigationPills items={satyaniketanamenities} items1={noidaamenities}style={{background:'transparent'}} />
+        
+        <Container className='my-5'>
+         <Row>  <h2 data-aos="fade-left" className="title col-12" style={{fontSize:'2rem'}}>Best in class Technology</h2>
+                     <Col md='6' data-aos="fade-right" style={{textAlign:'center'}} >
+                    
+               <img  style={{alignSelf:'center',width:'50%'}} src={require('../assets/img/jug.png')}></img>
+            </Col>  
+            <Col  className=" pl-5 mr-auto text-left" md="6">
+                 
+                  <h5 data-aos="fade-left" className="description" style={{fontSize:'0.95rem',fontFamily:'Lato'}}>
+                  When R. Buckminster Fuller said "Humanity is acquiring all the right technology for all the wrong reasons.” We felt him and evolved for an effective path of communication. The STAYRIFIC app is everything you need to modernize your solutions. The app records grievances,provides solutions,listens to the changes according you and spills them in front of us and also reminds you to pay us both love and invoices. You don’t have to worry just have to feel the HOMELY feeling.
+                  </h5>
+                  
+                  <div data-aos="fade-left" className="buttons">
+                    {/* <Button
+                      className="btn-icon btn-neutral"
+                      color="link"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                      size="lg"
+                    >
+                      <i className="fab fa-twitter"></i>
+                    </Button>
+                    <Button
+                      className="btn-icon btn-neutral"
+                      color="link"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                      size="lg"
+                    >
+                      <i className="fab fa-facebook-square"></i>
+                    </Button>
+                    <Button
+                      className="btn-icon btn-neutral"
+                      color="link"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                      size="lg"
+                    >
+                      <i className="fab fa-get-pocket"></i>
+                    </Button> */}
+                    <Button
+                      className="mr-3 btn-warning"
+                      color="info"
+                      href="#pablo"
+                      onClick={e =>{e.preventDefault();
+                    }}
+                      size="lg"
+                    >
+                      Read More
+                    </Button>
+                  </div>
+             
+            </Col></Row>
+                  </Container>
+                  <Container className='my-5'>
+              
+              
+                  <Row>
+           
+                  <h2  data-aos="fade-right" className="title col-12" style={{fontSize:'2rem'}}>Security is a prime priority</h2>
+         <Col data-aos="fade-left" md='6' style={{textAlign:'center'}} >
+           <img  style={{alignSelf:'center',width:'55%'}} src={require('../assets/img/foreigner2.png')}></img>
+           </Col>
+           <Col   className=" pl-5 mr-auto text-left" md="6">
+               
+               <h5 data-aos="fade-right" className="description" style={{fontSize:'0.95rem',fontFamily:'Lato'}}>
+               STAYRIFIC is as secure as your mother’s lap is.
+                We not only believe in manual  security but also confer your security in your hands on the app.
+                 The app generates out pass and in pass according to your concerns.
+                  CCTV cameras are installed and monitored every moment to make the place safer.
+                   You can sleep well because there’re people working hard to make you feel the HOMELY feeling.
+               </h5>
+          
+               <div  data-aos="fade-right" className="buttons">
+                 {/* <Button
+                   className="btn-icon btn-neutral"
+                   color="link"
+                   href="#pablo"
+                   onClick={e => e.preventDefault()}
+                   size="lg"
+                 >
+                   <i className="fab fa-twitter"></i>
+                 </Button>
+                 <Button
+                   className="btn-icon btn-neutral"
+                   color="link"
+                   href="#pablo"
+                   onClick={e => e.preventDefault()}
+                   size="lg"
+                 >
+                   <i className="fab fa-facebook-square"></i>
+                 </Button>
+                 <Button
+                   className="btn-icon btn-neutral"
+                   color="link"
+                   href="#pablo"
+                   onClick={e => e.preventDefault()}
+                   size="lg"
+                 >
+                   <i className="fab fa-get-pocket"></i>
+                 </Button> */}
+                 <Button
+                   className="mr-3 btn-warning"
+                   color="info"
+                   href="#pablo"
+                   onClick={e => e.preventDefault()}
+                   size="lg"
+                 >
+                   Read More
+                 </Button>
+               </div>
+          
+         </Col>
+           </Row>                </Container>
+               
+                    
+        
         {/* <div className="section">
           <Container>
             <div className="button-container">

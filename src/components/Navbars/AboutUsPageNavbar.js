@@ -71,7 +71,7 @@ function ScrollTransparentNavbar() {
       <Navbar className={"fixed-top" + navbarColor} color="white" expand="lg">
         <Container style={{marginLeft:'5%'}}>
           <div className="navbar-translate">
-          <NavbarBrand href="#pablo" onClick={e => e.preventDefault()} style={{maxWidth:'30vw'}}>
+          <NavbarBrand href="/" style={{maxWidth:'30vw'}}>
                 <img alt='logo' id='logoimage' width='35%' src={require('assets/img/BRANDLOGOMINI2.png')}/>
               </NavbarBrand>
             {/* <UncontrolledTooltip target="navbar-brand">
@@ -268,7 +268,16 @@ function ScrollTransparentNavbar() {
                   <p>Amenities</p>
                 </NavLink>
               </NavItem>
-              <NavItem >
+              <NavItem>
+              <NavLink
+                  className="nav-link btn-default"
+                  color={buyButtonColor}
+                  href="/events"
+                //   target="_blank"
+                >
+                  <p>Events</p>
+                </NavLink>
+              </NavItem><NavItem>
                 <NavLink
                   className="nav-link btn-default"
                   color={buyButtonColor}

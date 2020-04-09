@@ -57,7 +57,7 @@ React.useEffect(()=>{
                       setIconHorizontalTabs("1");
                     }}
                     style={{
-                      fontSize: "larger",
+                      // fontSize: "large",
                       border: "1px solid grey",
                       color: "black",
                       borderRadius: "10px",
@@ -68,7 +68,7 @@ React.useEffect(()=>{
                       backgroundColor: "white"
                     }}
                   >
-                    <img src={require("../assets/img/hostel1.png")} />
+                    <img src={require("../assets/img/hostel1.png")}  alt='Satya_Niketan'/>
                     <br />
                     Satya Niketan
                   </NavLink>
@@ -93,7 +93,7 @@ React.useEffect(()=>{
                       backgroundColor: "white"
                     }}
                   >
-                    <img src={require("../assets/img/hostel2.png")} />
+                    <img src={require("../assets/img/hostel2.png")} alt='Noida'/>
                     <br />
                     Noida
                   </NavLink>

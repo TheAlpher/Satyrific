@@ -15,6 +15,7 @@ import {
   CarouselIndicators
 } from "reactstrap";
 import { setGlobalCssModule } from "reactstrap/lib/utils";
+import { Container } from "@material-ui/core";
 
 // core components
 
@@ -35,9 +36,10 @@ const items = [
           <h5 className="card-description">
             "Awesome Design and very well organized code structure! Also, it
             contains numerous elements using which achieving the perfect or
-            required template can be done with ease. Great job!"
-          </h5>
-          <CardTitle tag="h4"className='my-0'>Stefan</CardTitle>
+            required template can be done with ease. Great job!"    </h5>
+            <CardTitle tag="h4"className='my-1'>Stefan</CardTitle>
+      
+          
           {/* <h6 className="category text-muted">Web Designer</h6>
           <CardFooter>
             <i className="fa fa-star text-warning mr-1"></i>
@@ -70,8 +72,8 @@ const items = [
             "It looks great and its somewhat futuristics cant wait to use it on
             a project here in nigeria i'm sure it would put me ahead.. I cant
             wait to hv enough money to buy ur product."
-          </h5>
-          <CardTitle tag="h4"className='my-0'>Mr. Bones</CardTitle>
+            </h5> <CardTitle tag="h4"className='my-0'>Mr. Bones</CardTitle>
+         
           {/* <h6 className="category text-muted">Web Designer</h6>
           <CardFooter>
             <i className="fa fa-star text-warning mr-1"></i>
@@ -103,10 +105,9 @@ const items = [
           <h5 className="card-description">
             "Everything is perfect. Codes are really organized. It's easy to
             edit for my own purposes. It's great that it is built on top of
-            Bootstrap 4." <br></br>
-            <br></br>
+            Bootstrap 4." <br/> <CardTitle tag="h4"className='my-0'>DOĞA</CardTitle>
           </h5>
-          <CardTitle tag="h4"className='my-0'>DOĞA</CardTitle>
+         
           {/* <h6 className="category text-muted">Web Developer</h6>
           <CardFooter>
             <i className="fa fa-star text-warning mr-1"></i>
@@ -156,31 +157,36 @@ function Testimonials() {
         className=" section-testimonials "  id='mytestimonials'
         data-background-color="orange" 
       >      
-        <div id="clipped-div-upside" style={{minHeight:'fit-content',position:'relative',zIndex:'1000',
-
-      background:'transparent'}}>
-        <img src={require('../../assets/img/Artboard7.svg')} width='100%'/>
+        <div id="clipped-div-upside" style={{height:'8vh',position:'relative',zIndex:'1000',
+          width:'100%',
+      backgroundImage:"url("+require('../../assets/img/Artboard7.svg')+")" ,backgroundSize:"cover",transform:'rotate(180deg)',  backgroundPosition: 'center' }}>
+        {/* <img src={require('../../assets/img/Artboard7.svg')} width='100%'/> */}
          </div> 
-        <Row>
+        {/* <Row>
           <Col className="ml-auto mr-auto text-center" md="8">
-            <h1        data-aos="zoom-in-up"
-            data-aos-duration="1000" className="title my-0 pt-0" style={{fontFamily:'Lato'}}> TESTIMONIALS</h1>
-            <h3        data-aos="zoom-in-up"
+            
+          </Col>
+        </Row> */}
+        <div className='p-3'>
+        <Row className='text-center' >
+  <Col md={12}>
+        <h2      style={{width:'100%'}}  data-aos="zoom-in-up"
+            data-aos-duration="1000" className="title my-0 pt-0" style={{fontFamily:'Lato'}}> TESTIMONIALS</h2>
+     </Col >   <Col md={12}>   
+      <h4        data-aos="zoom-in-up"
             data-aos-duration="1000" className="description" >
           <b> What Our Customers Say</b> 
-            </h3>
-            <hr
+            </h4>
+            </Col> 
+            <Col md={12}>  <hr
             data-aos="zoom-in-up"
             data-aos-duration="2000"
             style={{
-              width: "20%",
+              width: "20vw",
               border: "3px solid white",
               borderRadius: "3px"
             }}
-          />
-          </Col>
-        </Row>
-        <Row >
+          /></Col>
           <Col md="2">
             <div className="testimonials-people">
             {/* <div
@@ -267,11 +273,12 @@ pause={false}
 ride="carousel"
 interval="5000"
            >
-              {/* <CarouselIndicators
+              <CarouselIndicators
                 items={items}
+                className="my-0 review-carousel-indicators"
                 activeIndex={activeIndex}
                 onClickHandler={goToIndex}
-              /> */}
+              />
               {items.map((item, key) => {
                 return (
                   <CarouselItem
@@ -284,7 +291,7 @@ interval="5000"
                 );
               })}
               <a
-                className="left carousel-control carousel-control-prev"
+                className="left carousel-control review-carousel-controls carousel-control-prev"
                 data-slide="prev"
                 href="#pablo"
                 onClick={e => {
@@ -294,10 +301,10 @@ interval="5000"
                 role="button"
               >
                 <span className="now-ui-icons arrows-1_minimal-left" />
-                <span className="sr-only">Previous</span>
+            
               </a>
               <a
-                className="right carousel-control carousel-control-next"
+                className="right carousel-control review-carousel-controls carousel-control-next"
                 data-slide="next"
                 href="#pablo"
                 onClick={e => {
@@ -307,7 +314,7 @@ interval="5000"
                 role="button"
               >
                 <span className="now-ui-icons arrows-1_minimal-right" />
-                <span className="sr-only">Next</span>
+              
               </a>
             </Carousel>
           </Col>
@@ -332,15 +339,13 @@ interval="5000"
             </div>
           </Col>
         </Row>
-        <div id="clipped-div" style={{minHeight:'fit-content',position:'relative',zIndex:'1000',
-
-
-
-background:'transparent'}}>
-  <img src={require('../../assets/img/Artboard7.svg')} width='100%'/>
-   </div> 
+        </div>
+        <div id="clipped-div-upside" style={{height:'8vh',position:'relative',zIndex:'1000',
+          width:'100%',
+      backgroundImage:"url("+require('../../assets/img/Artboard7.svg')+")" ,backgroundSize:"cover",  backgroundPosition: 'center' }}>
       </div>
-    </>
+   
+   </div> </>
   );
 }
 

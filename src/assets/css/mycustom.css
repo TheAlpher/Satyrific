@@ -2,10 +2,45 @@ body{
   z-index: 0;
   position: relative;
   background-color: white;
+  /* scroll-behavior: smooth !important; */
 overflow-x: hidden;
 margin:0;
 box-sizing: border-box;
 padding: 0;
+}
+/*pop over event */
+.overlay-event{
+  position: fixed;
+  z-index: 3000;
+  right:7%;
+  color: black;
+
+  /* grid-template-columns: 1fr 9fr;
+  grid-template-rows: 2fr 8fr; */
+  top:90vh;
+
+}
+.overlay-btn{
+
+background-color:rgb(255, 180, 68) !important;
+}
+
+.overlay-btn:hover{
+  opacity:1 !important;
+}
+.overlay-btn:active,.overlay-btn:focus{
+  opacity:0.4 !important;
+}
+/* @media only screen and (max-width:600px){.overlay-event{display: none;}} */
+/* .bs-popover-top{
+  background: transparent;
+  box-shadow: unset !important;
+} */
+
+@media only screen and (max-width:600px) {
+#logoimage{
+width: 100%;
+}
 }
 #prev-btn:hover, #next-btn:hover{
 border: 2px solid white !important;
@@ -17,11 +52,12 @@ border: 2px solid white !important;
 #prev-btn, #next-btn{
     border: 2px solid rgb(133, 133, 133) !important;
     }
-    /* #clipped-div{
-        clip-path: ellipse(2600px 1200px at 50% -230%);
-      
-        background-color: aqua;
-    } */
+   #clipped-div{
+       height: fit-content;
+    } 
+    #clipped-div-upside{
+      height: fit-content;
+   } 
 
     #clipped-div-upside img{
 transform: rotate(180deg);
@@ -49,7 +85,7 @@ transform: rotate(180deg);
 .card-blog{
 
 }
-    .card-blog:hover{
+    .minicards:hover{
         background-color: rgba(240, 239, 239, 0.021);
         box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.3);
         transform:translateY(-10px) !important;
@@ -65,10 +101,16 @@ transform: rotate(180deg);
       max-height: 40vh !important;
     }
 
+    /* pills links active golden border*/
+    .pills-links.active{
+      border:5px solid yellow;
+    }
+
 /*landing page top carousel  bottom curve fix */
     .mycarouselindicators{
         background-image: url('../img/Artboard7.svg');
-        background-size:100vw 10vh;
+        background-size:cover;
+        background-position: center;
         margin-left:0 !important;
         /* padding-left:48% !important;
         padding-right:48% !important; */
@@ -138,9 +180,24 @@ color:rgb(209, 68, 68);
     
     
       }
+      @media only screen and (max-width: 800px) {
+        .review-carousel-controls span{
+          display: hidden;
+          opacity: 0;
+        }
+        .reviewcarouselitems{
+          max-height: 100vh !important; box-shadow: "none" ;
+       }
+        /* .review-carousel-indicators{
+display: none;
+        } */
+      }
 
+      .review-carousel-controls{
+        width:'15%'
+      }
 .reviewcarouselitems{
-   max-height: 45vh !important; box-shadow: "none" ;
+   max-height: 82vh !important; box-shadow: "none" ;
 }
 .reviewcarouselitems .card-testimonial{
 margin-left: auto !important;
@@ -148,7 +205,17 @@ margin-left: auto !important;
 margin-right: auto !important;
 margin-top: 1% !important;
 margin-bottom: 1% !important;}
+
+.testimonials-people{
+  padding: 0 !important;
+}
       /* fix contact us section background*/
       .section-image::after {
         background-color: white !important;
+      }
+
+      @media only screen and (max-width: 630px){
+#clipped-div-upside img,#clipped-div img{
+  height:'170%' !important;
+}
       }
