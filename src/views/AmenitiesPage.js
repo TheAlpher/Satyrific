@@ -1,5 +1,6 @@
 import React from "react";
 import Rellax from "rellax";
+import { Link } from "react-router-dom";
 import {
   Badge,
   Button,
@@ -67,11 +68,11 @@ const satyaniketanamenities = [
     altText: "Laundry"
 
   },
-  { title:"Library",
-  info:' All students have access to our Library',
+  { title:"Reading Room",
+  info:' All students have access to our Reading Room',
     src: require("../assets/img/library.png") ,
  
-    altText: "Library"
+    altText: "Reading Room"
 
   }
 ];
@@ -105,11 +106,11 @@ const noidaamenities = [
     altText: "Laundry"
 
   },
-  { title:"Library",
-  info:' All students have access to our Library',
+  { title:"Reading Room",
+  info:' All students have access to our Reading Room',
     src: require("../assets/img/library.png") ,
  
-    altText: "Library"
+    altText: "Reading Room"
 
   },  { title:" Housekeeping",
   info:' Housekeeping service is available for all students',
@@ -189,6 +190,36 @@ function AmenitiesPage() {
     ></div>{" "}
 
   </div>
+  <div id="hovericonscontainer">
+        <Link to="#">
+          <i
+            id="hovericons1"
+            className="mx-2 my-3  hovericons fab fa-2x fa-instagram"
+          ></i>
+        </Link>
+        <br />
+        <Link to="#">
+          <i
+            id="hovericons2"
+            className="mx-2 my-3 hovericons fab fa-2x fa-facebook"
+          ></i>
+        </Link>
+        <br />
+        <Link to="#">
+          {" "}
+          <i
+            id="hovericons3"
+            className="mx-2 my-3 hovericons fab fa-2x fa-twitter"
+          ></i>
+        </Link>
+        <br />
+        <Link to="#">
+          <i
+            id="hovericons4"
+            className="mx-2 my-3  hovericons fab fa-2x fa-linkedin"
+          ></i>
+        </Link>
+      </div>
 
       <AmenitiesNavbar />
       <div className="wrapper" style={{background:'transparent'}}>

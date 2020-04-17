@@ -27,7 +27,7 @@ import {
 //   import MyNavbar from 'components/Navbars/WhiteNavbar';
 const items = [
     {
-      src: "url(" + require("assets/img/bg20.jpg") + ")",
+      src: "url(" + require("assets/img/lpage_header_1.jpg") + ")",
       content: (
         <Row>
         <Col className="ml-auto mr-auto text-center" md="8">
@@ -77,11 +77,12 @@ const items = [
         </Col>
       </Row>
      ),
-      altText: "",
-      caption: ""
+      altText: "Hostel Image 1",
+      caption: "",
+      creditTag:(<a className='landing-page-header-credits' href="https://www.freepik.com/free-photos-vectors/travel">Travel photo created by rawpixel.com - www.freepik.com</a>)
     },
     {
-      src: "url(" + require("assets/img/bg15.jpg") + ")",
+      src: "url(" + require("assets/img/lpage_header_2.jpg") + ")",
       content: (
         <Row>
           <Col className="ml-auto mr-auto text-center" md="8">
@@ -131,11 +132,12 @@ const items = [
         </Row>
       
       ),
-      altText: "",
-      caption: ""
+      altText: "Hostel Image 2",
+      caption: "",
+      creditTag:(<a className='landing-page-header-credits' href="https://www.freepik.com/free-photos-vectors/house">House vector created by vectorpouch - www.freepik.com</a>)
     },
     {
-      src: "url(" + require("assets/img/bg17.jpg") + ")",
+      src: "url(" + require("assets/img/lpage_header_3.jpg") + ")",
       content: (
         <Row>
           <Col className="ml-auto mr-auto text-center" md="8">
@@ -187,9 +189,31 @@ const items = [
         </Row>
        
      ),
-      altText: "",
-      caption: ""
-    }
+      altText: "Hostel Image 3",
+      caption: "",
+      creditTag:(<a  className='landing-page-header-credits' href="https://www.freepik.com/free-photos-vectors/abstract">Abstract vector created by macrovector - www.freepik.com</a>)
+    },
+    //  {
+    //   src: "url(" + require("assets/img/lpage_header_4.jpg") + ")",
+    //   content: (
+    //     <Row>
+    //       <Col className="ml-auto mr-auto text-center" md="8">
+    //         <h1 className="title">Island of legends.</h1>
+    //         <h4 className="description">
+    //           The islands of Malta and Gozo are brilliant for a family holiday,
+    //           packed with fun places to visit whatever your children’s ages. The
+    //           islands’ small size means everywhere is within easy reach.
+    //         </h4>
+    //         <br></br>
+
+    //       </Col>
+    //     </Row>
+       
+    //  ),
+    //   altText: "Hostel Image 4",
+    //   caption: "",
+    //   creditTag:(<a className='landing-page-header-credits' href="https://www.freepik.com/free-photos-vectors/business">Business vector created by freepik - www.freepik.com</a>)
+    // }
   ];
 
   AOS.init();
@@ -312,7 +336,7 @@ const MyHeader =()=>{
 
 pause={false}
 ride="carousel"
-interval="5000"
+interval="500000"
 style={{minHeight:'80vh',maxHeight:'80vh'}} 
 next={next} previous={previous}
 >
@@ -341,7 +365,8 @@ background:'transparent'}}>
                       className="page-header-image"
                       style={{
                         backgroundImage: item.src,
-                        maxHeight:'inherit'
+                        maxHeight:'inherit',
+                        backgroundPosition:'center '
                       }}
                     ></div>                       
 
@@ -354,6 +379,7 @@ background:'transparent'}}>
                       </Container>
                     </div>
                   </div>
+                  {item.creditTag}
                 </CarouselItem>
               );
             })}

@@ -144,6 +144,37 @@ function FAQPage(props) {
     })
   return (
     <>
+    <div id="hovericonscontainer">
+        <Link to="#">
+          <i
+            id="hovericons1"
+            className="mx-2 my-3  hovericons fab fa-2x fa-instagram"
+          ></i>
+        </Link>
+        <br />
+        <Link to="#">
+          <i
+            id="hovericons2"
+            className="mx-2 my-3 hovericons fab fa-2x fa-facebook"
+          ></i>
+        </Link>
+        <br />
+        <Link to="#">
+          {" "}
+          <i
+            id="hovericons3"
+            className="mx-2 my-3 hovericons fab fa-2x fa-twitter"
+          ></i>
+        </Link>
+        <br />
+        <Link to="#">
+          <i
+            id="hovericons4"
+            className="mx-2 my-3  hovericons fab fa-2x fa-linkedin"
+          ></i>
+        </Link>
+      </div>
+
     <div className='bg-elements ' style={{height:0,width:'100%',marginTop:"30vh", position:'absolute',zIndex:'-1000'}}>
        <div className="bg-elements-1 rellax  ml-5 mr-auto"  data-rellax-speed="-7" style={{minHeight:'100px',maxWidth:'100px',borderRadius:'20%', backgroundColor:'rgba(255, 165, 0, 0.3)',transform:'rotate(45deg)'}}></div> 
        <div className="bg-elements-2 rellax mr-5 ml-auto"  data-rellax-speed='-3' style={{ minHeight:'150px',maxWidth:' 150px',borderRadius:'20%', backgroundColor:'rgba(255, 165, 0, 0.3)',transform:'rotate(45deg)'}}></div>
@@ -169,7 +200,7 @@ function FAQPage(props) {
                               </InputGroupText>
                             </InputGroupAddon>
                             <Input
-                            required='true'
+                            required={true}
                               aria-label="First Name..."
                               autoComplete="given-name"
                               placeholder="First Name..."
@@ -191,7 +222,7 @@ function FAQPage(props) {
                                 </InputGroupText>
                               </InputGroupAddon>
                               <Input
-                              required='true'
+                              required={true}
                                 aria-label="Last Name..."
                                 autoComplete="family-name"
                                 placeholder="Last Name..."
@@ -214,7 +245,7 @@ function FAQPage(props) {
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
-                          required='true'
+                          required={true}
                             autoComplete="email"
                             placeholder="Email Here..."
                             type="email"
@@ -234,7 +265,7 @@ function FAQPage(props) {
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
-                          required='true'
+                          required={true}
                             // autoComplete="phone"
                             placeholder="12345-67890"
                             pattern="[0-9]{5}-[0-9]{5}"
@@ -253,12 +284,13 @@ function FAQPage(props) {
                           rows="6"
                           type="textarea"
                           placeholder='Why ?'
-                          required='true'
+                          required={true}
                         ></Input>
                       </FormGroup>
                     
           
-                      <Row><Col md="6">
+                      <Row>
+                        {/* <Col md="6">
                       <FormGroup check>
             <Label check>
               <Input type="checkbox"></Input>
@@ -267,8 +299,8 @@ function FAQPage(props) {
                 <span className="check"></span>
               </span>
             </Label>
-          </FormGroup></Col>
-                        <Col md="6">
+          </FormGroup></Col> */}
+                        <Col md="12">
                           <Button
                             className="btn-round pull-right"
                             color="info"

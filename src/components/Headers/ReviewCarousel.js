@@ -155,7 +155,7 @@ function Testimonials() {
     <>
       <div
         className=" section-testimonials "  id='mytestimonials'
-        data-background-color="orange" 
+        // data-background-color="orange" 
       >      
         <div id="clipped-div-upside" style={{height:'8vh',position:'relative',zIndex:'1000',
           width:'100%',
@@ -170,8 +170,8 @@ function Testimonials() {
         <div className='p-3'>
         <Row className='text-center' >
   <Col md={12}>
-        <h2      style={{width:'100%'}}  data-aos="zoom-in-up"
-            data-aos-duration="1000" className="title my-0 pt-0" style={{fontFamily:'Lato'}}> TESTIMONIALS</h2>
+        <h2       data-aos="zoom-in-up"
+            data-aos-duration="1000" className="title my-0 pt-0" style={{width:'100%',fontFamily:'Lato'}}> TESTIMONIALS</h2>
      </Col >   <Col md={12}>   
       <h4        data-aos="zoom-in-up"
             data-aos-duration="1000" className="description" >

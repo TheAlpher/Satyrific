@@ -1,5 +1,6 @@
 import React from "react";
 import Rellax from "rellax";
+import { Link } from "react-router-dom";
 import {
   Badge,
   Button,
@@ -22,6 +23,7 @@ import {
   Container,
   Row,
   Col,
+
   CardFooter,
   UncontrolledTooltip
 } from "reactstrap";
@@ -70,11 +72,11 @@ const amenitiesitems = [
     altText: "Laundry"
   },
   {
-    title: "Library",
-    info: " All students have access to our Library",
+    title: "Reading Room",
+    info: " All students have access to our Reading Room",
     src: require("../assets/img/library.png"),
 
-    altText: "Library"
+    altText: "Reading Room"
   }
 ];
 // reactstrap components
@@ -101,6 +103,37 @@ function AboutUsPage() {
        <div className="bg-elements-2 rellax mr-5 ml-auto"  data-rellax-speed='-6' style={{ minHeight:'150px',maxWidth:' 150px',borderRadius:'20%', backgroundColor:'rgba(255, 165, 0, 0.3)',transform:'rotate(45deg)'}}></div>
        <div className="bg-elements-3 rellax  mr-auto"  data-rellax-speed='-2' style={{ zIndex:'-1000' ,marginLeft:'40vw',minHeight:'50px',maxWidth:'50px',borderRadius:'20%', backgroundColor:'rgba(255, 165, 0, 0.3)',transform:'rotate(45deg)'}}></div>
        </div> 
+       <div id="hovericonscontainer">
+        <Link to="#">
+          <i
+            id="hovericons1"
+            className="mx-2 my-3  hovericons fab fa-2x fa-instagram"
+          ></i>
+        </Link>
+        <br />
+        <Link to="#">
+          <i
+            id="hovericons2"
+            className="mx-2 my-3 hovericons fab fa-2x fa-facebook"
+          ></i>
+        </Link>
+        <br />
+        <Link to="#">
+          {" "}
+          <i
+            id="hovericons3"
+            className="mx-2 my-3 hovericons fab fa-2x fa-twitter"
+          ></i>
+        </Link>
+        <br />
+        <Link to="#">
+          <i
+            id="hovericons4"
+            className="mx-2 my-3  hovericons fab fa-2x fa-linkedin"
+          ></i>
+        </Link>
+      </div>
+
       <AboutUsNavbar />
       <div className="wrapper">
         <SecondaryPageHeader title="About Us" />
@@ -185,7 +218,7 @@ function AboutUsPage() {
               </Col>
             </Row>
           </Container>
-          <Container className="pt-2 mt-5" style={{background:'transparent',textAlign:'center'}}>
+          {/* <Container className="pt-2 mt-5" style={{background:'transparent',textAlign:'center'}}>
             <h2 className="title">Why Delhi-NCR</h2>
             <Row>
               <Col md="6">
@@ -247,6 +280,7 @@ function AboutUsPage() {
               </Col>
             </Row>
           </Container>
+         */}
           <Container style={{background:'transparent'}}>
             <Row>
               <Col className="ml-auto mr-auto text-center" md="8">

@@ -43,8 +43,28 @@ function Footer(props) {
               Outlook, Best Amenities and Yet affordable on Pocket.
                     </p>
                     <br/>    
-            </a>
-           
+            </a><Row>
+            <Col md="6" sm="6" className='px-0' style={{width:'auto'}}>
+            <a className=" " href="#" style={{textDecoration:'none'}}>
+            <div className='btn btn-light mx-auto android-btn'>
+  				<img width="50px" className="pull-left" src={require("../../assets/img/google_play.png")}  />
+            <div className="btn-text pull-right"><small>Available on</small><br/><strong>Google Play</strong>
+          </div></div></a>
+             </Col>  
+             <Col md="6" sm="6" className='px-0' style={{width:'auto'}}>
+            <a className="  px-auto" href="#" style={{textDecoration:'none'}}>
+              <div className=' btn btn-light mx-auto android-btn'>
+  				<img width="35px" className="pull-left ml-2 mr-3" src={require("../../assets/img/apple_logo.png")}/>
+            <div className="btn-text pull-right"><small>Available on</small><br/><strong>Apple Store</strong>
+          </div></div></a>
+             </Col> 
+             {/*  <
+                Col md="5" sm="5">
+                <Button color="google">
+                <i class="fab fa-google-play"></i>  Find us on Google
+                </Button>
+              </Col> */}
+              </Row>
                   </Col>
                   <Col md="4">
                     <h5>Social Feed</h5>

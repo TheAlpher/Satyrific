@@ -8,6 +8,66 @@ margin:0;
 box-sizing: border-box;
 padding: 0;
 }
+/**************/
+#preloader-img{
+  margin: auto;
+transition: all ease-in-out 4s;
+opacity: 0.3;
+}
+.pulsate1{
+  transform: scale(1.7) rotate(720deg);
+
+  opacity: 1 !important;
+}
+.pulsate2{
+  transform: scale(1) rotate(-360deg);
+  opacity: 0.3 ;
+}
+
+
+/* Pay Now button fixes*/
+.pay-now-btn,.pay-now-collapse-btn{
+ 
+  margin: 0 !important;
+  min-width: max-content;
+
+padding:5px 13px !important;
+
+  background-color: rgb(241,93,34) !important;
+}
+
+
+.pay-now-collapse-item{
+ display: none ; 
+}
+@media(max-width:990px){
+.pay-now-btn{
+  display: none !important;
+}
+.pay-now-collapse-item{
+  display:block ;
+}
+.pay-now-collapse-btn{
+font-size: small !important;
+}
+}
+/************************/
+/* Call Now button fixes*/
+.call-now-btn{
+  display:inline-block;
+  padding: 11px 11px !important;
+}
+.call-now-mini-navbar-item{
+display: none;
+}
+@media(max-width:990px){
+  .call-now-btn {
+  display: none !important;
+}
+.call-now-mini-navbar-item{
+  display:block;
+}
+}/************************/
 /*pop over event */
 .overlay-event{
   position: fixed;
@@ -36,6 +96,50 @@ background-color:rgb(255, 180, 68) !important;
   background: transparent;
   box-shadow: unset !important;
 } */
+/************************/
+
+
+/*Landing Page Header Credits*/
+.landing-page-header-credits {
+
+text-decoration: none !important;
+text-align:center ;
+     display:block;
+      
+     color:white;
+     margin:auto ; 
+     margin-top:-30px;
+     font-size:0.4rem;
+    }
+@media (max-width:990px){
+  .landing-page-header-credits {
+text-align:right ;
+  }
+}
+
+/************************/
+/*Landing Page Header Credits*/
+.secondary-page-header-credits{
+  position: absolute;
+  right:0;
+  bottom: 0;
+  font-size: 0.4rem;
+  color: white;
+  
+}
+
+/*******************/
+
+
+/*Location Carousel Controls */
+.locationcarousel-controls{
+  background: transparent !important;
+}
+.locationcarousel-controls:hover{
+border:1px solid grey !important;
+}
+
+/********************************/
 
 @media only screen and (max-width:600px) {
 #logoimage{
@@ -63,9 +167,25 @@ border: 2px solid white !important;
 transform: rotate(180deg);
     }
 
+
+    @media only screen and (max-width: 630px){
+      #clipped-div-upside img,#clipped-div img{
+        height:'170%' !important;
+      }
+            }
+
+
+
     .review-carousel .carousel-inner{
         border-radius: 3rem;
     }
+
+
+
+
+
+/*Exapnsion Panel fixes*/
+
 .MuiExpansionPanel-rounded{
     transition: all 0.5s !important;
 }
@@ -74,7 +194,7 @@ transform: rotate(180deg);
      background-color: rgba(240, 239, 239, 0.021);
         box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.3);
     }
-
+/**************/
     .wrapper{
         margin-top:5%;
         margin-bottom:5%;
@@ -90,22 +210,33 @@ transform: rotate(180deg);
         box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.3);
         transform:translateY(-10px) !important;
     }
-/*carousel bg color issue fix*/
+
+
+/*carousel general background color grey issue fix*/
+    
+
     .my-page-header::before{
         background-color: rgba(255, 255, 255, 0) !important;
     }
     .page-header::before{
       background-color: transparent !important;
     }
+    /************************/
     .my-page-header{
       max-height: 40vh !important;
     }
 
     /* pills links active golden border*/
+    .pills-links{
+      /* background-color: unset !important;
+      background:linear-gradient(to bottom right ,rgb(255, 191, 71),rgb(243, 226, 195)) !important; */
+    }
     .pills-links.active{
+      background-color: unset !important;
+      background:linear-gradient(to bottom right ,rgb(252, 162, 78),rgb(243, 226, 195)) !important;
       border:5px solid yellow;
     }
-
+ /************************/
 /*landing page top carousel  bottom curve fix */
     .mycarouselindicators{
         background-image: url('../img/Artboard7.svg');
@@ -124,9 +255,13 @@ transform: rotate(180deg);
         margin-right:0.5% !important;
         margin-left:0.5% !important;
     }
+
+     /************************/
+
+
 /* social media icons*/
 #hovericonscontainer{
-    z-index:9999999;display: block; padding:1%;position: fixed;right:0;bottom:5%
+    z-index:9999999;display: block; padding:1%;position: fixed;left:0;bottom:5%
 ;}
     .hovericons {
         transition: all 0.5s ease;
@@ -134,7 +269,7 @@ transform: rotate(180deg);
       }
     #hovericons1{
         border-radius:20%;
-        background: -webkit-linear-gradient( purple, red, gold);
+        background: linear-gradient( to bottom left,rgba(128, 0, 128, 0.515), rgba(255, 0, 0, 0.515), rgba(255, 217, 0, 0.515));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -148,8 +283,8 @@ transform: rotate(180deg);
     
       }
     #hovericons2{
-        border-radius:20%;
-        color:blue;
+        border-radius:12%;
+        color:rgba(0, 0, 255, 0.515);
     }
       #hovericons2:hover {
         transform: rotate(360deg);
@@ -159,7 +294,7 @@ transform: rotate(180deg);
     
       }
     #hovericons3{
-  border-radius:20%;color:rgb(59, 129, 233);
+  border-radius:20%;color:rgba(59, 129, 233, 0.515);
     }
       #hovericons3:hover {
         transform: rotate(360deg);
@@ -169,14 +304,14 @@ transform: rotate(180deg);
     
       }
     #hovericons4{
-    border-radius:50%;
-color:rgb(209, 68, 68);
+    border-radius:11%;
+color:rgba(28, 46, 211, 0.515);
     }
       #hovericons4:hover {
         transform: rotate(360deg);
         padding: 10%;
         color: white !important;
-        background-color: rgb(209, 68, 68) !important;
+        background-color: rgb(28, 46, 211) !important;
     
     
       }
@@ -193,6 +328,10 @@ display: none;
         } */
       }
 
+      /*Review Carousel */
+#mytestimonials{
+  background-color: rgba(209, 151, 42, 0.486);
+}
       .review-carousel-controls{
         width:'15%'
       }
@@ -209,13 +348,90 @@ margin-bottom: 1% !important;}
 .testimonials-people{
   padding: 0 !important;
 }
+
+ /************************/
       /* fix contact us section background*/
       .section-image::after {
         background-color: white !important;
       }
+/*******/
+/* #slider-container{
 
-      @media only screen and (max-width: 630px){
-#clipped-div-upside img,#clipped-div img{
-  height:'170%' !important;
 }
-      }
+.my-controls {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+
+     
+
+  display: flex;
+  align-items: center;    
+  justify-content: space-between;
+  
+
+  
+}
+.my-controls li{
+  background: rgb(216, 83, 83);
+}
+.my-controls li:hover {
+  cursor: pointer;        
+}
+.my-slider{
+  width:90%;
+} */
+
+/* Properties Page Carousel */
+.rcs_slideCon .itemWrapper{
+  margin: 0 40px !important;
+}
+.itemWrapper{
+  width:30vw  !important;
+}
+.itemWrapper img{
+  width:30vw !important;
+}
+
+.rcs_sliderBox{
+  background-color: rgba(255, 255, 255, 0) !important;
+  width: 100% !important;
+}
+.rcs_dotsSet{
+margin:auto;
+visibility: hidden;
+}
+@media (max-width:920px){
+  .itemWrapper{
+    width:60vw !important;
+  }
+  .itemWrapper img{
+    width:60vw !important;
+  }
+}
+@media (max-width:420px){
+  .itemWrapper{
+    width:100vw !important;
+  }
+  .itemWrapper img{
+    width:100vw !important;
+  }
+}
+
+/*Footer store buttons*/
+.android-btn{
+  width:100%;
+  display:flex;
+  background-color: white !important;
+text-align: center;
+/* padding-left: 0 !important;
+padding-right: 0 !important; */
+width: max-content;
+}
+.btn-text{
+color:black;
+  justify-content: center;
+}
+
+/**********************/

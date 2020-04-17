@@ -58,6 +58,37 @@ function EventsPage(props) {
   return (
     <>
       {" "}
+      <div id="hovericonscontainer">
+        <Link to="#">
+          <i
+            id="hovericons1"
+            className="mx-2 my-3  hovericons fab fa-2x fa-instagram"
+          ></i>
+        </Link>
+        <br />
+        <Link to="#">
+          <i
+            id="hovericons2"
+            className="mx-2 my-3 hovericons fab fa-2x fa-facebook"
+          ></i>
+        </Link>
+        <br />
+        <Link to="#">
+          {" "}
+          <i
+            id="hovericons3"
+            className="mx-2 my-3 hovericons fab fa-2x fa-twitter"
+          ></i>
+        </Link>
+        <br />
+        <Link to="#">
+          <i
+            id="hovericons4"
+            className="mx-2 my-3  hovericons fab fa-2x fa-linkedin"
+          ></i>
+        </Link>
+      </div>
+
       <EventsNavbar />
       <SecondaryHeader title="Events" />
       <Container id="mycontainer"></Container>

@@ -23,6 +23,8 @@ import { useHistory } from "react-router-dom";
 function BlogPost(props) {
 let [title,setTitle]=React.useState(null);
 let [author,setAuthor]=React.useState(null);
+let [event_header_bg,set_event_header_bg]=React.useState(null);
+
 let facebooklink='https://www.facebook.com/sharer/sharer.php?u=https://stayrific.in'+ props.match.url ;
  let twitterlink='http://twitter.com/share?text=Check Out this cool event!&url=https://stayrific.in'+ props.match.url +'&hashtags=Stayrific,StayTerrific';
   React.useEffect(() => {
@@ -36,6 +38,7 @@ let facebooklink='https://www.facebook.com/sharer/sharer.php?u=https://stayrific
             else{
               setTitle(res.title);
               setAuthor(res.author.displayName);
+              set_event_header_bg(res.images[0].url)
    let data=res.content;
         var template = document.createElement('div');
         template.innerHTML=data;
@@ -45,7 +48,7 @@ let facebooklink='https://www.facebook.com/sharer/sharer.php?u=https://stayrific
    }
           );
 
-console.log(props.match.params.id)
+
     document.body.classList.add("blog-post");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
@@ -58,9 +61,40 @@ console.log(props.match.params.id)
   },[]);
   return (
     <>
+    <div id="hovericonscontainer">
+        <Link to="#">
+          <i
+            id="hovericons1"
+            className="mx-2 my-3  hovericons fab fa-2x fa-instagram"
+          ></i>
+        </Link>
+        <br />
+        <Link to="#">
+          <i
+            id="hovericons2"
+            className="mx-2 my-3 hovericons fab fa-2x fa-facebook"
+          ></i>
+        </Link>
+        <br />
+        <Link to="#">
+          {" "}
+          <i
+            id="hovericons3"
+            className="mx-2 my-3 hovericons fab fa-2x fa-twitter"
+          ></i>
+        </Link>
+        <br />
+        <Link to="#">
+          <i
+            id="hovericons4"
+            className="mx-2 my-3  hovericons fab fa-2x fa-linkedin"
+          ></i>
+        </Link>
+      </div>
+
       <FixedNavbar />
       <div className="wrapper">
-        <BlogPostHeader title={title} author={author}/>
+        <BlogPostHeader title={title} author={author} bg={event_header_bg}/>
         <div className="section">
           <Container>
             <Row>

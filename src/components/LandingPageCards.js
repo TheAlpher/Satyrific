@@ -57,14 +57,14 @@ function LandingPageCards(props){
           var cardWidth = rotatingCard.parentElement.offsetWidth;
           var cardHeight = rotatingCard.children[0].children[0].offsetHeight;
           rotatingWrapper.style.height = cardHeight + "px";
-          rotatingWrapper.style["margin-bottom"] = 30 + "px";
+          rotatingWrapper.style["margin-bottom"] = 0 + "px";
           cardFront.style.height = "unset";
           cardFront.style.width = "unset";
           cardBack.style.height = "unset";
           cardBack.style.width = "unset";
-          cardFront.style.height = cardHeight + 35 + "px";
+          cardFront.style.height = cardHeight + 10 + "px";
           cardFront.style.width = cardWidth + "px";
-          cardBack.style.height = cardHeight + 35 + "px";
+          cardBack.style.height = cardHeight + 10 + "px";
           cardBack.style.width = cardWidth + "px";
         }
       };
@@ -76,7 +76,7 @@ function LandingPageCards(props){
         <GridContainer className="my-2 py-3">
         {props.items.map(item => {
               return (
-          <GridItem data-aos="zoom-in-up" className='my-2 py-2 px-1' xs={6} sm={6} md={6} lg={4}
+          <GridItem data-aos="zoom-in-up" className='my-1 py-1 px-1' xs={6} sm={6} md={6} lg={4}
           key={item.src}>
             <div className={classes.rotatingCardContainer}>
               <Card className={classes.cardRotate}>
@@ -94,7 +94,7 @@ function LandingPageCards(props){
                     <img
                       className="mx-auto my-auto"
                       src={item.src}
-                      width="80%"
+                      width="70%"
                       alt={item.altText}
                     />
                     {/* <Success>
@@ -122,7 +122,7 @@ function LandingPageCards(props){
                     style={{ border: "1px solid orange" }}
                   >
          
-                    <p className={classes.cardDescription}>
+                    <p className={classes.cardDescription} style={{fontSize:'medium'}}>
                      {item.info}
                     </p>
                     {/* <div className={classes.textCenter}>

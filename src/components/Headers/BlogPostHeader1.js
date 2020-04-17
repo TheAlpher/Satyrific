@@ -26,7 +26,11 @@ function BlogPostHeader(props) {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/bg24.jpg") + ")"
+            backgroundImage: "url(" +
+            //  require("assets/img/bg24.jpg")
+             props.bg
+             + ")",
+             backgroundPosition:'center'
           }}
           ref={pageHeader}
         ></div>

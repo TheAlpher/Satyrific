@@ -34,7 +34,7 @@ import {
                       <Container className="text-center">
                   
               <Row style={{justifyContent:'center',display:'flex'}}>
-                <Col md="3" sm='4' xs='4'>
+                <Col md="3" sm='4' xs='4' >
                  
                  
                   {/* <Button
@@ -46,24 +46,13 @@ import {
                     <i className="fab fa-twitter"></i>
                   </Button>
                  */}
-                 <img data-aos="zoom-in-up" data-aos-duration='500' src={require('assets/img/hostel1.png')}/>
+                 <a href='/properties/Satya Niketan' style={{textDecoration:'none'}}>
+                 <img  
+
+                 data-aos="zoom-in-up" data-aos-duration='500' src={require('assets/img/hostel1.png')}/></a>
                  <CardTitle data-aos="zoom-in-up" data-aos-duration='500' tag='h4'  className='text-center' style={{color:'black',marginTop:0,marginBottom:0}}>Satya Niketan </CardTitle>
                 </Col>
-                <Col md="3" sm='4' xs='4'>
-                 
-                 
-                 {/* <Button
-                   className="btn-neutral btn-icon btn-footer"
-                   color="twitter"
-                   href="#pablo"
-                   onClick={e => e.preventDefault()}
-                 >
-                   <i className="fab fa-twitter"></i>
-                 </Button>
-                */}
-                <img data-aos="zoom-in-up" data-aos-duration='500' src={require('assets/img/hostel2.png')}/>
-                <CardTitle data-aos="zoom-in-up" data-aos-duration='500' tag='h4'  className='text-center' style={{color:'black',marginTop:0,marginBottom:0}}>Noida </CardTitle>
-               </Col>
+    
             
              
               </Row>
@@ -85,7 +74,22 @@ import {
                       <Container className="text-center">
                   
               <Row style={{justifyContent:'center',display:'flex'}}>
-                <Col md="3" sm='3' xs='4' xs='4'>
+              <Col md="3" sm='3' xs='3' className='px-0'>
+                 
+                 
+                 {/* <Button
+                   className="btn-neutral btn-icon btn-footer"
+                   color="twitter"
+                   href="#pablo"
+                   onClick={e => e.preventDefault()}
+                 >
+                   <i className="fab fa-twitter"></i>
+                 </Button>
+                */}
+                <img data-aos="zoom-in-up" data-aos-duration='500' src={require('assets/img/hostel2.png')}/>
+                <CardTitle data-aos="zoom-in-up" data-aos-duration='500' tag='h4'  className='text-center' style={{color:'black',marginTop:0,marginBottom:0}}>Noida </CardTitle>
+               </Col>
+                <Col md="3" sm='3' xs='3' className='px-0'>
                  
                  
                   {/* <Button
@@ -100,7 +104,7 @@ import {
                  <img data-aos="zoom-in-up" data-aos-duration='500' src={require('assets/img/hostel1.png')}/>
                  <CardTitle data-aos="zoom-in-up" data-aos-duration='500' tag='h4'  className='text-center' style={{color:'black',marginTop:0,marginBottom:0}}>Pune </CardTitle>
                 </Col>
-                <Col md="3" sm='3' xs='4' xs='4'>
+                <Col md="3" sm='3'  xs='3'className='px-0'>
                  
                  
                  {/* <Button
@@ -113,9 +117,9 @@ import {
                  </Button>
                 */}
                 <img data-aos="zoom-in-up" data-aos-duration='500' src={require('assets/img/hostel2.png')}/>
-                <CardTitle data-aos="zoom-in-up" data-aos-duration='500' tag='h4'  className='text-center' style={{color:'black',marginTop:0,marginBottom:0}}>Colombo </CardTitle>
+                <CardTitle data-aos="zoom-in-up" data-aos-duration='500' tag='h5'  className='text-center' style={{color:'black',marginTop:0,marginBottom:0}}>Colombo </CardTitle>
                </Col>
-               <Col md="3" sm='3' xs='4' xs='4'>
+               <Col md="3" sm='3' xs='3'className='px-0'>
                  
                  
                  {/* <Button
@@ -144,7 +148,7 @@ import {
     }
   ];
   AOS.init();
-const MyHeader =()=>{
+const MyHeader =(props)=>{
     const [navbarOpen1, setNavbarOpen1] = React.useState(false);
     const [navbarOpen2, setNavbarOpen2] = React.useState(false);
     const [navbarOpen3, setNavbarOpen3] = React.useState(false);
@@ -167,6 +171,9 @@ const MyHeader =()=>{
       const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
       setActiveIndex(nextIndex);
     };
+    var property_page_render=()=>{
+
+    }
     const goToIndex = newIndex => {
       if (animating) return;
       setActiveIndex(newIndex);
@@ -225,7 +232,7 @@ next={next} previous={previous}
               role="button"
             >
 
-              <div className="now-ui-icons arrows-1_minimal-left" style={{ backgroundColor:'white', borderRadius:'50%', border:'1px solid grey',color:'black',fontWeight:'bolder',padding:'10%'}} />
+              <div className="now-ui-icons arrows-1_minimal-left locationcarousel-controls" style={{ backgroundColor:'white', borderRadius:'50%', border:'1px solid transparent',color:'black',fontWeight:'bolder',padding:'10%'}} />
           
             </a>
             <a
@@ -240,7 +247,7 @@ next={next} previous={previous}
               role="button"
             >
               
-              <div className="now-ui-icons arrows-1_minimal-right" style={{ backgroundColor:'white', borderRadius:'50%', border:'1px solid grey',color:'black',fontWeight:'bolder',padding:'10%'}} />
+              <div className="now-ui-icons arrows-1_minimal-right locationcarousel-controls" style={{ backgroundColor:'white', borderRadius:'50%', border:'1px solid transparent',color:'black',fontWeight:'bolder',padding:'10%'}} />
           
             </a>
           </Carousel>

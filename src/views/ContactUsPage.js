@@ -147,7 +147,38 @@ function ContactUsPage(props) {
        <div className="bg-elements-1 rellax  ml-5 mr-auto"  data-rellax-speed="-7" style={{minHeight:'100px',maxWidth:'100px',borderRadius:'20%', backgroundColor:'rgba(255, 165, 0, 0.3)',transform:'rotate(45deg)'}}></div> 
        <div className="bg-elements-2 rellax mr-5 ml-auto"  data-rellax-speed='-3' style={{ minHeight:'150px',maxWidth:' 150px',borderRadius:'20%', backgroundColor:'rgba(255, 165, 0, 0.3)',transform:'rotate(45deg)'}}></div>
        <div className="bg-elements-3 rellax  mr-auto"  data-rellax-speed='10' style={{ zIndex:'-1000' ,marginLeft:'40vw',minHeight:'50px',maxWidth:'50px',borderRadius:'20%', backgroundColor:'rgba(255, 165, 0, 0.3)',transform:'rotate(45deg)'}}></div>
-       </div>      <ContactUsNavbar />
+       </div>      
+       <div id="hovericonscontainer">
+        <Link to="#">
+          <i
+            id="hovericons1"
+            className="mx-2 my-3  hovericons fab fa-2x fa-instagram"
+          ></i>
+        </Link>
+        <br />
+        <Link to="#">
+          <i
+            id="hovericons2"
+            className="mx-2 my-3 hovericons fab fa-2x fa-facebook"
+          ></i>
+        </Link>
+        <br />
+        <Link to="#">
+          {" "}
+          <i
+            id="hovericons3"
+            className="mx-2 my-3 hovericons fab fa-2x fa-twitter"
+          ></i>
+        </Link>
+        <br />
+        <Link to="#">
+          <i
+            id="hovericons4"
+            className="mx-2 my-3  hovericons fab fa-2x fa-linkedin"
+          ></i>
+        </Link>
+      </div>
+<ContactUsNavbar />
       <div className="wrapper">
         <SecondaryPageHeader title="Contact Us" />
         <div className="cd-section mt-5 pt-5" id="contact-us" style={{background:'transparent'}}>
@@ -200,6 +231,7 @@ function ContactUsPage(props) {
                               </InputGroupText>
                             </InputGroupAddon>
                             <Input
+                            required={true}
                               aria-label="First Name..."
                               autoComplete="given-name"
                               placeholder="First Name..."
@@ -221,6 +253,7 @@ function ContactUsPage(props) {
                                 </InputGroupText>
                               </InputGroupAddon>
                               <Input
+                              required={true}
                                 aria-label="Last Name..."
                                 autoComplete="family-name"
                                 placeholder="Last Name..."
@@ -240,7 +273,7 @@ function ContactUsPage(props) {
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
-                          required='true'
+                          required={true}
                             // autoComplete="phone"
                             placeholder="12345-67890"
                             pattern="[0-9]{5}-[0-9]{5}"
@@ -253,6 +286,7 @@ function ContactUsPage(props) {
                       <FormGroup>
                         <label>Your message</label>
                         <Input
+                        required={true}
                           id="message"
                           name="message"
                           rows="6"

@@ -182,7 +182,10 @@ function Pills(props) {
             What do you really look for when you are in a new city away from home, friends and family? Well, you look for exactly what you are away from. In a nutshell, that is what Stayrific is all about.
           </CardTitle>
           <CardTitle data-aos="zoom-in-up" data-aos-duration='1000' tag='h3'  className='text-center mt-3 pt-3' style={{color:'danger'}}>
-         We're the cool <b> CATS </b>
+         We're the cool 
+          </CardTitle>
+          <CardTitle data-aos="zoom-in-up" data-aos-duration='1000' tag='h1'  className='text-center my-0 py-0' style={{color:'rgb(241,93,34)'}}>
+         CATS
           </CardTitle>
             <Row>
      
@@ -206,7 +209,7 @@ function Pills(props) {
                       style={{display:'block',textAlign:"center", textDecoration:'none',fontSize:'larger',border:'1px solid grey',color:'black',borderRadius:'10px ',paddingRight:'3.5vh ',paddingLeft:'3.5vh ',paddingTop:'30px',paddingBottom:'30px',backgroundColor:'white'}}
                     >
                      <img className='px-auto mx-auto' align='middle' src={require('../assets/img/temp13.svg')}/>
-                   <p className='mx-auto my-0 py-0'style={{fontFamily:'Lato',fontWeight:'bold'}}>  <b>C</b>ommunity</p>
+                   <p className='mx-auto my-0 py-0'style={{fontFamily:'Lato',fontWeight:'bold',background:'transparent'}}>  <b style={{color:'rgb(241,93,34)'}}>C</b>ommunity</p>
                     </Link>
                   </NavItem>
                 
@@ -223,7 +226,7 @@ function Pills(props) {
                       style={{display:'block',textAlign:"center", textDecoration:'none',fontSize:'larger',border:'1px solid grey',color:'black',borderRadius:'10px ',paddingRight:'4.4vh ',paddingLeft:'4.4vh ',paddingTop:'30px',paddingBottom:'30px',backgroundColor:'white'}}
                     >
                      <img className='px-auto mx-auto' align='middle' src={require('../assets/img/temp14.svg')}/>
-                   <p className='mx-auto my-0 py-0'style={{fontFamily:'Lato',fontWeight:'bold'}}>  <b>A</b>menities</p>
+                   <p className='mx-auto my-0 py-0'style={{fontFamily:'Lato',fontWeight:'bold',background:'transparent'}}>  <b style={{color:'rgb(241,93,34)'}}>A</b>menities</p>
                     </Link>
                   </NavItem>
                 
@@ -239,7 +242,7 @@ function Pills(props) {
                       style={{display:'block',textAlign:"center", textDecoration:'none',fontSize:'larger',border:'1px solid grey',color:'black',borderRadius:'10px ',paddingRight:'3.5vh ',paddingLeft:'3.5vh ',paddingTop:'30px',paddingBottom:'30px',backgroundColor:'white'}}
                     >
                      <img className='px-auto mx-auto' align='middle' src={require('../assets/img/temp15.svg')}/>
-                   <p className='mx-auto my-0 py-0'style={{fontFamily:'Lato',fontWeight:'bold'}}>  <b>T</b>echnology</p>
+                   <p className='mx-auto my-0 py-0'style={{fontFamily:'Lato',fontWeight:'bold',background:'transparent'}}>  <b style={{color:'rgb(241,93,34)'}}>T</b>echnology</p>
                     </Link>
                   </NavItem>
                 
@@ -256,7 +259,7 @@ function Pills(props) {
                       style={{display:'block',textAlign:"center", textDecoration:'none',fontSize:'larger',border:'1px solid grey',color:'black',borderRadius:'10px ',paddingRight:'5.2vh ',paddingLeft:'5.2vh ',paddingTop:'30px',paddingBottom:'30px',backgroundColor:'white'}}
                     >
                      <img className='px-auto mx-auto' align='middle' src={require('../assets/img/temp11.svg')}/>
-                   <p className='mx-auto my-0 py-0'style={{fontFamily:'Lato',fontWeight:'bold'}}>  <b>S</b>ecurity</p>
+                   <p className='mx-auto my-0 py-0'style={{fontFamily:'Lato',fontWeight:'bold',background:'transparent'}}>  <b style={{color:'rgb(241,93,34)'}}>S</b>ecurity</p>
                     </Link>
                   </NavItem>
                 

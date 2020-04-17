@@ -1,7 +1,7 @@
 @media screen and (max-width: 991px){
   .sidebar-collapse .navbar-collapse:before {
     background: $info-color;
-    background: linear-gradient(rgb(241,93,34),rgb(255, 255, 255) 80%);
+    background: linear-gradient(rgb(241,93,34),rgb(255, 255, 255) 80%) !important;
   }
   .navbar-nav .dropdown-menu {
     position: static !important;

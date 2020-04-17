@@ -4,9 +4,31 @@ import React from "react";
 import { Container } from "reactstrap";
 
 // core components
+let headerbg=[{
+  src:  require("../../assets/img/lpage_header_2.jpg") ,
+  creditTag:(<a className='secondary-page-header-credits' href="https://www.freepik.com/free-photos-vectors/house">House vector created by vectorpouch - www.freepik.com</a>)
+},
+{
+  src:  require("../../assets/img/lpage_header_3.jpg") ,
+  creditTag:(<a  className='secondary-page-header-credits' href="https://www.freepik.com/free-photos-vectors/abstract">Abstract vector created by macrovector - www.freepik.com</a>)
+},
+{
+  src:  require("../../assets/img/lpage_header_1.jpg") ,
+  creditTag:(<a className='secondary-page-header-credits' href="https://www.freepik.com/free-photos-vectors/travel">Travel photo created by rawpixel.com - www.freepik.com</a>)
+},
+{
+src: require('../../assets/img/lpage_header_4.jpg'),
+creditTag:(<a className='secondary-page-header-credits' href="https://www.freepik.com/free-photos-vectors/abstract">Abstract vector created by macrovector - www.freepik.com</a>)
+},
+{
+  src: require('../../assets/img/lpage_header_5.jpg'),
+  creditTag:(<a className='secondary-page-header-credits'  href="https://www.freepik.com/free-photos-vectors/house">House vector created by vectorpocket - www.freepik.com</a>)
+}]
+
 
 function AmenitiesPageHeader(props) {
   let pageHeader = React.createRef();
+  let x=Math.floor(Math.random() * 5);
   React.useEffect(() => {
     let x=991;
 
@@ -34,10 +56,12 @@ function AmenitiesPageHeader(props) {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/bg5.jpg") + ")"
+            backgroundImage: "url(" + headerbg[x].src + ")"
           }}
           ref={pageHeader}
-        ></div>
+        >
+         
+        </div>
         <Container>
           {/* <div className="photo-container">
             <img alt="..." src={require("assets/img/ryan.jpg")}></img>
@@ -62,6 +86,7 @@ function AmenitiesPageHeader(props) {
         */}
        
         </Container>
+        {headerbg[x].creditTag}
       </div>
     </>
   );

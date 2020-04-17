@@ -1,5 +1,5 @@
 {
-  "name": "aaknew",
+  "name": "Stayrific",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,11 +11,14 @@
     "moment": "2.24.0",
     "node-sass": "4.12.0",
     "nouislider": "14.0.2",
+    "owl.carousel": "^2.3.4",
     "react": "16.8.6",
     "react-bootstrap-switch": "15.5.3",
+    "react-carousel-slider": "^2.0.13",
     "react-datetime": "2.16.3",
     "react-dom": "16.8.6",
     "react-google-maps": "^9.4.5",
+    "react-lottie": "^1.2.3",
     "react-router": "5.0.1",
     "react-router-dom": "5.0.1",
     "react-scripts": "3.0.1",
@@ -25,7 +28,8 @@
     "react-select": "3.0.4",
     "react-tagsinput": "3.19.0",
     "reactstrap": "8.0.1",
-    "rellax": "1.10.0"
+    "rellax": "1.10.0",
+    "tiny-slider": "^2.9.2"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -26,6 +26,7 @@ import EventPage from 'views/EventPage.js';
 import FaqPage from 'views/FAQPage.js';
 import WorkWithUs from 'views/WorkWithUsPage.js';
 import OurNews from 'views/OurNewsPage';
+import PropertiesPage from 'views/PropertiesPage';
 // import ProductsPage from "views/ProductsPage.js";
 // import LoginPage from "views/examples/LoginPage.js";
 // import NucleoIcons from "views/NucleoIcons.js";
@@ -51,7 +52,7 @@ ReactDOM.render(<React.Fragment>
 <Route path='/faq' render={props =><FaqPage {...props}/>}/>
 <Route path='/work-with-us' render={props =><WorkWithUs {...props}/>}/>
 <Route path='/our-news' render={props =><OurNews {...props}/>}/>
-
+<Route path='/properties/:location' render={props=><PropertiesPage{...props}/>}/>
 
       
 {/* 

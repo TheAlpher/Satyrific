@@ -103,10 +103,10 @@ React.useEffect(()=>{
                 className="tab-space mt-3"
                 activeTab={"iconHorizontalTabs" + iconHorizontalTabs}
               >
-                <TabPane tabId="iconHorizontalTabs1" unmountOnExit='false'>
+                <TabPane tabId="iconHorizontalTabs1" >
                 <LandingCards items={props.items} />
                 </TabPane>
-                <TabPane tabId="iconHorizontalTabs2" transition='true'>
+                <TabPane tabId="iconHorizontalTabs2" >
                 <LandingCards items={props.items1}/> 
                                  </TabPane>
               </TabContent>
