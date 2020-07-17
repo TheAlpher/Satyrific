@@ -1,4 +1,4 @@
-import React from "react";
+import React,{Component} from "react";
 import {Link} from 'react-router-dom';
 import Rellax from "rellax";
 import {
@@ -35,8 +35,9 @@ import {
   } from "react-google-maps";
 import DefaultNavbar from "components/Navbars/DefaultPageNavbar.js";
 import SecondaryPageHeader from "components/Headers/SecondaryPageHeader.js";
-
+import axios from 'axios';
 import Footer from 'components/Footers/Myfooter';
+
 const MapWrapper = withScriptjs(
     withGoogleMap(props => (
       <GoogleMap
@@ -124,24 +125,86 @@ const MapWrapper = withScriptjs(
       </GoogleMap>
     ))
   );
-function FAQPage(props) {
-    const [first1Focus, setFirst1Focus] = React.useState(false);
-    const [last1Focus, setLast1Focus] = React.useState(false);
-    const [email1Focus, setEmail1Focus] = React.useState(false);
-    const [first2Focus, setFirst2Focus] = React.useState(false);
-    const [email2Focus, setEmail2Focus] = React.useState(false);
-    React.useEffect(()=>{
-        // if (window.innerWidth >= 801) {
-        //     setTimeout(function() {
-        //       new Rellax(".rellax", {
-        //         center: false
-        //       });
-        //     }, 100);
-        //     new Rellax(".rellax-header");
-        //     new Rellax(".rellax-text");
-        //   }
-      
-    })
+
+
+class FAQPage extends Component{
+  constructor(props){
+    super(props);
+    this.state={
+      email1Focus:false,
+      first1Focus:false,
+      last1Focus:false,
+      firstname:'',
+      lastname:'',
+      message:'',
+      phone:'',
+      email:'',
+    }
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+
+    const name = target.name;
+
+    this.setState({
+        [name]: value
+    });
+    //this.setState({post: {[name]: value}})
+
+}
+
+handleSubmit(event) {
+  event.preventDefault();
+  console.log("submitting")
+  let post = {name: this.state.firstname+ ' '+ this.state.lastname, message: this.state.message,email:this.state.email,phone:this.state.phone,type:'work',sender: "stayrificWebsite" };
+  // createPost(post).then(res => console.log(res));
+console.log(post)
+
+axios.post('https://us-central1-website-d02cf.cloudfunctions.net/mailer',post).then((res)=>{
+
+if(res.status==200){
+  document.getElementById('work-form-error').style.color='green'; 
+  document.getElementById('work-form-error').style.textAlign='center';
+  document.getElementById('work-form-error').style.opacity=1; 
+  document.getElementById('work-form-error').innerHTML="Request Sent Successfully"
+setTimeout(function(){
+
+document.getElementById('work-form-error').style.opacity=0;
+return;},1800)
+
+
+this.setState({
+  firstname:'',
+  lastname:'',
+  message:'',
+  phone:'',
+  email:''
+
+})
+}
+else{
+  document.getElementById('work-form-error').style.opacity=1; 
+  document.getElementById('work-form-error').style.textAlign='center';
+  document.getElementById('work-form-error').innerHTML="Request Attempt Failed ,Try Again";
+  setTimeout(function(){
+
+    document.getElementById('work-form-error').style.opacity=0;
+    return;},1800)
+    
+
+}  
+
+
+})
+}
+   
+    
+render(){
   return (
     <>
     <div id="hovericonscontainer">
@@ -183,7 +246,11 @@ function FAQPage(props) {
       <div className="wrapper">
         <SecondaryPageHeader title="Work With Us" />
 <div className='wrapper'>
-<Container>    <Form id="contact-form1" method="post" role="form">
+<Container>   
+  
+   <Form id="contact-form1"  onSubmit={this.handleSubmit}
+  //  onSubmit={()=>{formsubmit()}}
+     >
                     <CardHeader className="text-center">
                       <CardTitle tag="h4">Let us Know</CardTitle>
                     </CardHeader>
@@ -192,7 +259,7 @@ function FAQPage(props) {
                         <Col className="pr-2" md="6">
                           <label>First name</label>
                           <InputGroup
-                            className={first1Focus ? "input-group-focus" : ""}
+                            className={this.state.first1Focus ? "input-group-focus" : ""}
                           >
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
@@ -205,8 +272,11 @@ function FAQPage(props) {
                               autoComplete="given-name"
                               placeholder="First Name..."
                               type="text"
-                              onFocus={() => setFirst1Focus(true)}
-                              onBlur={() => setFirst1Focus(false)}
+                              name='firstname'
+                              value={this.state.firstname}
+                              onChange={this.handleInputChange}
+                              onFocus={() => this.setState({first1Focus:true})}
+                              onBlur={() => this.setState({first1Focus:false})}
                             ></Input>
                           </InputGroup>
                         </Col>
@@ -214,7 +284,7 @@ function FAQPage(props) {
                           <FormGroup>
                             <label>Last name</label>
                             <InputGroup
-                              className={last1Focus ? "input-group-focus" : ""}
+                              className={this.state.last1Focus ? "input-group-focus" : ""}
                             >
                               <InputGroupAddon addonType="prepend">
                                 <InputGroupText>
@@ -227,8 +297,11 @@ function FAQPage(props) {
                                 autoComplete="family-name"
                                 placeholder="Last Name..."
                                 type="text"
-                                onFocus={() => setLast1Focus(true)}
-                                onBlur={() => setLast1Focus(false)}
+                                value={this.state.lastname}
+                                name='lastname'
+                                onChange={this.handleInputChange}
+                                onFocus={() => this.setState({last1Focus:true})}
+                                onBlur={() => this.setState({last1Focus:false})}
                               ></Input>
                             </InputGroup>
                           </FormGroup>
@@ -237,7 +310,7 @@ function FAQPage(props) {
                       <FormGroup>
                         <label>Email address</label>
                         <InputGroup
-                          className={email1Focus ? "input-group-focus" : ""}
+                          className={this.state.email1Focus ? "input-group-focus" : ""}
                         >
                           <InputGroupAddon addonType="prepend">
                             <InputGroupText>
@@ -249,15 +322,20 @@ function FAQPage(props) {
                             autoComplete="email"
                             placeholder="Email Here..."
                             type="email"
-                            onFocus={() => setEmail1Focus(true)}
-                            onBlur={() => setEmail1Focus(false)}
+                            value={this.state.email}
+                            name='email'
+                            onChange={this.handleInputChange}
+                            onFocus={() => this.setState({email1Focus:true})}
+                            onBlur={() =>this.setState({email1Focus:false})}
                           ></Input>
                         </InputGroup>
                       </FormGroup>
+                  
+                  
                       <FormGroup>
                         <label>Contact Number</label>
                         <InputGroup
-                          className={email1Focus ? "input-group-focus" : ""}
+                          className={this.state.email1Focus ? "input-group-focus" : ""}
                         >
                           <InputGroupAddon addonType="prepend">
                             <InputGroupText>
@@ -267,11 +345,15 @@ function FAQPage(props) {
                           <Input
                           required={true}
                             // autoComplete="phone"
-                            placeholder="12345-67890"
-                            pattern="[0-9]{5}-[0-9]{5}"
+                            placeholder="Contact No."
+                            maxLength="10"
+                            minLength='10'
                             type="tel"
-                            onFocus={() => setEmail1Focus(true)}
-                            onBlur={() => setEmail1Focus(false)}
+                            name='phone'
+                            value={this.state.phone}
+                            onChange={this.handleInputChange}
+                            onFocus={() => this.setState({email1Focus:true})}
+                            onBlur={() =>this.setState({email1Focus:false})}
                           ></Input>
                         </InputGroup>
                       </FormGroup>
@@ -282,29 +364,24 @@ function FAQPage(props) {
                           id="message"
                           name="message"
                           rows="6"
+                          value={this.state.message}
                           type="textarea"
                           placeholder='Why ?'
+                          onChange={this.handleInputChange}
                           required={true}
                         ></Input>
                       </FormGroup>
                     
-          
+          <div id='work-form-error' tyle={{color:'red', textAlign:'center', width:'100%'}}>&nbsp;</div>
                       <Row>
-                        {/* <Col md="6">
-                      <FormGroup check>
-            <Label check>
-              <Input type="checkbox"></Input>
-             I understand the Terms and Conditions {" "}
-              <span className="form-check-sign">
-                <span className="check"></span>
-              </span>
-            </Label>
-          </FormGroup></Col> */}
+
                         <Col md="12">
                           <Button
                             className="btn-round pull-right"
                             color="info"
-                            type="submit"
+                       type='submit'
+                       id='work-form-send'
+                      
                           >
                             Send It !
                           </Button>
@@ -317,5 +394,6 @@ function FAQPage(props) {
       <Footer/>
     </>
   );
+}
 }
 export default FAQPage;

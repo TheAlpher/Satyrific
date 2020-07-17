@@ -12,7 +12,7 @@ code {
     monospace;
 } */
 body{
-  font-family: 'Lato !important';
+  font-family: 'Lato', 'Montserrat' ,"Helvetica Neue", Arial, sans-serif !important;
   scroll-behavior: smooth;
   width: 100vw;
 }

@@ -30,7 +30,8 @@ import {
 
 // core components
 
-import AboutUsNavbar from "components/Navbars/AboutUsPageNavbar.js";
+
+import DefaultNavbar from "components/Navbars/DefaultPageNavbar.js";
 import SecondaryPageHeader from "components/Headers/SecondaryPageHeader.js";
 import Footer from 'components/Footers/Myfooter';
 
@@ -98,7 +99,7 @@ function AboutUsPage() {
   });
   return (
     <>
-      <div className='bg-elements ' style={{height:0,width:'100%',marginTop:"30vh", position:'absolute',zIndex:'-1000'}}>
+      <div className='bg-elements ' style={{height:0,width:'100%',marginTop:"20vh", position:'absolute',zIndex:'-1000'}}>
        <div className="bg-elements-1 rellax  ml-5 mr-auto"  data-rellax-speed="-4" style={{minHeight:'100px',maxWidth:'100px',borderRadius:'20%', backgroundColor:'rgba(255, 165, 0, 0.3)',transform:'rotate(45deg)'}}></div> 
        <div className="bg-elements-2 rellax mr-5 ml-auto"  data-rellax-speed='-6' style={{ minHeight:'150px',maxWidth:' 150px',borderRadius:'20%', backgroundColor:'rgba(255, 165, 0, 0.3)',transform:'rotate(45deg)'}}></div>
        <div className="bg-elements-3 rellax  mr-auto"  data-rellax-speed='-2' style={{ zIndex:'-1000' ,marginLeft:'40vw',minHeight:'50px',maxWidth:'50px',borderRadius:'20%', backgroundColor:'rgba(255, 165, 0, 0.3)',transform:'rotate(45deg)'}}></div>
@@ -133,16 +134,16 @@ function AboutUsPage() {
           ></i>
         </Link>
       </div>
-
-      <AboutUsNavbar />
+<DefaultNavbar activelink='About Us'/>
+   
       <div className="wrapper">
         <SecondaryPageHeader title="About Us" />
         <div className="section" style={{background:'transparent'}}>
           <Container style={{background:'transparent'}}>
-            <h3 className="title" style={{textAlign:'center'}}>Stay Terrific</h3>
+            <h3 className="title" style={{textAlign:'center',color:'#4c4a4a'}}>Stay Terrific</h3>
             <h5
               className="description text-center"
-              style={{ fontFamily: "Lato" }}
+              style={{ fontFamily: "Lato, Montserrat,Helvetica Neue, Arial, sans-serif",color:'#4c4a4a' }}
             >
               As the name suggests Stayrific is a provider of Student Housing &
               Living Solutions with World Class, Tech Enabled, Neo & Vibrant
@@ -158,7 +159,7 @@ function AboutUsPage() {
                   src={require("../assets/img/temp12.png")}
                 ></img>
               </Col>
-              <Col className=" pr-5 ml-auto text-center" md="6">
+              <Col className=" pr-5 ml-auto text-center " style={{paddingTop:'8%'}} md="6">
                 <h2
                   data-aos="fade-up"
                   className="title"
@@ -169,7 +170,7 @@ function AboutUsPage() {
                 <h5
                   data-aos="fade-down"
                   className="description"
-                  style={{ fontSize: "1.3rem", fontFamily: "Lato" }}
+                  style={{ fontSize: "1.3rem", fontFamily: "Lato, Montserrat,Helvetica Neue, Arial, sans-serif",color:'#4c4a4a' }}
                 >
                   Offer superior living experience to college students across
                   the Length and Breadth of Indian Sub-Continent by leveraging
@@ -283,9 +284,9 @@ function AboutUsPage() {
          */}
           <Container style={{background:'transparent'}}>
             <Row>
-              <Col className="ml-auto mr-auto text-center" md="8">
+              <Col className="ml-auto mr-auto text-center" md="12">
                 <h2 className="title">The Team </h2>
-                <h4 className="description">
+                <h4 className="description" style={{color:'#4c4a4a'}}>
                   We are an experienced team with a total work experience of 50
                   Years, from Varied Verticals with Customer First, Think Big
                   and Bias for Action always being displayed. We are absolutely

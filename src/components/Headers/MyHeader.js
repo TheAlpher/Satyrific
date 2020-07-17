@@ -104,7 +104,7 @@ import {
                  <img data-aos="zoom-in-up" data-aos-duration='500' src={require('assets/img/hostel1.png')}/>
                  <CardTitle data-aos="zoom-in-up" data-aos-duration='500' tag='h4'  className='text-center' style={{color:'black',marginTop:0,marginBottom:0}}>Pune </CardTitle>
                 </Col>
-                <Col md="3" sm='3'  xs='3'className='px-0'>
+                {/* <Col md="3" sm='3'  xs='3'className='px-0'>
                  
                  
                  {/* <Button
@@ -115,7 +115,7 @@ import {
                  >
                    <i className="fab fa-twitter"></i>
                  </Button>
-                */}
+                
                 <img data-aos="zoom-in-up" data-aos-duration='500' src={require('assets/img/hostel2.png')}/>
                 <CardTitle data-aos="zoom-in-up" data-aos-duration='500' tag='h5'  className='text-center' style={{color:'black',marginTop:0,marginBottom:0}}>Colombo </CardTitle>
                </Col>
@@ -130,12 +130,12 @@ import {
                  >
                    <i className="fab fa-twitter"></i>
                  </Button>
-                */}
+               
                 <img data-aos="zoom-in-up" data-aos-duration='500' src={require('assets/img/hostel3.png')}/>
                 <CardTitle data-aos="zoom-in-up" data-aos-duration='500' tag='h4'  className='text-center' style={{color:'black',marginTop:0,marginBottom:0}}> Lagos </CardTitle>
                </Col>
         
-             
+              */}
               </Row>
             
                       </Container>

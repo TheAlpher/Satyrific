@@ -87,7 +87,7 @@ function PropertiesPageCards(props){
                   >
                                <h5
                       className={classes.cardTitle + 'cardtitle pt-2'}
-                      style={{ fontFamily: "Lato",textAlign:'center' }}
+                      style={{ fontFamily: "Lato, Montserrat, Helvetica Neue, Arial, sans-serif " , textAlign:'center' }}
                     >
                       {item.title}
                     </h5>
@@ -122,7 +122,7 @@ function PropertiesPageCards(props){
                     style={{ border: "1px solid orange" }}
                   >
          
-                    <p className={classes.cardDescription} style={{fontSize:'medium'}}>
+                    <p className={classes.cardDescription} style={{fontSize:'medium',color:'#4c4a4a'}}>
                      {item.info}
                     </p>
                     {/* <div className={classes.textCenter}>

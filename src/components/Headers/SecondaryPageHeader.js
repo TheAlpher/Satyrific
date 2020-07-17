@@ -24,11 +24,11 @@ creditTag:(<a className='secondary-page-header-credits' href="https://www.freepi
   src: require('../../assets/img/lpage_header_5.jpg'),
   creditTag:(<a className='secondary-page-header-credits'  href="https://www.freepik.com/free-photos-vectors/house">House vector created by vectorpocket - www.freepik.com</a>)
 }]
-
+let x=Math.floor(Math.random() * 5);
 
 function AmenitiesPageHeader(props) {
   let pageHeader = React.createRef();
-  let x=Math.floor(Math.random() * 5);
+
   React.useEffect(() => {
     let x=991;
 
@@ -67,7 +67,7 @@ function AmenitiesPageHeader(props) {
             <img alt="..." src={require("assets/img/ryan.jpg")}></img>
           </div> */}
           
-          <h1 className="title"><u>{props.title}</u></h1>
+          <h1 className="title">{props.title}</h1>
           {/* <p className="category">Photographer</p>
           <div className="content">
             <div className="social-description">
@@ -86,9 +86,11 @@ function AmenitiesPageHeader(props) {
         */}
        
         </Container>
+        <div id="clipped-div-upside" style={{height:'8vh',position:'absolute', bottom:0,zIndex:'1000',
+          width:'100%',
+      backgroundImage:"url("+require('../../assets/img/Artboard7.svg')+")" ,backgroundSize:"cover",  backgroundPosition: 'center' }}></div> 
         {headerbg[x].creditTag}
-      </div>
-    </>
+      </div>           </>
   );
 }
 

@@ -33,7 +33,7 @@ import Footer from 'components/Footers/Myfooter';
 import axios from "axios";
 import { Divider } from "@material-ui/core";
 
-function EventsPage(props) {
+function BlogPage(props) {
     
   let content1 = null;
   const [content, setContent] = React.useState([]);
@@ -58,7 +58,7 @@ function EventsPage(props) {
 
   return (
     <>
- 
+    
       <div id="hovericonscontainer">
         <Link to="#">
           <i
@@ -90,15 +90,15 @@ function EventsPage(props) {
         </Link>
       </div>
 
-      <DefaultNavbar />
+      <DefaultNavbar activelink='Blog' />
       <div className='wrapper'>
-      <SecondaryHeader title="Events" />
+      <SecondaryHeader title="Blog" />
       <Container id="mycontainer"></Container>
       <div className="blogs-1" id="blogs-1">
         <Container>
           <Row>
             <Col className="ml-auto mr-auto" md="10">
-              <h2 className="title">Latest Events</h2>
+              <h2 className="title">Latest Blogs</h2>
               <br></br>
 
               {content.map((item, index) => {
@@ -241,10 +241,9 @@ function EventsPage(props) {
           </Row>
         </Container>
       </div>
-     </div>
-     
-      <Footer/>
+      </div>
+       <Footer/>
     </>
   );
 }
-export default EventsPage;
+export default BlogPage;

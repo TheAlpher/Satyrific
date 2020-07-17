@@ -1,8 +1,10 @@
 .navbar{
+  background-color: rgb(213,251,254);
   p{
     line-height: 1.8em;
-    font-size: 1em;
+    font-size: 0.6rem;
     font-weight: 400;
+    text-transform: uppercase;
   }
 
   &.navbar-absolute{

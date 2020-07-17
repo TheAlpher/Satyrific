@@ -81,34 +81,34 @@ const amenitiesitems = [
 
     altText: "Gym",
   },
-  {
-    title: " Housekeeping",
-    info: " Housekeeping service is available for all students",
-    src: require("../assets/img/housekeeping.png"),
+  // {
+  //   title: " Housekeeping",
+  //   info: " Housekeeping service is available for all students",
+  //   src: require("../assets/img/housekeeping.png"),
 
-    altText: "Housekeeping",
-  },
-  {
-    title: "Meals",
-    info: " Students are provided 4  meals everyday with a lot of choices",
-    src: require("../assets/img/meals.png"),
+  //   altText: "Housekeeping",
+  // },
+  // {
+  //   title: "Meals",
+  //   info: " Students are provided 4  meals everyday with a lot of choices",
+  //   src: require("../assets/img/meals.png"),
 
-    altText: "Meals",
-  },
-  {
-    title: " Laundry",
-    info: " Laundry service is available for all students",
-    src: require("../assets/img/laundry.png"),
+  //   altText: "Meals",
+  // },
+  // {
+  //   title: " Laundry",
+  //   info: " Laundry service is available for all students",
+  //   src: require("../assets/img/laundry.png"),
 
-    altText: "Laundry",
-  },
-  {
-    title: "Reading Room",
-    info: " All students have access to our Reading Room",
-    src: require("../assets/img/library.png"),
+  //   altText: "Laundry",
+  // },
+  // {
+  //   title: "Reading Room",
+  //   info: " All students have access to our Reading Room",
+  //   src: require("../assets/img/library.png"),
 
-    altText: "Reading Room",
-  },
+  //   altText: "Reading Room",
+  // },
 ];
 const defaultOptions = {loop: true,autoplay: true,animationData: legoData.default,rendererSettings: {preserveAspectRatio: "xMidYMid slice"}}
 const defaultOptions1 = {loop: true,autoplay: true,animationData: checkedData.default,rendererSettings: {preserveAspectRatio: "xMidYMid slice"}}
@@ -232,6 +232,9 @@ function LandingPage(props) {
   const [toggledetailsbuttonvalue, settoggledetailsbutton] = React.useState(
     "See Details"
   );
+const[fullname,setFullName]=React.useState('');
+const [email,setEmail]=React.useState('');
+
   React.useEffect(() => {
     document.getElementById('preloader-img').classList.add('pulsate1')
     fetch(
@@ -269,6 +272,9 @@ setSuccess2(true);
       new Rellax(".rellax-text");
     }
 
+
+
+
     document.body.classList.add("landing-page");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
@@ -277,6 +283,28 @@ setSuccess2(true);
       document.body.classList.remove("sidebar-collapse");
     };
   }, []);
+
+  function handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+
+    const name = target.name;
+if(name=='email'){
+  setEmail(value)
+}
+else if(name=='fullname')
+   {
+     setFullName(value)
+   }
+}
+
+function handleSubmit(event){
+  event.preventDefault();
+  console.log("submitting")
+  let post = {Name: fullname,Email:email};
+  // createPost(post).then(res => console.log(res));
+console.log(post)
+}
 
   return (
     <>
@@ -365,7 +393,7 @@ setSuccess2(true);
           className=" btn-round overlay-btn"
           id="tooltip511894367"
           type="button"
-          style={{ opacity: 0.8 }}
+          style={{ opacity: 1 }}
         >
           Whats New !
         </Button>
@@ -378,7 +406,7 @@ setSuccess2(true);
           <a
             style={{ textDecoration: "none" }}
             href={"./events/" + content.id}
-            target="_blank"
+         
           >
             <PopoverHeader style={{ color: "black" }}>
               {content.title}
@@ -398,6 +426,25 @@ setSuccess2(true);
               ></img>
             </PopoverBody>
           </a>
+      
+      
+    {/* <a href="./events" className='px-auto'
+            target="_blank" style={{textDecoration:'none',color:'black',fontWeight:'bold',textDecoration:'underline',width: 'max-content',
+
+            display: 'block',
+            
+            
+
+            
+            marginBottom: '2%',
+            
+            marginLeft: 'auto',
+            
+            marginRight: '7%'}}> ....More </a>  */}
+            <Button
+          className=" btn-round pull-right" style={{padding:'5px 18px',marginRight:'5%',fontSize:'small'}}
+          type='button' href="./events" 
+          color='info'>...  More</Button>
         </UncontrolledPopover>
       </div>
       <LandingPageHeader3 />
@@ -466,13 +513,10 @@ setSuccess2(true);
       </Container>
      */}
 
-      <LandingPills style={{ background: "transparent" }} />
-      <div
+      <LandingPills  />
+      {/* <div
         className="wrapper"
-        style={{
-          backgroundColor: "white ",
-          position: "relative",
-          zIndex: "1",
+        
           marginBottom: "unset",
           paddingBottom: "3%",
         }}
@@ -487,7 +531,7 @@ setSuccess2(true);
           Amenities{" "}
         </CardTitle>
         <LandingCards items={amenitiesitems} />
-      </div>
+      </div> */}
 
       <ReviewsCarousel style={{ background: "transparent" }} />
       {/* <Features1 /> */}
@@ -637,105 +681,23 @@ setSuccess2(true);
         </Container>
       </div>
     */}
-      <div
-        style={{
-          paddingTop: "3%",
-          backgroundColor: "white",
-          position: "relative",
-          zIndex: "1",
-        }}
-      >
-        <Container>
-          <Row>
-            <Col
-              className=" pl-5 mr-auto text-left"
-              md="6"
-              style={{ overflowX: "hidden" }}
-            >
-              <h2
-                data-aos="fade-left"
-                className="title"
-                style={{ fontSize: "2rem" }}
-              >
-                Mansehej 's History
-              </h2>
-              <h5
-                data-aos="fade-left"
-                className="description"
-                style={{ fontSize: "1rem" }}
-              >
-                The riding of waves has likely existed since humans began
-                swimming in the ocean. In this sense, bodysurfing is the oldest
-                type of wave-catching. Standing up on what is now called a
-                surfboard is a relatively recent innovation developed by the
-                Polynesians.
-              </h5>
-              <br></br>
-              <div data-aos="fade-left" className="buttons">
-                {/* <Button
-                      className="btn-icon btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                      size="lg"
-                    >
-                      <i className="fab fa-twitter"></i>
-                    </Button>
-                    <Button
-                      className="btn-icon btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                      size="lg"
-                    >
-                      <i className="fab fa-facebook-square"></i>
-                    </Button>
-                    <Button
-                      className="btn-icon btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                      size="lg"
-                    >
-                      <i className="fab fa-get-pocket"></i>
-                    </Button> */}
-                <Button
-                  className="mr-3 btn-warning"
-                  color="info"
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                  size="lg"
-                >
-                  Read More
-                </Button>
-              </div>
-            </Col>
-            <Col md="6" style={{ alignSelf: "center" }}>
-              <img
-                data-aos="fade-up"
-                style={{ alignSelf: "center" }}
-                src={require("../assets/img/temp12.png")}
-              ></img>
-            </Col>{" "}
-          </Row>
-        </Container>
-      </div>
-      <div className="section mx-3">
+
+      {/* <div className="section mx-3">
         <Row
-          className="contactus-2  mx-5 mb-5"
+          className="contactus-2 landingcontactus-container   mb-5"
           style={{
             backgroundColor: "white",
             position: "relative",
             zIndex: "1",
           }}
         >
-          <Col xs="12" sm="12" md="6" style={{ marginTop: "2%" }}>
+          <Col xs="12" sm="12" md="12" lg='6' style={{ marginTop: "2%" }}>
             <div
               className="big-map"
               id="contactUsMap"
               style={{
                 // position: "relative",
-
+         
                 overflowX: "hidden",
                 height: "62vh",
               }}
@@ -754,124 +716,64 @@ setSuccess2(true);
            frameborder="0" style={{border:"0",height:'400%',width:'100%'}} allowfullscreen="" aria-hidden="false"
               tabindex="0"></iframe>
           </div>
-        */}
+     
           </Col>
-          <Col xs="12" sm="12" lg="6" md="6" style={{ marginTop: "2%" }}>
-            <Card
-              className="card-contact  "
-              style={{
-                maxWidth: "unset",
-                height: "100%",
-                marginLeft: 0,
-                marginTop: 0,
-                boxShadow: "none",
-              }}
-            >
-              <Form id="contact-form" method="post" role="form">
-                <CardHeader className="text-center">
-                  <CardTitle tag="h2">Contact Us</CardTitle>
-                </CardHeader>
-                <CardBody style={{padding:0}}>
-                  <Row>
-                    <Col md="6">
-                      <div className="info info-horizontal">
-                        <div className="icon icon-info">
-                          <i className="now-ui-icons tech_mobile"></i>
-                        </div>
-                        <div className="description">
-                          <h5 className="info-title">Give us a ring</h5>
-                          <p>
-                            Michael Jordan <br></br>
-                            +40 762 321 762 <br></br>
-                            Mon - Fri, 8:00-22:00
-                          </p>
-                        </div>
+          <Col xs="12" sm="12" lg="6" md="12" style={{  marginTop: "2%" }}>
+          <Card
+            className="card-contact  "
+            style={{
+              maxWidth: "unset",
+              height: "100%",
+              marginLeft: 0,
+              marginTop: 0,
+              boxShadow: "none",
+            }}
+          >
+         
+              <CardHeader className="text-center">
+                <CardTitle tag="h4">Contact Us</CardTitle>
+              </CardHeader>
+              <CardBody>
+                <Row>
+                  <Col md="12">
+                  <div className="info " style={{margin:'0 auto'}}>
+                      <div className="icon icon-info">
+                        <i className="now-ui-icons tech_mobile"></i>
                       </div>
-                    </Col>
-                    <Col md="6">
-                      <div className="info info-horizontal">
-                        <div className="icon icon-info">
-                          <i className="now-ui-icons location_pin"></i>
-                        </div>
-                        <div className="description">
-                          <h5 className="info-title">Find us at the office</h5>
-                          <p>
-                            Bld Mihail Kogalniceanu, nr. 8, <br></br>
-                            7652 Bucharest, <br></br>
-                            Romania
-                          </p>
-                        </div>
+                      <div className="description m-0">
+                        <h5 className="info-title">Give us a ring</h5>
+                        <p>
+                          Michael Jordan <br></br>
+                          +40 762 321 762 <br></br>
+                          Mon - Fri, 8:00-22:00
+                        </p>
                       </div>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col className="pr-2" md="6">
-                      <label>Full name</label>
-                      <InputGroup
-                        className={first2Focus ? "input-group-focus" : ""}
-                      >
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="now-ui-icons users_circle-08"></i>
-                          </InputGroupText>
-                        </InputGroupAddon>
-                        <Input
-                        required={true}
-                          autoComplete="given-name"
-                          placeholder="Full Name..."
-                          type="text"
-                          onFocus={() => setFirst2Focus(true)}
-                          onBlur={() => setFirst2Focus(false)}
-                        ></Input>
-                      </InputGroup>
-                    </Col>
-                    <Col className="pl-2" md="6">
-                      <label>Email address</label>
-                      <InputGroup
-                        className={email2Focus ? "input-group-focus" : ""}
-                      >
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
-                            <i className="now-ui-icons ui-1_email-85"></i>
-                          </InputGroupText>
-                        </InputGroupAddon>
-                        <Input
-                        required={true}
-                          autoComplete="email"
-                          placeholder="Email Here..."
-                          type="email"
-                          onFocus={() => setEmail2Focus(true)}
-                          onBlur={() => setEmail2Focus(false)}
-                        ></Input>
-                      </InputGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col md="6">
-                      {/* <FormGroup check>
-                      <Label check>
-                        <Input type="checkbox"></Input>
-                        <span className="form-check-sign"></span>
-                        I'm not a robot
-                      </Label>
-                    </FormGroup> */}
-                    </Col>
-                    <Col md="6">
-                      <Button
-                        className="btn-round pull-right"
-                        color="info"
-                        type="submit"
-                      >
-                        Send 
-                      </Button>
-                    </Col>
-                  </Row>
-                </CardBody>
-              </Form>
-            </Card>
+                    </div>
+                  </Col>
+                  <Col md="12">
+                    <div className="info " style={{margin:'0 auto'}}>
+                      <div className="icon icon-info">
+                        <i className="now-ui-icons location_pin"></i>
+                      </div>
+                      <div className="description m-0">
+                        <h5 className="info-title">Find us at the office</h5>
+                        <p>
+                          Bld Mihail Kogalniceanu, nr. 8, <br></br>
+                          7652 Bucharest, <br></br>
+                          Romania
+                        </p>
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+                   </CardBody>
+      
+          </Card>
+     
+     
           </Col>
         </Row>
-      </div>
+      </div> */}
 
       <Footer />
     </React.Fragment>

@@ -2931,7 +2931,7 @@ optgroup,
 select,
 textarea {
   /* font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif; */
-  font-family: "Lato";
+  font-family: "Lato","Montserrat", "Helvetica Neue", Arial;
 }
 
 h1,
@@ -3123,7 +3123,7 @@ body {
   color: #2c2c2c;
   font-size: 14px;
   /* font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif; */
-  font-family: "Lato";
+  font-family: "Lato","Montserrat", "Helvetica Neue", Arial, sans-serif;
   overflow-x: hidden;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -5875,7 +5875,7 @@ textarea.form-control:active {
 }
 
 .navbar a:not(.btn):not(.dropdown-item) {
-  color: #FFFFFF;
+  color: #000;
 }
 
 .navbar p {
@@ -6999,7 +6999,7 @@ img {
 
 .media .media-heading small {
   /* font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif; */
-font-family: "Lato";
+font-family: "Lato","Montserrat", "Helvetica Neue", Arial, sans-serif;
 }
 
 .media .media-body {
@@ -7332,7 +7332,7 @@ font-family: "Lato";
 }
 
 .footer ul li {
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 .footer ul li a {
@@ -10187,7 +10187,7 @@ font-family: "Lato";
   }
   .navbar .dropdown.show .dropdown-menu,
   .navbar .dropdown .dropdown-menu {
-    background-color: transparent;
+    background-color: transparent !important;
     border: 0;
     transition: none;
     -webkit-box-shadow: none;
@@ -10296,7 +10296,7 @@ font-family: "Lato";
     opacity: 1;
     top: 0;
     left: auto;
-    right: 300px;
+    right: 0;
     content: "";
     z-index: 9999;
     overflow-x: hidden;

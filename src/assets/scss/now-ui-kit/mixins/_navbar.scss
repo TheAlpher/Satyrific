@@ -19,17 +19,17 @@
 
         .dropdown.show .dropdown-menu,
         .dropdown .dropdown-menu{
-            background-color: transparent;
+            background-color: transparent !important;
             border: 0;
             transition: none;
             -webkit-box-shadow: none;
             box-shadow: none;
             width: auto;
             margin: 0 1rem;
-            margin-bottom: 15px;
+            // margin-bottom: 15px;
             padding-top: 0;
-            height: 125px;
-            overflow-y: scroll;
+            height: max-content;
+            overflow-y: unset;
 
             &:before{
                 display: none;
@@ -38,7 +38,7 @@
 
         .dropdown{
             .dropdown-item{
-                padding-left: 2.5rem;
+                // padding-left: 2.5rem;
             }
 
             .dropdown-menu{
@@ -74,7 +74,7 @@
             width: 22px;
             height: 1px;
             border-radius: 1px;
-            background: $white-bg;
+            background: $black-bg;
 
             & + .navbar-toggler-bar{
                 margin-top: 7px;
@@ -87,7 +87,7 @@
         }
 
         &.bg-white:not(.navbar-transparent) .navbar-toggler-bar{
-            background: $default-color;
+            background: rgb(213,251,254);
         }
 
     }
@@ -214,7 +214,7 @@
 
         .navbar-nav:not(.navbar-logo){
             .nav-link {
-                margin: 0 1rem;
+                // margin: 0 1rem;
                 margin-top: 0.3125rem;
 
                 &:not(.btn){
@@ -232,7 +232,7 @@
 
 
     [class*="navbar-expand-"] .navbar-collapse{
-        width: 300px;
+        width: 200px;
     }
 
     .wrapper{
@@ -246,7 +246,7 @@
         opacity: 1;
         top: 0;
         left: auto;
-        right: 300px;
+     right: 250px;
         content: "";
         z-index: 9999;
         overflow-x: hidden;

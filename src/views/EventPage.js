@@ -14,7 +14,7 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 // core components
-import FixedNavbar from "components/Navbars/EventNavbar.js";
+import DefaultNavbar from "components/Navbars/DefaultPageNavbar.js";
 import BlogPostHeader from "components/Headers/BlogPostHeader1.js";
 import FooterBlack from "components/Footers/FooterBlack.js";
 import Footer from 'components/Footers/Myfooter';
@@ -92,7 +92,7 @@ let facebooklink='https://www.facebook.com/sharer/sharer.php?u=https://stayrific
         </Link>
       </div>
 
-      <FixedNavbar />
+      <DefaultNavbar />
       <div className="wrapper">
         <BlogPostHeader title={title} author={author} bg={event_header_bg}/>
         <div className="section">

@@ -23,7 +23,7 @@ import {
     CarouselItem,
     CarouselIndicators
   } from "reactstrap";
-  import MyNavbar from '../Navbars/LandingPageNavbar';
+  import DefaultNavbar from "components/Navbars/DefaultPageNavbar.js";
 //   import MyNavbar from 'components/Navbars/WhiteNavbar';
 const items = [
     {
@@ -259,77 +259,9 @@ const MyHeader =()=>{
           }}
         />
       ) : null}
- {/* <Navbar
-          className="navbar-absolute navbar-white"
-          expand="lg"
-        >
-          <Container>
-            <div className="navbar-translate">
-              <button
-                aria-expanded={navbarOpen3}
-                className="navbar-toggler"
-                data-toggle="collapse"
-                type="button"
-                onClick={() => {
-                  document.documentElement.classList.toggle("nav-open");
-                  setNavbarOpen3(!navbarOpen3);
-                }}
-              >
-                <span className="navbar-toggler-bar bar1"></span>
-                <span className="navbar-toggler-bar bar2"></span>
-                <span className="navbar-toggler-bar bar3"></span>
-              </button>
-              <NavbarBrand href="#pablo" onClick={e => e.preventDefault()} style={{maxWidth:'30vw'}}>
-                <img width='35%' src={require('../../assets/img/BRANDLOGOMINI2.png')}/>
-              </NavbarBrand>
-            </div>
-            <Collapse navbar isOpen={navbarOpen3}>
-              <Nav className="ml-auto" navbar>
-                <NavItem className="active">
-                <NavLink href="/" 
-                  // onClick={e => e.preventDefault()}
-                  >
-                    Home
-                  </NavLink>
-                </NavItem>
-                <NavItem >
-                  <NavLink href="/about-us" 
-                  // onClick={e => e.preventDefault()}
-                  >
-                    About Us
-                  </NavLink>
-                </NavItem>
-                {/* <NavItem>
-                  <NavLink href="/products?types=all" 
-                  // onClick={e => e.preventDefault()}
-                  >
-                    Products
-                  </NavLink>
-                </NavItem> 
-                <NavItem>
-                  <NavLink href="#pablo" onClick={e => e.preventDefault()}>
-                    Contact Us
-                  </NavLink>
-                </NavItem>
-              </Nav>
-            </Collapse>
-          </Container>
-        </Navbar>
-      */}
-      <MyNavbar/>
-        {/* <div className="page-header header-filter"> 
-                            <div
-                              className="page-header-image"
-                              style={{
-                                backgroundImage: "url(" + require("assets/img/bg15.jpg") + ")",
-                              }}
-                            ></div>
-                            <div className="content" style= {{marginTop:'15%'}} >
+ 
+      <DefaultNavbar activelink='Home'/>
 
-
-                              
-                            </div>
-                          </div>    */}
                           <div className='wrapper1' >
  <Carousel activeIndex={activeIndex} className='carousel-fade' keyboard={false}
 

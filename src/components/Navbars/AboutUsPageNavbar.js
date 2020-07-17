@@ -91,7 +91,7 @@ function ScrollTransparentNavbar() {
       ) : null}
       <Navbar className={"fixed-top" + navbarColor} color="white" expand="lg">
         <Container
-          style={{ marginLeft: "5%", marginRight: "5%", display: "flex" }}
+          style={{ marginLeft: "5%", marginRight: "2%", display: "flex" }}
         >
           <div className="navbar-translate mr-2">
             <NavbarBrand href="/" style={{ maxWidth: "30vw" }}>
@@ -151,7 +151,7 @@ function ScrollTransparentNavbar() {
                   <p>Amenities</p>
                 </NavLink>
               </NavItem>
-              <NavItem>
+              {/* <NavItem>
                 <NavLink
                   className="nav-link btn-default "
                   color={buyButtonColor}
@@ -160,8 +160,8 @@ function ScrollTransparentNavbar() {
                 >
                   <p>Events</p>
                 </NavLink>
-              </NavItem>{" "}
-              <NavItem>
+              </NavItem> */}
+              {/* <NavItem>
                 <NavLink
                   className="nav-link btn-default"
                   color={buyButtonColor}
@@ -170,7 +170,7 @@ function ScrollTransparentNavbar() {
                 >
                   <p>Contact Us</p>
                 </NavLink>
-              </NavItem>
+              </NavItem> */}
               <NavItem>
                 <NavLink
                   className="nav-link btn-default pay-now-collapse-item"
@@ -179,7 +179,7 @@ function ScrollTransparentNavbar() {
                   style={{ textAlign: "center" }}
                   //   target="_blank"
                 >
-                  {" "}
+                  {/* {" "} */}
                   <Button
                     className=" btn-round pay-now-collapse-btn"
                     id="tooltip511894367"
@@ -199,10 +199,10 @@ function ScrollTransparentNavbar() {
 
               marginTop: "1.7%",
             }}
-            className="btn-icon btn-round call-now-mini-navbar-item"
+            className=" btn-round call-now-mini-navbar-item"
             color="info"
           >
-            <i className="fas fa-phone"></i>
+         Contact Us
             {/* <i className="fas fa-phone"></i> */}
           </Button>
             </Nav>
@@ -297,7 +297,9 @@ function ScrollTransparentNavbar() {
           </div>
       
         </Modal>
-    
+       
+       
+       
         </Container>
         <Button
           className=" btn-round pay-now-btn "
@@ -305,16 +307,17 @@ function ScrollTransparentNavbar() {
           type="button"
         >
           Pay Now
-        </Button>{" "}
+        </Button>
         <Button
          
           onClick={() => setModalNotice1(true)}
-          className="btn-icon btn-round call-now-btn ml-5"
+          className=" btn-round call-now-btn ml-4"
           color='info'
         >
-          <i className="fas fa-phone"></i>
+        Contact Us
           {/* <i className="fas fa-phone"></i> */}
-        </Button>{" "}
+        </Button>
+       
         <Modal isOpen={modalNotice1} toggle={() => setModalNotice1(false)}>
           <div className="modal-header">
             <button
@@ -403,7 +406,9 @@ function ScrollTransparentNavbar() {
             
           </div>
 
-        </Modal> </Navbar>
+        </Modal> 
+       
+        </Navbar>
     </>
   );
 }

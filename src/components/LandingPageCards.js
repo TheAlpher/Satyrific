@@ -31,6 +31,7 @@ import {
   import styles from "assets/jss/sectionCards.js";
   const useStyles = makeStyles(styles);
 function LandingPageCards(props){
+  let length=props.items.length;
     const classes = useStyles();
     React.useEffect(() => {
         if (window) {
@@ -73,28 +74,28 @@ function LandingPageCards(props){
 
         <Container className="mb-5">
 
-        <GridContainer className="my-2 py-3">
+        <GridContainer className=" py-3  "  style={length===2 ? {justifyContent:'space-evenly'}:{justifyContent:'center'}}>
         {props.items.map(item => {
               return (
-          <GridItem data-aos="zoom-in-up" className='my-1 py-1 px-1' xs={6} sm={6} md={6} lg={4}
+          <GridItem data-aos="zoom-in-up" className='my-5 py-1 px-4' xs={6} sm={6} md={4} lg={4}
           key={item.src}>
             <div className={classes.rotatingCardContainer}>
               <Card className={classes.cardRotate}>
                 <div className={classes.front}>
                   <CardBody
                     className={classes.cardBodyRotate}
-                    style={{ minHeight: "37vh" }}
+                    style={{ minHeight: "26vh" }}
                   >
-                               <h5
+                               {/* <h5
                       className={classes.cardTitle + 'cardtitle pt-2'}
-                      style={{ fontFamily: "Lato",textAlign:'center' }}
+                      style={{ fontFamily: "Lato, Montserrat,Helvetica Neue, Arial, sans-serif",textAlign:'center' }}
                     >
                       {item.title}
-                    </h5>
+                    </h5> */}
                     <img
                       className="mx-auto my-auto"
                       src={item.src}
-                      width="70%"
+                      width="90%"
                       alt={item.altText}
                     />
                     {/* <Success>
@@ -121,8 +122,13 @@ function LandingPageCards(props){
                     className={classes.cardBodyRotate}
                     style={{ border: "1px solid orange" }}
                   >
-         
-                    <p className={classes.cardDescription} style={{fontSize:'medium'}}>
+         <h5
+                      className={classes.cardTitle + 'cardtitle pt-2'}
+                      style={{ fontFamily: "Lato, Montserrat,Helvetica Neue, Arial, sans-serif",textAlign:'center' }}
+                    >
+                      {item.title}
+                    </h5>
+                    <p className={classes.cardDescription} style={{fontSize:'medium',color:'#4c4a4a'}}>
                      {item.info}
                     </p>
                     {/* <div className={classes.textCenter}>

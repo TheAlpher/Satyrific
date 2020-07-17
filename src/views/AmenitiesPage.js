@@ -29,6 +29,8 @@ import {
 // core components
 import NavigationPills from 'components/AmenitiesPagePills.js';
 import  AmenitiesNavbar from "components/Navbars/AmenitiesPageNavbar.js";
+import DefaultNavbar from "components/Navbars/DefaultPageNavbar.js";
+
 import SecondaryPageHeader from "components/Headers/SecondaryPageHeader.js";
 import FooterDefault from "components/Footers/FooterDefault.js";
 import Footer from 'components/Footers/Myfooter';
@@ -144,7 +146,8 @@ function AmenitiesPage() {
     };
   });
   return (
-    <>  <div
+    <>  
+    <div
     className="bg-elements "
     style={{
       height: 0,
@@ -221,127 +224,83 @@ function AmenitiesPage() {
         </Link>
       </div>
 
-      <AmenitiesNavbar />
+      {/* <AmenitiesNavbar /> */}
+      <DefaultNavbar  activelink='Amenities'/>
       <div className="wrapper" style={{background:'transparent'}}>
         <SecondaryPageHeader title='Amenities' />
         <NavigationPills items={satyaniketanamenities} items1={noidaamenities}style={{background:'transparent'}} />
-        
-        <Container className='my-5'>
-         <Row>  <h2 data-aos="fade-left" className="title col-12" style={{fontSize:'2rem',textAlign:'center'}}>Best in class Technology</h2>
-                     <Col md='6' data-aos="fade-right" style={{textAlign:'center'}} >
-                    
-               <img  style={{alignSelf:'center',width:'50%'}} src={require('../assets/img/jug.png')}></img>
-            </Col>  
-            <Col  className=" pl-5 mr-auto text-left" md="6">
-                 
-                  <h5 data-aos="fade-left" className="description" style={{fontSize:'0.95rem',fontFamily:'Lato'}}>
-                  When R. Buckminster Fuller said "Humanity is acquiring all the right technology for all the wrong reasons.” We felt him and evolved for an effective path of communication. The STAYRIFIC app is everything you need to modernize your solutions. The app records grievances,provides solutions,listens to the changes according you and spills them in front of us and also reminds you to pay us both love and invoices. You don’t have to worry just have to feel the HOMELY feeling.
-                  </h5>
+        <Container style={{background:'transparent'}}>
+            <Row>
+              <Col md="6" style={{ alignSelf: "center" }}>
+                <img
+                className='mx-auto'
+                  data-aos="fade-up"
+                  style={{ alignSelf: "center" ,width:'50%',display:'block'}}
+                  src={require('../assets/img/jug.png')}
+
+                ></img>
+              </Col>
+              <Col className=" pr-5 ml-auto text-center " style={{paddingTop:'8%'}} md="6">
+                <h2
+                  data-aos="fade-up"
+                  className="title"
+                  style={{ fontSize: "2rem" ,textAlign:'center'}}
                   
-                  <div data-aos="fade-left" className="buttons">
-                    {/* <Button
-                      className="btn-icon btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                      size="lg"
-                    >
-                      <i className="fab fa-twitter"></i>
-                    </Button>
-                    <Button
-                      className="btn-icon btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                      size="lg"
-                    >
-                      <i className="fab fa-facebook-square"></i>
-                    </Button>
-                    <Button
-                      className="btn-icon btn-neutral"
-                      color="link"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                      size="lg"
-                    >
-                      <i className="fab fa-get-pocket"></i>
-                    </Button> */}
-                    <Button
-                      className="mr-3 btn-warning"
-                      color="info"
-                      href="#pablo"
-                      onClick={e =>{e.preventDefault();
-                    }}
-                      size="lg"
-                    >
-                      Read More
-                    </Button>
-                  </div>
-             
-            </Col></Row>
-                  </Container>
-                  <Container className='my-5'>
-              
-              
-                  <Row>
-           
-                  <h2  data-aos="fade-right" className="title col-12" style={{fontSize:'2rem',textAlign:'center'}}>Security is a prime priority</h2>
-         <Col data-aos="fade-left" md='6' style={{textAlign:'center'}} >
-           <img  style={{alignSelf:'center',width:'55%'}} src={require('../assets/img/foreigner2.png')}></img>
-           </Col>
-           <Col   className=" pl-5 mr-auto text-left" md="6">
-               
-               <h5 data-aos="fade-right" className="description" style={{fontSize:'0.95rem',fontFamily:'Lato'}}>
-               STAYRIFIC is as secure as your mother’s lap is.
+                >
+                  Best in class Technology
+                </h2>
+                <h5
+                  data-aos="fade-down"
+                  className="description"
+                  style={{ fontSize: "1rem", fontFamily: "Lato, Montserrat,Helvetica Neue, Arial, sans-serif",color:'#4c4a4a' }}
+                >
+                    When R. Buckminster Fuller said "Humanity is acquiring all the right technology for all the wrong reasons.” We felt him and evolved for an effective path of communication. The STAYRIFIC app is everything you need to modernize your solutions. The app records grievances,provides solutions,listens to the changes according you and spills them in front of us and also reminds you to pay us both love and invoices. You don’t have to worry just have to feel the HOMELY feeling.
+                </h5>
+                <br></br>
+    
+              </Col>
+            </Row>
+          </Container>
+          <Container style={{background:'transparent'}}>
+            <Row>     
+              <Col className=" text-center " style={{paddingTop:'8%'}} md="6">
+                <h2
+                  data-aos="fade-up"
+                  className="title"
+                  style={{ fontSize: "2rem" ,textAlign:'center'}}
+                >
+                 Security is a prime priority
+                </h2>
+                <h5
+                  data-aos="fade-down"
+                  className="description"
+                  style={{ fontSize: "1rem", fontFamily: "Lato, Montserrat,Helvetica Neue, Arial, sans-serif",color:'#4c4a4a' }}
+                >
+ STAYRIFIC is as secure as your mother’s lap is.
                 We not only believe in manual  security but also confer your security in your hands on the app.
                  The app generates out pass and in pass according to your concerns.
                   CCTV cameras are installed and monitored every moment to make the place safer.
                    You can sleep well because there’re people working hard to make you feel the HOMELY feeling.
-               </h5>
-          
-               <div  data-aos="fade-right" className="buttons">
-                 {/* <Button
-                   className="btn-icon btn-neutral"
-                   color="link"
-                   href="#pablo"
-                   onClick={e => e.preventDefault()}
-                   size="lg"
-                 >
-                   <i className="fab fa-twitter"></i>
-                 </Button>
-                 <Button
-                   className="btn-icon btn-neutral"
-                   color="link"
-                   href="#pablo"
-                   onClick={e => e.preventDefault()}
-                   size="lg"
-                 >
-                   <i className="fab fa-facebook-square"></i>
-                 </Button>
-                 <Button
-                   className="btn-icon btn-neutral"
-                   color="link"
-                   href="#pablo"
-                   onClick={e => e.preventDefault()}
-                   size="lg"
-                 >
-                   <i className="fab fa-get-pocket"></i>
-                 </Button> */}
-                 <Button
-                   className="mr-3 btn-warning"
-                   color="info"
-                   href="#pablo"
-                   onClick={e => e.preventDefault()}
-                   size="lg"
-                 >
-                   Read More
-                 </Button>
-               </div>
-          
-         </Col>
-           </Row>                </Container>
-               
-                    
+                </h5>
+                <br></br>
+    
+              </Col>
+        
+              <Col md="6" style={{ alignSelf: "center" }}>
+                <img
+                 className='mx-auto'
+                 data-aos="fade-up"
+                 style={{ alignSelf: "center" ,width:'50%',display:'block'}}
+                  src={require('../assets/img/foreigner2.png')}
+                />
+              </Col>
+             </Row>
+          </Container>
+       
+       
+      
+           
+           
         
       
 
